@@ -6,6 +6,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile, UploadedFile
 from django.utils.translation import ugettext_lazy as _
+from pretix.control.forms import ClearableBasenameFileInput
 
 logger = logging.getLogger(__name__)
 
@@ -21,6 +22,7 @@ def validate_rsa_privkey(value: str):
 
 
 class CertificateFileField(forms.FileField):
+    widget = ClearableBasenameFileInput
 
     def clean(self, value, *args, **kwargs):
         value = super().clean(value, *args, **kwargs)
@@ -58,6 +60,7 @@ class CertificateFileField(forms.FileField):
 
 
 class PNGImageField(forms.FileField):
+    widget = ClearableBasenameFileInput
 
     def clean(self, value, *args, **kwargs):
         value = super().clean(value, *args, **kwargs)
