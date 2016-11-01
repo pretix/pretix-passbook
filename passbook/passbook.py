@@ -12,8 +12,8 @@ from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
 class PassbookOutput(BaseTicketOutput):
     identifier = 'passbook'
     verbose_name = 'Passbook Tickets'
-    download_button_icon = 'mobile'
-    download_button_text = _('Download passbook ticket')
+    download_button_icon = 'fa-mobile'
+    download_button_text = _('Add to Wallet/Download Passbook')
 
     @property
     def settings_form_fields(self) -> dict:
