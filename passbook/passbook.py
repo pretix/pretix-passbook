@@ -49,7 +49,8 @@ class PassbookOutput(BaseTicketOutput):
             ]
         )
 
-    def generate(self, order: Order) -> Tuple[str, str, str]:
+    def generate(self, order_position: Order) -> Tuple[str, str, str]:
+        order = order_position.order
         card = EventTicket()
         card.addPrimaryField('eventName', str(order.event.name), ugettext('Event'))
         card.addPrimaryField('name', order.email, ugettext('Name'))
@@ -70,10 +71,11 @@ class PassbookOutput(BaseTicketOutput):
             teamIdentifier=order.event.settings.passbook_team_id,
         )
 
-        passfile.serialNumber = order.code
+        passfile.serialNumber = '%s-%s-%s-%d' % (order.event.organizer.slug, order.event.slug, order.code,
+                                                 order_position.pk)
         passfile.description = ugettext('Ticket for {}').format(order.event.name)
-        passfile.barcode = Barcode(message=order.secret, format=BarcodeFormat.QR)
-        passfile.barcode.altText = order.secret
+        passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
+        passfile.barcode.altText = order_position.secret
         passfile.logoText = str(order.event.name)
         passfile.relevantDate = order.event.date_from.isoformat()
 
