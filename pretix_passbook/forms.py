@@ -74,7 +74,6 @@ class PNGImageField(forms.FileField):
             value.seek(0)
             try:
                 with Image.open(value) as im, tempfile.NamedTemporaryFile('rb', suffix='.png') as tmpfile:
-                    print(im, im.format, "%dx%d" % im.size, im.mode)
                     im.save(tmpfile.name)
                     tmpfile.seek(0)
                     return SimpleUploadedFile('picture.png', tmpfile.read(), 'image png')
