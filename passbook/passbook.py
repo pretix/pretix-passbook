@@ -21,12 +21,17 @@ class PassbookOutput(BaseTicketOutput):
             list(super().settings_form_fields.items()) + [
                 ('icon',
                     forms.FileField(
-                        label=_('Event icon'),
+                        label=_('Event icon (.png)'),
                         required=True,
                     )),
                 ('logo',
+                 forms.FileField(
+                     label=_('Event logo (.png)'),
+                     required=True,
+                 )),
+                ('background',
                     forms.FileField(
-                        label=_('Event logo (.png)'),
+                        label=_('Pass background (.png)'),
                         required=True,
                     )),
                 ('latitude',
@@ -65,8 +70,10 @@ class PassbookOutput(BaseTicketOutput):
 
         icon_file = self.event.settings.get('ticketoutput_passbook_icon')
         logo_file = self.event.settings.get('ticketoutput_passbook_logo')
+        bg_file = self.event.settings.get('ticketoutput_passbook_background')
         passfile.addFile('icon.png', default_storage.open(icon_file.name, 'rb'))
         passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
+        passfile.addFile('background.png', default_storage.open(bg_file.name, 'rb'))
 
         filename = '{}-{}.pkpass'.format(order.event.slug, order.code)
         _pass = passfile.create(
