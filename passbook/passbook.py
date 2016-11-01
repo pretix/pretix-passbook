@@ -3,7 +3,7 @@ from typing import Tuple
 
 from django import forms
 from django.core.files.storage import default_storage
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ugettext
 from pretix.base.models import Order
 from pretix.base.ticketoutput import BaseTicketOutput
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
@@ -49,8 +49,17 @@ class PassbookOutput(BaseTicketOutput):
 
     def generate(self, order: Order) -> Tuple[str, str, str]:
         card = EventTicket()
-        card.addPrimaryField('event', str(order.event.name), 'Event')
-        card.addPrimaryField('name', order.email, 'Name')
+        card.addPrimaryField('eventName', str(order.event.name), ugettext('Event'))
+        card.addPrimaryField('name', order.email, ugettext('Name'))
+        if order.event.settings.show_times:
+            card.addPrimaryField('doorsOpen', order.event.date_from.isoformat(), ugettext('From'))
+        else:
+            card.addPrimaryField('doorsOpen', order.event.date_from.date().isoformat(), ugettext('From'))
+        if order.event.settings.show_date_to:
+            if order.event.settings.show_times:
+                card.addPrimaryField('doorsClose', order.event.date_from.isoformat(), ugettext('To'))
+            else:
+                card.addPrimaryField('doorsClose', order.event.date_from.date().isoformat(), ugettext('To'))
 
         passfile = Pass(
             card,
@@ -60,8 +69,9 @@ class PassbookOutput(BaseTicketOutput):
         )
 
         passfile.serialNumber = order.code
-        passfile.description = str(_('Ticket for {}').format(order.event.name))
+        passfile.description = ugettext('Ticket for {}').format(order.event.name)
         passfile.barcode = Barcode(message=order.secret, format=BarcodeFormat.QR)
+        passfile.barcode.altText = order.secret
         passfile.logoText = str(order.event.name)
         passfile.userInfo = order.email
 
@@ -69,11 +79,16 @@ class PassbookOutput(BaseTicketOutput):
             passfile.locations = Location(self.event.settings.passbook_latitude, self.event.settings.passbook_longitude)
 
         icon_file = self.event.settings.get('ticketoutput_passbook_icon')
+        if icon_file:
+            passfile.addFile('icon.png', default_storage.open(icon_file.name, 'rb'))
+
         logo_file = self.event.settings.get('ticketoutput_passbook_logo')
+        if logo_file:
+            passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
+
         bg_file = self.event.settings.get('ticketoutput_passbook_background')
-        passfile.addFile('icon.png', default_storage.open(icon_file.name, 'rb'))
-        passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
-        passfile.addFile('background.png', default_storage.open(bg_file.name, 'rb'))
+        if bg_file:
+            passfile.addFile('background.png', default_storage.open(bg_file.name, 'rb'))
 
         filename = '{}-{}.pkpass'.format(order.event.slug, order.code)
         _pass = passfile.create(
