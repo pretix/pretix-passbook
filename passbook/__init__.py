@@ -9,7 +9,7 @@ class PassbookApp(AppConfig):
     class PretixPluginMeta:
         name = 'Passbook Tickets'
         author = 'Tobias Kunze'
-        description = 'Provides passbook tickets for pretix',
+        description = 'Provides passbook tickets for pretix'
         visible = True
         version = '0.0'
         type = PluginType.ADMINFEATURE
