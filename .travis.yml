@@ -1,0 +1,19 @@
+language: python
+sudo: false
+python:
+    - "3.4"
+install:
+    - pip install -U pip wheel setuptools
+    - pushd ~
+    - git clone --depth 1 https://github.com/pretix/pretix.git
+    - cd pretix/src
+    - pip3 install -Ur requirements.txt -r requirements/py34.txt -r requirements/dev.txt
+    - python setup.py develop
+    - make all compress
+    - popd
+script:
+    - flake8 .
+    - isort -c -rc .
+cache:
+    directories:
+        - $HOME/.cache/pip
