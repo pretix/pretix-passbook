@@ -9,6 +9,8 @@ setup(
     author='Tobias Kunze',
     author_email='rixx@cutebit.de',
 
+    install_requires=['wallet-py3k'],
+
     include_package_data=True,
     entry_points="""
 [pretix.plugin]
