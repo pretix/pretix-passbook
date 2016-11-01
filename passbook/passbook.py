@@ -15,7 +15,7 @@ class PassbookOutput(BaseTicketOutput):
     identifier = 'passbook'
     verbose_name = 'Passbook Tickets'
     download_button_icon = 'fa-mobile'
-    download_button_text = _('Add to Wallet/Download Passbook')
+    download_button_text = _('Wallet/Passbook')
 
     @property
     def settings_form_fields(self) -> dict:
