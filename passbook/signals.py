@@ -3,6 +3,7 @@ from collections import OrderedDict
 from django import forms
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
+from passbook.forms import CertificateFileField, validate_rsa_privkey
 from pretix.base.signals import (
     register_global_settings, register_ticket_outputs,
 )
@@ -29,12 +30,26 @@ def register_global_settings(sender, **kwargs):
             label=_('Passbook organizer name'),
             required=False,
         )),
-        ('passbook_certificate_file', forms.FileField(required=False)),
-        ('passbook_key_file', forms.FileField(required=False)),
-        ('passbook_wwdr_certificate_file', forms.FileField(required=False)),
+        ('passbook_certificate_file', CertificateFileField(
+            label=_('Passbook certificate file'),
+            required=False,
+        )),
+        ('passbook_wwdr_certificate_file', CertificateFileField(
+            label=_('Passbook CA Certificate'),
+            help_text=_('You can download the current CA certificate from apple at '
+                        'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer'),
+            required=False,
+        )),
+        ('passbook_key', forms.CharField(
+            label=_('Passbook secret key'),
+            required=False,
+            widget=forms.Textarea,
+            validators=[validate_rsa_privkey]
+        )),
         ('passbook_key_password', forms.CharField(
             label=_('Passbook key password'),
             widget=forms.PasswordInput,
             required=False,
+            help_text=_('Optional, only necessary if the key entered above requires a password to use.')
         )),
     ])

@@ -1,9 +1,10 @@
+import tempfile
 from collections import OrderedDict
 from typing import Tuple
 
 from django import forms
 from django.core.files.storage import default_storage
-from django.utils.translation import ugettext_lazy as _, ugettext
+from django.utils.translation import ugettext, ugettext_lazy as _
 from pretix.base.models import Order
 from pretix.base.ticketoutput import BaseTicketOutput
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
@@ -91,11 +92,16 @@ class PassbookOutput(BaseTicketOutput):
             passfile.addFile('background.png', default_storage.open(bg_file.name, 'rb'))
 
         filename = '{}-{}.pkpass'.format(order.event.slug, order.code)
-        _pass = passfile.create(
-            order.event.settings.passbook_certificate_file.name,
-            order.event.settings.passbook_key_file.name,
-            order.event.settings.passbook_wwdr_certificate_file.name,
-            order.event.settings.get('passbook_key_password', '')
-        )
+
+        with tempfile.NamedTemporaryFile('w', encoding='utf-8') as keyfile:
+            keyfile.write(order.event.settings.passbook_key)
+            keyfile.flush()
+            _pass = passfile.create(
+                order.event.settings.passbook_certificate_file.name,
+                keyfile.name,
+                order.event.settings.passbook_wwdr_certificate_file.name,
+                order.event.settings.get('passbook_key_password', '')
+            )
+
         _pass.seek(0)
         return filename, 'application/vnd.apple.pkpass', _pass.read()
