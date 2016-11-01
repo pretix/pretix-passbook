@@ -5,6 +5,7 @@ from typing import Tuple
 from django import forms
 from django.core.files.storage import default_storage
 from django.utils.translation import ugettext, ugettext_lazy as _
+from passbook.forms import PNGImageField
 from pretix.base.models import Order
 from pretix.base.ticketoutput import BaseTicketOutput
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
@@ -21,30 +22,30 @@ class PassbookOutput(BaseTicketOutput):
         return OrderedDict(
             list(super().settings_form_fields.items()) + [
                 ('icon',
-                    forms.FileField(
-                        label=_('Event icon (.png)'),
-                        required=True,
-                    )),
+                 PNGImageField(
+                     label=_('Event icon'),
+                     required=True,
+                 )),
                 ('logo',
-                 forms.FileField(
-                     label=_('Event logo (.png)'),
+                 PNGImageField(
+                     label=_('Event logo'),
                      required=True,
                  )),
                 ('background',
-                    forms.FileField(
-                        label=_('Pass background (.png)'),
-                        required=False,
-                    )),
+                 PNGImageField(
+                     label=_('Pass background image'),
+                     required=False,
+                 )),
                 ('latitude',
-                    forms.FloatField(
-                        label=_('Event location (latitude)'),
-                        required=False
-                    )),
+                 forms.FloatField(
+                     label=_('Event location (latitude)'),
+                     required=False
+                 )),
                 ('longitude',
-                    forms.FloatField(
-                        label=_('Event location (longitude)'),
-                        required=False
-                    )),
+                 forms.FloatField(
+                     label=_('Event location (longitude)'),
+                     required=False
+                 )),
             ]
         )
 

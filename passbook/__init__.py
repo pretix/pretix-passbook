@@ -26,5 +26,14 @@ class PassbookApp(AppConfig):
             errs.append("The OpenSSL binary is not installed or not in the PATH.")
         return errs
 
+    @cached_property
+    def compatibility_warnings(self):
+        errs = []
+        try:
+            from PIL import Image  # NOQA
+        except ImportError:
+            errs.append("Pillow is not installed on this system, which is required for converting and scaling images.")
+        return errs
+
 
 default_app_config = 'passbook.PassbookApp'
