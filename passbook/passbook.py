@@ -55,7 +55,7 @@ class PassbookOutput(BaseTicketOutput):
         )
 
         passfile.serialNumber = order.code
-        passfile.description = 'Ticket for {}'.format(order.event.name)
+        passfile.description = str(_('Ticket for {}').format(order.event.name))
         passfile.barcode = Barcode(message=order.secret, format=BarcodeFormat.QR)
         passfile.logoText = str(order.event.name)
         passfile.userInfo = order.email
