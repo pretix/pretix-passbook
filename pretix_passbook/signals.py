@@ -3,10 +3,11 @@ from collections import OrderedDict
 from django import forms
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
-from passbook.forms import CertificateFileField, validate_rsa_privkey
 from pretix.base.signals import (
     register_global_settings, register_ticket_outputs,
 )
+
+from .forms import CertificateFileField, validate_rsa_privkey
 
 
 @receiver(register_ticket_outputs, dispatch_uid='output_passbook')

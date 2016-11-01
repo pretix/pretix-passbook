@@ -4,12 +4,12 @@ from pretix.base.plugins import PluginType
 
 
 class PassbookApp(AppConfig):
-    name = 'passbook'
+    name = 'pretix_passbook'
     verbose_name = 'Passbook Tickets'
 
     class PretixPluginMeta:
         name = 'Passbook Tickets'
-        author = 'Tobias Kunze'
+        author = 'Tobias Kunze and Raphael Michel'
         description = 'Provides passbook tickets for pretix'
         visible = True
         version = '0.0'
@@ -36,4 +36,4 @@ class PassbookApp(AppConfig):
         return errs
 
 
-default_app_config = 'passbook.PassbookApp'
+default_app_config = 'pretix_passbook.PassbookApp'

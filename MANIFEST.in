@@ -1,2 +1,3 @@
-recursive-include passbook/static *
-recursive-include passbook/templates *
+recursive-include pretix_passbook/static *
+recursive-include pretix_passbook/templates *
+recursive-include pretix_passbook/locale *

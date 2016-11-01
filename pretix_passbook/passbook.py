@@ -5,10 +5,11 @@ from typing import Tuple
 from django import forms
 from django.core.files.storage import default_storage
 from django.utils.translation import ugettext, ugettext_lazy as _
-from passbook.forms import PNGImageField
 from pretix.base.models import Order
 from pretix.base.ticketoutput import BaseTicketOutput
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
+
+from .forms import PNGImageField
 
 
 class PassbookOutput(BaseTicketOutput):

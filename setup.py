@@ -6,15 +6,15 @@ setup(
     version='0.0.0',
     description='Passbook tickets for pretix',
     long_description='Provides passbook tickets for pretix',
+    url='https://github.com/pretix/pretix-passbook',
     author='Tobias Kunze',
     author_email='rixx@cutebit.de',
 
-    packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=['wallet-py3k'],
-
+    packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,
     entry_points="""
 [pretix.plugin]
-passbook=passbook:PretixPluginMeta
+passbook=pretix_passbook:PretixPluginMeta
 """,
 )
