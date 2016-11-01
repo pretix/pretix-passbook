@@ -54,7 +54,7 @@ class PassbookOutput(BaseTicketOutput):
 
         passfile = Pass(
             card,
-            passTypeIdentifier=order.event.settings.passbook_type_id,
+            passTypeIdentifier=order.event.settings.passbook_pass_type_id,
             organizationName=order.event.settings.passbook_organizer_name,
             teamIdentifier=order.event.settings.passbook_team_id,
         )
