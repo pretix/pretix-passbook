@@ -22,7 +22,7 @@ def register_global_settings(sender, **kwargs):
             required=False,
         )),
         ('passbook_pass_type_id', forms.CharField(
-            label=_('Passbok type'),
+            label=_('Passbook type'),
             required=False,
         )),
         ('passbook_organizer_name', forms.CharField(
