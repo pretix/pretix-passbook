@@ -9,6 +9,7 @@ setup(
     author='Tobias Kunze',
     author_email='rixx@cutebit.de',
 
+    packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=['wallet-py3k'],
 
     include_package_data=True,
