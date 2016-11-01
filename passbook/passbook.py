@@ -73,7 +73,6 @@ class PassbookOutput(BaseTicketOutput):
         passfile.barcode = Barcode(message=order.secret, format=BarcodeFormat.QR)
         passfile.barcode.altText = order.secret
         passfile.logoText = str(order.event.name)
-        passfile.userInfo = order.email
         passfile.relevantDate = order.event.date_from.isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
