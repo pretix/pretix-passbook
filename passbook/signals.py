@@ -3,8 +3,9 @@ from collections import OrderedDict
 from django import forms
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
-
-from pretix.base.signals import register_ticket_outputs, register_global_settings
+from pretix.base.signals import (
+    register_global_settings, register_ticket_outputs,
+)
 
 
 @receiver(register_ticket_outputs, dispatch_uid='output_passbook')
