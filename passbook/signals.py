@@ -32,4 +32,9 @@ def register_global_settings(sender, **kwargs):
         ('passbook_certificate_file', forms.FileField(required=False)),
         ('passbook_key_file', forms.FileField(required=False)),
         ('passbook_wwdr_certificate_file', forms.FileField(required=False)),
+        ('passbook_key_password', forms.CharField(
+            label=_('Passbook key password'),
+            widget=forms.PasswordInput,
+            required=False,
+        )),
     ])

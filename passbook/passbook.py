@@ -32,7 +32,7 @@ class PassbookOutput(BaseTicketOutput):
                 ('background',
                     forms.FileField(
                         label=_('Pass background (.png)'),
-                        required=True,
+                        required=False,
                     )),
                 ('latitude',
                     forms.FloatField(
@@ -74,6 +74,7 @@ class PassbookOutput(BaseTicketOutput):
         passfile.barcode.altText = order.secret
         passfile.logoText = str(order.event.name)
         passfile.userInfo = order.email
+        passfile.relevantDate = order.event.date_from.isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
             passfile.locations = Location(self.event.settings.passbook_latitude, self.event.settings.passbook_longitude)
@@ -95,7 +96,7 @@ class PassbookOutput(BaseTicketOutput):
             order.event.settings.passbook_certificate_file.name,
             order.event.settings.passbook_key_file.name,
             order.event.settings.passbook_wwdr_certificate_file.name,
-            ''
+            order.event.settings.get('passbook_key_password', '')
         )
         _pass.seek(0)
         return filename, 'application/vnd.apple.pkpass', _pass.read()
