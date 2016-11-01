@@ -80,7 +80,7 @@ class PassbookOutput(BaseTicketOutput):
             order.event.settings.passbook_certificate_file.name,
             order.event.settings.passbook_key_file.name,
             order.event.settings.passbook_wwdr_certificate_file.name,
-            filename, '',
+            ''
         )
         _pass.seek(0)
         return filename, 'application/vnd.apple.pkpass', _pass.read()
