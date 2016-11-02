@@ -7,6 +7,7 @@ from django.core.files.storage import default_storage
 from django.utils.translation import ugettext, ugettext_lazy as _
 from pretix.base.models import Order
 from pretix.base.ticketoutput import BaseTicketOutput
+from pretix.multidomain.urlreverse import build_absolute_uri
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
 
 from .forms import PNGImageField
@@ -53,17 +54,28 @@ class PassbookOutput(BaseTicketOutput):
     def generate(self, order_position: Order) -> Tuple[str, str, str]:
         order = order_position.order
         card = EventTicket()
+
         card.addPrimaryField('eventName', str(order.event.name), ugettext('Event'))
-        card.addPrimaryField('name', order.email, ugettext('Name'))
-        if order.event.settings.show_times:
-            card.addPrimaryField('doorsOpen', order.event.date_from.isoformat(), ugettext('From'))
-        else:
-            card.addPrimaryField('doorsOpen', order.event.date_from.date().isoformat(), ugettext('From'))
+
+        ticket = str(order_position.item)
+        if order_position.variation:
+            ticket += ' - ' + str(order_position.variation)
+        card.addSecondaryField('ticket', ticket, ugettext('Product'))
+
+        if order_position.attendee_name:
+            card.addBackField('name', order_position.attendee_name, ugettext('Attendee name'))
+
+        card.addBackField('email', order.email, ugettext('Ordered by'))
+        card.addBackField('organizer', str(order.event.organizer), ugettext('Organizer'))
+        if order.event.settings.contact_mail:
+            card.addBackField('organizerContact', order.event.settings.contact_mail, ugettext('Organizer contact'))
+        card.addBackField('orderCode', order.code, ugettext('Order code'))
+
+        card.addAuxiliaryField('doorsOpen', order.event.get_date_from_display(), ugettext('From'))
         if order.event.settings.show_date_to:
-            if order.event.settings.show_times:
-                card.addPrimaryField('doorsClose', order.event.date_from.isoformat(), ugettext('To'))
-            else:
-                card.addPrimaryField('doorsClose', order.event.date_from.date().isoformat(), ugettext('To'))
+            card.addAuxiliaryField('doorsClose', order.event.get_date_to_display(), ugettext('To'))
+
+        card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), ugettext('Website'))
 
         passfile = Pass(
             card,
@@ -84,12 +96,10 @@ class PassbookOutput(BaseTicketOutput):
             passfile.locations = Location(self.event.settings.passbook_latitude, self.event.settings.passbook_longitude)
 
         icon_file = self.event.settings.get('ticketoutput_passbook_icon')
-        if icon_file:
-            passfile.addFile('icon.png', default_storage.open(icon_file.name, 'rb'))
+        passfile.addFile('icon.png', default_storage.open(icon_file.name, 'rb'))
 
         logo_file = self.event.settings.get('ticketoutput_passbook_logo')
-        if logo_file:
-            passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
+        passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
 
         bg_file = self.event.settings.get('ticketoutput_passbook_background')
         if bg_file:
