@@ -26,16 +26,22 @@ class PassbookOutput(BaseTicketOutput):
                 ('icon',
                  PNGImageField(
                      label=_('Event icon'),
+                     help_text=_('Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 pixels to '
+                                 'support retina displays.'),
                      required=True,
                  )),
                 ('logo',
                  PNGImageField(
                      label=_('Event logo'),
+                     help_text=_('Display size is 160 x 50 pixels. We suggest an upload size of 480 x 150 pixels to '
+                                 'support retina displays.'),
                      required=True,
                  )),
                 ('background',
                  PNGImageField(
                      label=_('Pass background image'),
+                     help_text=_('Display size is 180 x 220 pixels. We suggest an upload size of 540 x 660 pixels to '
+                                 'support retina displays.'),
                      required=False,
                  )),
                 ('latitude',
