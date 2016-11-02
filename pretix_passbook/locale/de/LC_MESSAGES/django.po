@@ -6,18 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-01 18:58+0100\n"
-"PO-Revision-Date: 2016-11-01 19:02+0100\n"
+"POT-Creation-Date: 2016-11-02 13:31+0100\n"
+"PO-Revision-Date: 2016-11-02 13:33+0100\n"
+"Last-Translator: Raphael Michel <michel@rami.io>\n"
+"Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Raphael Michel <michel@rami.io>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.9\n"
 
-#: passbook/forms.py:19
+#: pretix_passbook/forms.py:19
 msgid ""
 "This does not look like a RSA private key in PEM format (it misses the begin "
 "or end signifiers)"
@@ -25,81 +25,129 @@ msgstr ""
 "Dies scheint kein privater RSA-Schlüssel im PEM-Format zu sein (die "
 "Kennzeichnung am Anfang oder Ende fehlt)"
 
-#: passbook/forms.py:53
+#: pretix_passbook/forms.py:53
 msgid "This does not look like a X509 certificate in either PEM or DER format"
 msgstr ""
 "Diese Datei scheint kein X509-Zertifikat im PEM- oder DER-Format zu sein."
 
-#: passbook/forms.py:81
+#: pretix_passbook/forms.py:81
 msgid "The file you uploaded could not be converted to PNG format."
 msgstr ""
 "Die hochgeladene Datei konnte nicht in eine PNG-Datei umgewandelt werden."
 
-#: passbook/passbook.py:18
+#: pretix_passbook/passbook.py:20
 msgid "Wallet/Passbook"
 msgstr "Wallet/Passbook"
 
-#: passbook/passbook.py:26
+#: pretix_passbook/passbook.py:28
 msgid "Event icon"
 msgstr "Icon"
 
-#: passbook/passbook.py:31
+#: pretix_passbook/passbook.py:29
+msgid ""
+"Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 pixels "
+"to support retina displays."
+msgstr ""
+"Anzeigegröße ist 29 x 29 Pixel. Wir empfehlen eine Bildgröße von 87 x 87 "
+"Pixeln zur Unterstützung von Retina-Displays."
+
+#: pretix_passbook/passbook.py:35
 msgid "Event logo"
 msgstr "Logo"
 
-#: passbook/passbook.py:36
+#: pretix_passbook/passbook.py:36
+msgid ""
+"Display size is 160 x 50 pixels. We suggest an upload size of 480 x 150 "
+"pixels to support retina displays."
+msgstr ""
+"Anzeigegröße ist 160 x 50 Pixel. Wir empfehlen eine Bildgröße von 480 x 150 "
+"Pixeln zur Unterstützung von Retina-Displays."
+
+#: pretix_passbook/passbook.py:42
 msgid "Pass background image"
 msgstr "Hintergrundbild"
 
-#: passbook/passbook.py:41
+#: pretix_passbook/passbook.py:43
+msgid ""
+"Display size is 180 x 220 pixels. We suggest an upload size of 540 x 660 "
+"pixels to support retina displays."
+msgstr ""
+"Anzeigegröße ist 180 x 220 Pixel. Wir empfehlen eine Bildgröße von 540 x 660 "
+"Pixeln zur Unterstützung von Retina-Displays."
+
+#: pretix_passbook/passbook.py:49
 msgid "Event location (latitude)"
 msgstr "Veranstaltungsort (Breitengrad)"
 
-#: passbook/passbook.py:46
+#: pretix_passbook/passbook.py:54
 msgid "Event location (longitude)"
 msgstr "Veranstaltungsort (Längengrad)"
 
-#: passbook/passbook.py:55
+#: pretix_passbook/passbook.py:64
 msgid "Event"
 msgstr "Veranstaltung"
 
-#: passbook/passbook.py:56
-msgid "Name"
-msgstr "Name"
+#: pretix_passbook/passbook.py:69
+msgid "Product"
+msgstr "Produkt"
 
-#: passbook/passbook.py:58 passbook/passbook.py:60
+#: pretix_passbook/passbook.py:72
+msgid "Attendee name"
+msgstr "Name des Teilnehmers"
+
+#: pretix_passbook/passbook.py:74
+msgid "Ordered by"
+msgstr "Bestellt von"
+
+#: pretix_passbook/passbook.py:75
+msgid "Organizer"
+msgstr "Veranstalter"
+
+#: pretix_passbook/passbook.py:77
+msgid "Organizer contact"
+msgstr "Veranstalterkontakt"
+
+#: pretix_passbook/passbook.py:78
+msgid "Order code"
+msgstr "Bestellnummer"
+
+#: pretix_passbook/passbook.py:80
 msgid "From"
 msgstr "Von"
 
-#: passbook/passbook.py:63 passbook/passbook.py:65
+#: pretix_passbook/passbook.py:82
 msgid "To"
 msgstr "Bis"
 
-#: passbook/passbook.py:76
+#: pretix_passbook/passbook.py:84
+msgid "Website"
+msgstr "Website"
+
+#: pretix_passbook/passbook.py:95
 msgid "Ticket for {}"
 msgstr "Ticket für {}"
 
-#: passbook/signals.py:22
+#: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
 msgstr "Passbook-Team-ID"
 
-#: passbook/signals.py:26
+#: pretix_passbook/signals.py:27
 msgid "Passbook type"
 msgstr "Passbook-Typ"
 
-#: passbook/signals.py:30
+#: pretix_passbook/signals.py:31
 msgid "Passbook organizer name"
 msgstr "Passbook-Aussteller"
 
-#: passbook/signals.py:34
+#: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
 msgstr "Passbook-Zertifikat"
 
-#: passbook/signals.py:38
+#: pretix_passbook/signals.py:39
 msgid "Passbook CA Certificate"
 msgstr "Passbook-CA"
 
-#: passbook/signals.py:39
+#: pretix_passbook/signals.py:40
 msgid ""
 "You can download the current CA certificate from apple at https://developer."
 "apple.com/certificationauthority/AppleWWDRCA.cer"
@@ -107,17 +155,20 @@ msgstr ""
 "Sie können das aktuelle CA-Zertifikat von Apple unter https://developer."
 "apple.com/certificationauthority/AppleWWDRCA.cer herunterladen"
 
-#: passbook/signals.py:44
+#: pretix_passbook/signals.py:45
 msgid "Passbook secret key"
 msgstr "Passbook-Schlüssel"
 
-#: passbook/signals.py:50
+#: pretix_passbook/signals.py:51
 msgid "Passbook key password"
 msgstr "Passbook-Schlüssel-Passwort"
 
-#: passbook/signals.py:53
+#: pretix_passbook/signals.py:54
 msgid ""
 "Optional, only necessary if the key entered above requires a password to use."
 msgstr ""
 "Optional, nur erforderlich wenn der oben eingegebene RSA-Schlüssel mit einem "
 "Passwort gesichert ist."
+
+#~ msgid "Name"
+#~ msgstr "Name"
