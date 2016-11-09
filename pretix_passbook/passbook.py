@@ -1,9 +1,8 @@
 import tempfile
 from collections import OrderedDict
-
-import pytz
 from typing import Tuple
 
+import pytz
 from django import forms
 from django.core.files.storage import default_storage
 from django.utils.translation import ugettext, ugettext_lazy as _
