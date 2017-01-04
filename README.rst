@@ -32,6 +32,18 @@ Development setup
 6. Restart your local pretix server. You can now use the plugin from this repository for your events by enabling it in
    the 'plugins' tab in the settings.
 
+
+Generating Passbook keys
+------------------------
+
+You can generate a key and CSR using::
+
+    openssl genrsa -out pass-pretix.key 2048
+    openssl req -new -key pass-pretix.key -out pass-pretix.csr
+
+You can then request a certificate using that CSR in your `Apple developer account`_.
+
+
 License
 -------
 
@@ -40,6 +52,7 @@ Copyright 2016 Tobias 'rixx' Kunze and Raphael Michel
 Released under the terms of the Apache License 2.0
 
 
+.. _Apple developer account: https://developer.apple.com/account/ios/certificate/
 .. _pretix: https://github.com/pretix/pretix
 .. _Code of Conduct: https://docs.pretix.eu/en/latest/development/contribution/codeofconduct.html
 .. _pretix development setup: https://docs.pretix.eu/en/latest/development/setup.html
