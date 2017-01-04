@@ -1,6 +1,9 @@
 pretix-passbook
 ===============
 
+.. image:: https://img.shields.io/pypi/v/pretix-passbook.svg
+   :target: https://pypi.python.org/pypi/pretix-passbook
+
 .. image:: https://travis-ci.org/pretix/pretix-passbook.svg?branch=master
    :target: https://travis-ci.org/pretix/pretix-passbook
 
