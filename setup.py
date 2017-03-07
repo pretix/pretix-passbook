@@ -1,4 +1,7 @@
 import os
+from distutils.command.build import build
+
+from django.core import management
 from setuptools import setup, find_packages
 
 
@@ -7,6 +10,17 @@ try:
         long_description = f.read()
 except:
     long_description = ''
+
+
+class CustomBuild(build):
+    def run(self):
+        management.call_command('compilemessages', verbosity=1, interactive=False)
+        build.run(self)
+
+
+cmdclass = {
+    'build': CustomBuild
+}
 
 
 setup(
@@ -21,6 +35,7 @@ setup(
     install_requires=['wallet-py3k'],
     packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,
+    cmdclass=cmdclass,
     entry_points="""
 [pretix.plugin]
 passbook=pretix_passbook:PretixPluginMeta
