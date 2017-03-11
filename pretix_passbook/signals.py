@@ -49,7 +49,7 @@ def register_global_settings(sender, **kwargs):
         )),
         ('passbook_key_password', forms.CharField(
             label=_('Passbook key password'),
-            widget=forms.PasswordInput,
+            widget=forms.PasswordInput(render_value=True),
             required=False,
             help_text=_('Optional, only necessary if the key entered above requires a password to use.')
         )),
