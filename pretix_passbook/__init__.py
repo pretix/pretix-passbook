@@ -12,7 +12,7 @@ class PassbookApp(AppConfig):
         author = 'Tobias Kunze and Raphael Michel'
         description = 'Provides passbook tickets for pretix'
         visible = True
-        version = '0.0'
+        version = '1.0.0'
         type = PluginType.ADMINFEATURE
 
     def ready(self):
