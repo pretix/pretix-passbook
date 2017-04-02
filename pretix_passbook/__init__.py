@@ -1,6 +1,5 @@
 from django.apps import AppConfig
 from django.utils.functional import cached_property
-from pretix.base.plugins import PluginType
 
 
 class PassbookApp(AppConfig):
@@ -12,8 +11,7 @@ class PassbookApp(AppConfig):
         author = 'Tobias Kunze and Raphael Michel'
         description = 'Provides passbook tickets for pretix'
         visible = True
-        version = '1.0.0'
-        type = PluginType.ADMINFEATURE
+        version = '1.0.1'
 
     def ready(self):
         from . import signals  # NOQA
