@@ -32,7 +32,7 @@ setup(
     author='Tobias Kunze',
     author_email='rixx@cutebit.de',
 
-    install_requires=['wallet-py3k'],
+    install_requires=['wallet-py3k', 'googlemaps'],
     packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,
     cmdclass=cmdclass,

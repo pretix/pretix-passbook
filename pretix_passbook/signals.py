@@ -53,4 +53,10 @@ def register_global_settings(sender, **kwargs):
             required=False,
             help_text=_('Optional, only necessary if the key entered above requires a password to use.')
         )),
+        ('passbook_gmaps_api_key', forms.CharField(
+            label=_('Google Maps API key'),
+            widget=forms.PasswordInput(render_value=True),
+            required=False,
+            help_text=_('Optional, only necessary to find coordinates automatically.')
+        )),
     ])

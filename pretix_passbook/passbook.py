@@ -1,5 +1,7 @@
 import tempfile
 from collections import OrderedDict
+
+from django.template.loader import get_template
 from typing import Tuple
 
 import pytz
@@ -128,3 +130,10 @@ class PassbookOutput(BaseTicketOutput):
 
         _pass.seek(0)
         return filename, 'application/vnd.apple.pkpass', _pass.read()
+
+    def settings_content_render(self, request) -> str:
+        if self.event.settings.get('passbook_gmaps_api_key') and self.event.location:
+            template = get_template('pretix_passbook/form.html')
+            return template.render({
+                'request': request
+            })
