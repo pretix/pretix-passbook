@@ -4,7 +4,6 @@ from django.http import JsonResponse
 from django.views import View
 from googlemaps import Client
 from googlemaps.exceptions import ApiError
-
 from pretix.control.permissions import EventPermissionRequiredMixin
 
 logger = logging.getLogger(__name__)
