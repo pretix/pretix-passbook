@@ -11,7 +11,7 @@ class PassbookApp(AppConfig):
         author = 'Tobias Kunze and Raphael Michel'
         description = 'Provides passbook tickets for pretix'
         visible = True
-        version = '1.0.1'
+        version = '1.1.0'
 
     def ready(self):
         from . import signals  # NOQA
