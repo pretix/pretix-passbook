@@ -15,4 +15,4 @@ pypi:
         - release
     artifacts:
         paths:
-            - src/dist/
+            - dist/

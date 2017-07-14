@@ -7,7 +7,7 @@ from django import forms
 from django.core.files.storage import default_storage
 from django.template.loader import get_template
 from django.utils.translation import ugettext, ugettext_lazy as _
-from pretix.base.models import Order
+from pretix.base.models import OrderPosition
 from pretix.base.ticketoutput import BaseTicketOutput
 from pretix.multidomain.urlreverse import build_absolute_uri
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
@@ -20,6 +20,7 @@ class PassbookOutput(BaseTicketOutput):
     verbose_name = 'Passbook Tickets'
     download_button_icon = 'fa-mobile'
     download_button_text = _('Wallet/Passbook')
+    multi_download_enabled = False
 
     @property
     def settings_form_fields(self) -> dict:
@@ -59,13 +60,14 @@ class PassbookOutput(BaseTicketOutput):
             ]
         )
 
-    def generate(self, order_position: Order) -> Tuple[str, str, str]:
+    def generate(self, order_position: OrderPosition) -> Tuple[str, str, str]:
         order = order_position.order
+        ev = order_position.subevent or order.event
         tz = pytz.timezone(order.event.settings.timezone)
 
         card = EventTicket()
 
-        card.addPrimaryField('eventName', str(order.event.name), ugettext('Event'))
+        card.addPrimaryField('eventName', str(ev.name), ugettext('Event'))
 
         ticket = str(order_position.item)
         if order_position.variation:
@@ -81,11 +83,16 @@ class PassbookOutput(BaseTicketOutput):
             card.addBackField('organizerContact', order.event.settings.contact_mail, ugettext('Organizer contact'))
         card.addBackField('orderCode', order.code, ugettext('Order code'))
 
-        card.addAuxiliaryField('doorsOpen', order.event.get_date_from_display(tz), ugettext('From'))
+        card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz), ugettext('From'))
         if order.event.settings.show_date_to:
-            card.addAuxiliaryField('doorsClose', order.event.get_date_to_display(tz), ugettext('To'))
+            card.addAuxiliaryField('doorsClose', ev.get_date_to_display(tz), ugettext('To'))
 
-        card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), ugettext('Website'))
+        if order_position.subevent:
+            card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index', {
+                'subevent': order_position.subevent.pk
+            }), ugettext('Website'))
+        else:
+            card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), ugettext('Website'))
 
         passfile = Pass(
             card,
@@ -96,11 +103,11 @@ class PassbookOutput(BaseTicketOutput):
 
         passfile.serialNumber = '%s-%s-%s-%d' % (order.event.organizer.slug, order.event.slug, order.code,
                                                  order_position.pk)
-        passfile.description = ugettext('Ticket for {}').format(order.event.name)
+        passfile.description = ugettext('Ticket for {}').format(ev.name)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
         passfile.barcode.altText = order_position.secret
-        passfile.logoText = str(order.event.name)
-        passfile.relevantDate = order.event.date_from.astimezone(tz).isoformat()
+        passfile.logoText = str(ev.name)
+        passfile.relevantDate = ev.date_from.astimezone(tz).isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
             passfile.locations = Location(self.event.settings.passbook_latitude, self.event.settings.passbook_longitude)
