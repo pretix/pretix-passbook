@@ -6,4 +6,5 @@ localecompile:
 
 localegen:
 	django-admin makemessages --keep-pot -i build -i dist -i "*egg*" $(LNGS)
+	django-admin makemessages -d djangojs --keep-pot -i build -i dist -i "*egg*" $(LNGS)
 

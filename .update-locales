@@ -1,5 +1,5 @@
 #!/bin/sh
-COMPONENTS=pretix/pretix-plugin-passbook
+COMPONENTS=pretix/pretix-plugin-passbook pretix/pretix-plugin-passbook-js
 DIR=pretix_passbook/locale
 # Renerates .po files used for translating the plugin
 set -e
