@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 18:20+0100\n"
-"PO-Revision-Date: 2018-03-14 15:59+0000\n"
-"Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
+"PO-Revision-Date: 2018-03-19 11:01+0000\n"
+"Last-Translator: Pieter Roziers <pieter@trippeltwiejenul.be>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-passbook/nl/>\n"
 "Language: nl\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
-msgstr ""
+msgstr "Passbook Tickets"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
@@ -85,7 +85,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:70
 msgid "Event"
-msgstr ""
+msgstr "Evenement"
 
 #: pretix_passbook/passbook.py:75
 msgid "Product"
@@ -101,7 +101,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:81
 msgid "Organizer"
-msgstr ""
+msgstr "Organisator"
 
 #: pretix_passbook/passbook.py:83
 msgid "Organizer contact"
