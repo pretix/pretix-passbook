@@ -124,13 +124,22 @@ class PassbookOutput(BaseTicketOutput):
 
         filename = '{}-{}.pkpass'.format(order.event.slug, order.code)
 
-        with tempfile.NamedTemporaryFile('w', encoding='utf-8') as keyfile:
+        with tempfile.NamedTemporaryFile('w', encoding='utf-8') as keyfile, \
+                tempfile.NamedTemporaryFile('w', encoding='utf-8') as certfile, \
+                tempfile.NamedTemporaryFile('w', encoding='utf-8') as cafile:
+
+            certfile.write(order.event.settings.passbook_certificate_file.read())
+            certfile.flush()
+
+            cafile.write(order.event.settings.passbook_wwdr_certificate_file.read())
+            cafile.flush()
+
             keyfile.write(order.event.settings.passbook_key)
             keyfile.flush()
             _pass = passfile.create(
-                order.event.settings.passbook_certificate_file.name,
+                certfile.name,
                 keyfile.name,
-                order.event.settings.passbook_wwdr_certificate_file.name,
+                cafile.name,
                 order.event.settings.get('passbook_key_password', '')
             )
 
