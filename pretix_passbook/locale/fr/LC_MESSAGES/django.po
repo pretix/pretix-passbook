@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 18:20+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-03-21 08:00+0000\n"
+"Last-Translator: Claude <superoxyde@laposte.net>\n"
+"Language-Team: French <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-passbook/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.19.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -106,7 +109,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:84
 msgid "Order code"
-msgstr ""
+msgstr "Code de commande"
 
 #: pretix_passbook/passbook.py:86
 msgid "From"
