@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 18:20+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-03-20 12:46+0000\n"
+"Last-Translator: Mikkel Ricky <rimi@aarhus.dk>\n"
+"Language-Team: Danish <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-passbook/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.19.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -82,15 +85,15 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:70
 msgid "Event"
-msgstr ""
+msgstr "Arrangement"
 
 #: pretix_passbook/passbook.py:75
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #: pretix_passbook/passbook.py:78
 msgid "Attendee name"
-msgstr ""
+msgstr "Navn på deltager"
 
 #: pretix_passbook/passbook.py:80
 msgid "Ordered by"
@@ -98,7 +101,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:81
 msgid "Organizer"
-msgstr ""
+msgstr "Arrangør"
 
 #: pretix_passbook/passbook.py:83
 msgid "Organizer contact"
@@ -106,7 +109,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:84
 msgid "Order code"
-msgstr ""
+msgstr "Bestillingskode"
 
 #: pretix_passbook/passbook.py:86
 msgid "From"
