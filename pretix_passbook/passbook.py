@@ -69,7 +69,7 @@ class PassbookOutput(BaseTicketOutput):
 
         card.addPrimaryField('eventName', str(ev.name), ugettext('Event'))
 
-        ticket = str(order_position.item)
+        ticket = str(order_position.item.name)
         if order_position.variation:
             ticket += ' - ' + str(order_position.variation)
         card.addSecondaryField('ticket', ticket, ugettext('Product'))
