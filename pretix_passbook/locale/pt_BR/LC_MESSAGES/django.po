@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 18:20+0100\n"
-"PO-Revision-Date: 2018-03-19 11:02+0000\n"
-"Last-Translator: Matheus Nunes <matheus@integrate.com.br>\n"
+"PO-Revision-Date: 2018-06-05 04:00+0000\n"
+"Last-Translator: wallber azevedo pinheiro <wallpinheiro@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://translate.pretix.eu/projects/pretix/pretix-plugin-passbook/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -89,7 +89,7 @@ msgstr "Evento"
 
 #: pretix_passbook/passbook.py:75
 msgid "Product"
-msgstr ""
+msgstr "Produto"
 
 #: pretix_passbook/passbook.py:78
 msgid "Attendee name"
@@ -101,7 +101,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:81
 msgid "Organizer"
-msgstr ""
+msgstr "Organizador"
 
 #: pretix_passbook/passbook.py:83
 msgid "Organizer contact"
