@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 18:20+0100\n"
-"PO-Revision-Date: 2018-07-17 22:00+0000\n"
+"PO-Revision-Date: 2018-07-18 21:00+0000\n"
 "Last-Translator: Yunus Fırat Pişkin <firat.piskin@idvlabs.com>\n"
 "Language-Team: Turkish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/tr/>\n"
@@ -35,53 +35,59 @@ msgstr ""
 
 #: pretix_passbook/forms.py:55
 msgid "This does not look like a X509 certificate in either PEM or DER format"
-msgstr ""
+msgstr "Bu, PEM veya DER biçiminde bir X509 sertifikası gibi görünmüyor"
 
 #: pretix_passbook/forms.py:83
 msgid "The file you uploaded could not be converted to PNG format."
-msgstr ""
+msgstr "Yüklediğiniz dosya PNG biçimine dönüştürülemedi."
 
 #: pretix_passbook/passbook.py:22
 msgid "Wallet/Passbook"
-msgstr ""
+msgstr "Cüzdan/Hesap cüzdanı"
 
 #: pretix_passbook/passbook.py:31
 msgid "Event icon"
-msgstr ""
+msgstr "Etkinlik simgesi"
 
 #: pretix_passbook/passbook.py:32
 msgid ""
 "Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 pixels "
 "to support retina displays."
 msgstr ""
+"Ekran boyutu 29 x 29 pikseldir. Retina ekranlarını desteklemek için 87 x 87 "
+"piksel bir yükleme boyutu öneririz."
 
 #: pretix_passbook/passbook.py:38
 msgid "Event logo"
-msgstr ""
+msgstr "Etkinlik logosu"
 
 #: pretix_passbook/passbook.py:39
 msgid ""
 "Display size is 160 x 50 pixels. We suggest an upload size of 480 x 150 "
 "pixels to support retina displays."
 msgstr ""
+"Ekran boyutu 160 x 50 pikseldir. Retina ekranlarını desteklemek için 480 x "
+"150 piksel bir yükleme boyutu öneririz."
 
 #: pretix_passbook/passbook.py:45
 msgid "Pass background image"
-msgstr ""
+msgstr "Arka plan resmini geç"
 
 #: pretix_passbook/passbook.py:46
 msgid ""
 "Display size is 180 x 220 pixels. We suggest an upload size of 540 x 660 "
 "pixels to support retina displays."
 msgstr ""
+"Ekran boyutu 180 x 220 pikseldir. Retina ekranlarını desteklemek için 540 x "
+"660 piksellik bir yükleme boyutu öneririz."
 
 #: pretix_passbook/passbook.py:52
 msgid "Event location (latitude)"
-msgstr ""
+msgstr "Etkinlik konumu (enlem)"
 
 #: pretix_passbook/passbook.py:57
 msgid "Event location (longitude)"
-msgstr ""
+msgstr "Etkinlik konumu (boylam)"
 
 #: pretix_passbook/passbook.py:70
 msgid "Event"
@@ -89,15 +95,15 @@ msgstr "Etkinlik"
 
 #: pretix_passbook/passbook.py:75
 msgid "Product"
-msgstr ""
+msgstr "Ürün"
 
 #: pretix_passbook/passbook.py:78
 msgid "Attendee name"
-msgstr ""
+msgstr "Katılımcı adı"
 
 #: pretix_passbook/passbook.py:80
 msgid "Ordered by"
-msgstr ""
+msgstr "Tarafından sipariş verildi"
 
 #: pretix_passbook/passbook.py:81
 msgid "Organizer"
@@ -105,7 +111,7 @@ msgstr "Organizatör"
 
 #: pretix_passbook/passbook.py:83
 msgid "Organizer contact"
-msgstr ""
+msgstr "Organizatör bağlantısı"
 
 #: pretix_passbook/passbook.py:84
 msgid "Order code"
@@ -113,53 +119,56 @@ msgstr "Sipariş kodu"
 
 #: pretix_passbook/passbook.py:86
 msgid "From"
-msgstr ""
+msgstr "itibaren"
 
 #: pretix_passbook/passbook.py:88
 msgid "To"
-msgstr ""
+msgstr "için"
 
 #: pretix_passbook/passbook.py:93 pretix_passbook/passbook.py:95
 msgid "Website"
-msgstr ""
+msgstr "Web sitesi"
 
 #: pretix_passbook/passbook.py:106
 msgid "Ticket for {}"
-msgstr ""
+msgstr "{} için bilet"
 
 #: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
-msgstr ""
+msgstr "Hesap cüzdanı takım kimliği"
 
 #: pretix_passbook/signals.py:27
 msgid "Passbook type"
-msgstr ""
+msgstr "Hesap cüzdan türü"
 
 #: pretix_passbook/signals.py:31
+#, fuzzy
 msgid "Passbook organizer name"
-msgstr ""
+msgstr "Hesap cüzdanı düzenleyici adı"
 
 #: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
-msgstr ""
+msgstr "Hesap cüzdan sertifika dosyası"
 
 #: pretix_passbook/signals.py:39
 msgid "Passbook CA Certificate"
-msgstr ""
+msgstr "Hesap Cüzdanı CA Sertifikası"
 
 #: pretix_passbook/signals.py:40
 msgid ""
 "You can download the current CA certificate from apple at https://developer."
 "apple.com/certificationauthority/AppleWWDRCA.cer"
 msgstr ""
+"Geçerli CA sertifikasını apple'dan https://developer.apple.com/"
+"certificationauthority/AppleWWDRCA.cer adresinden indirebilirsiniz."
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"
-msgstr ""
+msgstr "Hesap cüzdanı gizli anahtarı"
 
 #: pretix_passbook/signals.py:51
 msgid "Passbook key password"
-msgstr ""
+msgstr "Hesap cüzdanı anahtar şifresi"
 
 #: pretix_passbook/signals.py:54
 msgid ""
@@ -168,8 +177,9 @@ msgstr ""
 
 #: pretix_passbook/signals.py:57
 msgid "Google Maps API key"
-msgstr ""
+msgstr "Google Maps API'sı anahtarı"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
 msgstr ""
+"İsteğe bağlı, sadece koordinatları otomatik olarak bulmak için gereklidir."
