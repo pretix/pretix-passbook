@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 18:20+0100\n"
-"PO-Revision-Date: 2018-07-18 21:00+0000\n"
+"PO-Revision-Date: 2018-07-19 06:18+0000\n"
 "Last-Translator: Yunus Fırat Pişkin <firat.piskin@idvlabs.com>\n"
 "Language-Team: Turkish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/tr/>\n"
@@ -25,13 +25,15 @@ msgstr "Passbook Biletleri"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr ""
+msgstr "Pretix için hesap cüzdanı bileti sağlar"
 
 #: pretix_passbook/forms.py:20
 msgid ""
 "This does not look like a RSA private key in PEM format (it misses the begin "
 "or end signifiers)"
 msgstr ""
+"Bu, PEM formatında bir RSA özel anahtarı gibi görünmüyor (başlangıç veya "
+"bitiş işaretleyicilerini özlüyor)"
 
 #: pretix_passbook/forms.py:55
 msgid "This does not look like a X509 certificate in either PEM or DER format"
@@ -142,7 +144,6 @@ msgid "Passbook type"
 msgstr "Hesap cüzdan türü"
 
 #: pretix_passbook/signals.py:31
-#, fuzzy
 msgid "Passbook organizer name"
 msgstr "Hesap cüzdanı düzenleyici adı"
 
@@ -174,6 +175,8 @@ msgstr "Hesap cüzdanı anahtar şifresi"
 msgid ""
 "Optional, only necessary if the key entered above requires a password to use."
 msgstr ""
+"İsteğe bağlı, sadece yukarıda girilen şifre kullanmak için bir şifre "
+"gerektirdiğinde gereklidir."
 
 #: pretix_passbook/signals.py:57
 msgid "Google Maps API key"
