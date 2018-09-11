@@ -12,7 +12,7 @@ class PassbookApp(AppConfig):
         author = 'Tobias Kunze, Raphael Michel'
         description = ugettext_lazy('Provides passbook tickets for pretix')
         visible = True
-        version = '1.3.1'
+        version = '1.3.2'
 
     def ready(self):
         from . import signals  # NOQA
