@@ -103,7 +103,8 @@ class PassbookOutput(BaseTicketOutput):
 
         passfile.serialNumber = '%s-%s-%s-%d' % (order.event.organizer.slug, order.event.slug, order.code,
                                                  order_position.pk)
-        passfile.description = ugettext('Ticket for {}').format(ev.name)
+
+        passfile.description = ugettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
         passfile.barcode.altText = order_position.secret
         # passfile.logoText = str(ev.name)
