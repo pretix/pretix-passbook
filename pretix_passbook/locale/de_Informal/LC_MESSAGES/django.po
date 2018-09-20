@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 17:24+0200\n"
+"POT-Creation-Date: 2018-09-20 21:54+0200\n"
 "PO-Revision-Date: 2017-10-07 18:57+0200\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: \n"
@@ -130,8 +130,10 @@ msgstr "Bis"
 msgid "Website"
 msgstr "Website"
 
-#: pretix_passbook/passbook.py:106
-msgid "Ticket for {}"
+#: pretix_passbook/passbook.py:107
+#, fuzzy, python-brace-format
+#| msgid "Ticket for {}"
+msgid "Ticket for {event} ({product})"
 msgstr "Ticket für {}"
 
 #: pretix_passbook/signals.py:23

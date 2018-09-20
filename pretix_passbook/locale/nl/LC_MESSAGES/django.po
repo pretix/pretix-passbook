@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 17:24+0200\n"
+"POT-Creation-Date: 2018-09-20 21:54+0200\n"
 "PO-Revision-Date: 2018-05-03 08:06+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
@@ -133,8 +133,10 @@ msgstr "Tot"
 msgid "Website"
 msgstr "Website"
 
-#: pretix_passbook/passbook.py:106
-msgid "Ticket for {}"
+#: pretix_passbook/passbook.py:107
+#, fuzzy, python-brace-format
+#| msgid "Ticket for {}"
+msgid "Ticket for {event} ({product})"
 msgstr "Ticket voor {}"
 
 #: pretix_passbook/signals.py:23
