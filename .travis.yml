@@ -17,3 +17,10 @@ script:
 cache:
     directories:
         - $HOME/.cache/pip
+addons:
+    apt:
+        packages:
+            - enchant
+            - myspell-de-de
+            - aspell-en
+
