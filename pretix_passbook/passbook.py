@@ -1,5 +1,7 @@
 import tempfile
 from collections import OrderedDict
+
+from django.contrib.staticfiles import finders
 from typing import Tuple
 
 import pytz
@@ -31,14 +33,14 @@ class PassbookOutput(BaseTicketOutput):
                      label=_('Event icon'),
                      help_text=_('Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 pixels to '
                                  'support retina displays.'),
-                     required=True,
+                     required=False,
                  )),
                 ('logo',
                  PNGImageField(
                      label=_('Event logo'),
                      help_text=_('Display size is 160 x 50 pixels. We suggest an upload size of 480 x 150 pixels to '
                                  'support retina displays.'),
-                     required=True,
+                     required=False,
                  )),
                 ('background',
                  PNGImageField(
@@ -107,17 +109,23 @@ class PassbookOutput(BaseTicketOutput):
         passfile.description = ugettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
         passfile.barcode.altText = order_position.secret
-        # passfile.logoText = str(ev.name)
         passfile.relevantDate = ev.date_from.astimezone(tz).isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
             passfile.locations = Location(self.event.settings.passbook_latitude, self.event.settings.passbook_longitude)
 
         icon_file = self.event.settings.get('ticketoutput_passbook_icon')
-        passfile.addFile('icon.png', default_storage.open(icon_file.name, 'rb'))
+        if icon_file:
+            passfile.addFile('icon.png', default_storage.open(icon_file.name, 'rb'))
+        else:
+            passfile.addFile('icon.png', open(finders.find('pretix_passbook/icon.png'), "rb"))
 
         logo_file = self.event.settings.get('ticketoutput_passbook_logo')
-        passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
+        if logo_file:
+            passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
+        else:
+            passfile.logoText = str(ev.name)
+            passfile.addFile('logo.png', open(finders.find('pretix_passbook/logo.png'), "rb"))
 
         bg_file = self.event.settings.get('ticketoutput_passbook_background')
         if bg_file:
