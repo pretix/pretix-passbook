@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-20 21:54+0200\n"
-"PO-Revision-Date: 2018-09-20 19:56+0000\n"
+"PO-Revision-Date: 2018-11-22 10:02+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: German (informal) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-passbook/de_Informal/>\n"
@@ -102,7 +102,7 @@ msgstr "Produkt"
 
 #: pretix_passbook/passbook.py:78
 msgid "Attendee name"
-msgstr "Name des Teilnehmers"
+msgstr "Name des/der Teilnehmer*in"
 
 #: pretix_passbook/passbook.py:80
 msgid "Ordered by"
