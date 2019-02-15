@@ -12,6 +12,7 @@ from pretix.base.models import OrderPosition
 from pretix.base.ticketoutput import BaseTicketOutput
 from pretix.multidomain.urlreverse import build_absolute_uri
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
+from pretix.control.forms import ClearableBasenameFileInput
 
 from .forms import PNGImageField
 
@@ -27,11 +28,44 @@ class PassbookOutput(BaseTicketOutput):
     def settings_form_fields(self) -> dict:
         return OrderedDict(
             list(super().settings_form_fields.items()) + [
+                ('selfscale',
+                 forms.BooleanField(
+                     label=_('I would like to scale the graphics myself'),
+                     help_text=_('In some instances, the downscaling of graphics done by the Wallet-app is not '
+                                 'satisfactory. By checking this box, you can provide prescaled files in the correct '
+                                 'dimensions.'
+                                 '<br><br>'
+                                 'If you choose to do so, please only upload your pictures in the regular display size '
+                                 'and not the increased retina size.'),
+                     required=False
+                 )),
                 ('icon',
                  PNGImageField(
                      label=_('Event icon'),
                      help_text=_('Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 pixels to '
                                  'support retina displays.'),
+                     required=False,
+                 )),
+                ('icon2x',
+                 PNGImageField(
+                     label=_('Event icon for Retina 2x displays'),
+                     help_text=_('Display size is 58 x 58 pixels.'),
+                     widget=ClearableBasenameFileInput(
+                         attrs={
+                             'data-display-dependency': '#id_ticketoutput_passbook_selfscale',
+                         }
+                     ),
+                     required=False,
+                 )),
+                ('icon3x',
+                 PNGImageField(
+                     label=_('Event icon for Retina 3x displays'),
+                     help_text=_('Display size is 87 x 87 pixels.'),
+                     widget=ClearableBasenameFileInput(
+                         attrs={
+                             'data-display-dependency': '#id_ticketoutput_passbook_selfscale',
+                         }
+                     ),
                      required=False,
                  )),
                 ('logo',
@@ -41,11 +75,55 @@ class PassbookOutput(BaseTicketOutput):
                                  'support retina displays.'),
                      required=False,
                  )),
+                ('logo2x',
+                 PNGImageField(
+                     label=_('Event logo for Retina 2x displays'),
+                     help_text=_('Display size is 320 x 100 pixels.'),
+                     widget=ClearableBasenameFileInput(
+                         attrs={
+                             'data-display-dependency': '#id_ticketoutput_passbook_selfscale',
+                         }
+                     ),
+                     required=False,
+                 )),
+                ('logo3x',
+                 PNGImageField(
+                     label=_('Event logo for Retina 3x displays'),
+                     help_text=_('Display size is 480 x 150 pixels.'),
+                     widget=ClearableBasenameFileInput(
+                         attrs={
+                             'data-display-dependency': '#id_ticketoutput_passbook_selfscale',
+                         }
+                     ),
+                     required=False,
+                 )),
                 ('background',
                  PNGImageField(
                      label=_('Pass background image'),
                      help_text=_('Display size is 180 x 220 pixels. We suggest an upload size of 540 x 660 pixels to '
                                  'support retina displays.'),
+                     required=False,
+                 )),
+                ('background2x',
+                 PNGImageField(
+                     label=_('Pass background image for Retina 2x displays'),
+                     help_text=_('Display size is 360 x 440 pixels.'),
+                     widget=ClearableBasenameFileInput(
+                         attrs={
+                             'data-display-dependency': '#id_ticketoutput_passbook_selfscale',
+                         }
+                     ),
+                     required=False,
+                 )),
+                ('background3x',
+                 PNGImageField(
+                     label=_('Pass background image for Retina 3x displays'),
+                     help_text=_('Display size is 540 x 660 pixels.'),
+                     widget=ClearableBasenameFileInput(
+                         attrs={
+                             'data-display-dependency': '#id_ticketoutput_passbook_selfscale',
+                         }
+                     ),
                      required=False,
                  )),
                 ('latitude',
@@ -119,6 +197,14 @@ class PassbookOutput(BaseTicketOutput):
         else:
             passfile.addFile('icon.png', open(finders.find('pretix_passbook/icon.png'), "rb"))
 
+        icon2x_file = self.event.settings.get('ticketoutput_passbook_icon2x')
+        if icon2x_file:
+            passfile.addFile('icon@2x.png', default_storage.open(icon2x_file.name, 'rb'))
+
+        icon3x_file = self.event.settings.get('ticketoutput_passbook_icon3x')
+        if icon3x_file:
+            passfile.addFile('icon@3x.png', default_storage.open(icon3x_file.name, 'rb'))
+
         logo_file = self.event.settings.get('ticketoutput_passbook_logo')
         if logo_file:
             passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
@@ -126,9 +212,25 @@ class PassbookOutput(BaseTicketOutput):
             passfile.logoText = str(ev.name)
             passfile.addFile('logo.png', open(finders.find('pretix_passbook/logo.png'), "rb"))
 
+        logo2x_file = self.event.settings.get('ticketoutput_passbook_logo2x')
+        if logo2x_file:
+            passfile.addFile('logo@2x.png', default_storage.open(logo2x_file.name, 'rb'))
+
+        logo3x_file = self.event.settings.get('ticketoutput_passbook_logo3x')
+        if logo3x_file:
+            passfile.addFile('logo@3x.png', default_storage.open(logo3x_file.name, 'rb'))
+
         bg_file = self.event.settings.get('ticketoutput_passbook_background')
         if bg_file:
             passfile.addFile('background.png', default_storage.open(bg_file.name, 'rb'))
+
+        bg2x_file = self.event.settings.get('ticketoutput_passbook_background2x')
+        if bg2x_file:
+            passfile.addFile('background2x.png', default_storage.open(bg2x_file.name, 'rb'))
+
+        bg3x_file = self.event.settings.get('ticketoutput_passbook_background3x')
+        if bg3x_file:
+            passfile.addFile('background@3x.png', default_storage.open(bg3x_file.name, 'rb'))
 
         filename = '{}-{}.pkpass'.format(order.event.slug, order.code)
 
