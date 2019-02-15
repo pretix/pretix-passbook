@@ -10,9 +10,9 @@ from django.template.loader import get_template
 from django.utils.translation import ugettext, ugettext_lazy as _
 from pretix.base.models import OrderPosition
 from pretix.base.ticketoutput import BaseTicketOutput
+from pretix.control.forms import ClearableBasenameFileInput
 from pretix.multidomain.urlreverse import build_absolute_uri
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
-from pretix.control.forms import ClearableBasenameFileInput
 
 from .forms import PNGImageField
 
