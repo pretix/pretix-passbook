@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-20 21:54+0200\n"
+"POT-Creation-Date: 2019-04-03 12:44+0200\n"
 "PO-Revision-Date: 2018-09-20 19:56+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
-"Language-Team: German <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-passbook/de/>\n"
+"Language-Team: German <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-passbook/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,95 +44,116 @@ msgid "The file you uploaded could not be converted to PNG format."
 msgstr ""
 "Die hochgeladene Datei konnte nicht in eine PNG-Datei umgewandelt werden."
 
-#: pretix_passbook/passbook.py:22
+#: pretix_passbook/passbook.py:24
 msgid "Wallet/Passbook"
 msgstr "Wallet/Passbook"
 
-#: pretix_passbook/passbook.py:31
+#: pretix_passbook/passbook.py:33
+msgid "I would like to scale the graphics myself"
+msgstr ""
+
+#: pretix_passbook/passbook.py:34
+msgid ""
+"In some instances, the downscaling of graphics done by the Wallet-app is not "
+"satisfactory. By checking this box, you can provide prescaled files in the "
+"correct dimensions.<br><br>If you choose to do so, please only upload your "
+"pictures in the regular display size and not the increased retina size."
+msgstr ""
+
+#: pretix_passbook/passbook.py:44
 msgid "Event icon"
 msgstr "Icon"
 
-#: pretix_passbook/passbook.py:32
-msgid ""
-"Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 pixels "
-"to support retina displays."
+#: pretix_passbook/passbook.py:46 pretix_passbook/passbook.py:54
+#: pretix_passbook/passbook.py:65 pretix_passbook/passbook.py:77
+#: pretix_passbook/passbook.py:85 pretix_passbook/passbook.py:96
+#: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
+#: pretix_passbook/passbook.py:127
+msgid "Display size is {} x {} pixels."
+msgstr ""
+
+#: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
+#: pretix_passbook/passbook.py:109
+#, fuzzy
+#| msgid ""
+#| "Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 "
+#| "pixels to support retina displays."
+msgid "We suggest an upload size of {} x {} pixels to support retina displays."
 msgstr ""
 "Anzeigegröße ist 29 x 29 Pixel. Wir empfehlen eine Bildgröße von 87 x 87 "
 "Pixeln zur Unterstützung von Retina-Displays."
 
-#: pretix_passbook/passbook.py:38
+#: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
+msgid "Event icon for Retina {}x displays"
+msgstr ""
+
+#: pretix_passbook/passbook.py:75
 msgid "Event logo"
 msgstr "Logo"
 
-#: pretix_passbook/passbook.py:39
-msgid ""
-"Display size is 160 x 50 pixels. We suggest an upload size of 480 x 150 "
-"pixels to support retina displays."
+#: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
+msgid "Event logo for Retina {}x displays"
 msgstr ""
-"Anzeigegröße ist 160 x 50 Pixel. Wir empfehlen eine Bildgröße von 480 x 150 "
-"Pixeln zur Unterstützung von Retina-Displays."
 
-#: pretix_passbook/passbook.py:45
+#: pretix_passbook/passbook.py:106
 msgid "Pass background image"
 msgstr "Hintergrundbild"
 
-#: pretix_passbook/passbook.py:46
-msgid ""
-"Display size is 180 x 220 pixels. We suggest an upload size of 540 x 660 "
-"pixels to support retina displays."
-msgstr ""
-"Anzeigegröße ist 180 x 220 Pixel. Wir empfehlen eine Bildgröße von 540 x 660 "
-"Pixeln zur Unterstützung von Retina-Displays."
+#: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
+#, fuzzy
+#| msgid "Pass background image"
+msgid "Pass background image for Retina {}x displays"
+msgstr "Hintergrundbild"
 
-#: pretix_passbook/passbook.py:52
+#: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
 msgstr "Veranstaltungsort (Breitengrad)"
 
-#: pretix_passbook/passbook.py:57
+#: pretix_passbook/passbook.py:142
 msgid "Event location (longitude)"
 msgstr "Veranstaltungsort (Längengrad)"
 
-#: pretix_passbook/passbook.py:70
+#: pretix_passbook/passbook.py:155
 msgid "Event"
 msgstr "Veranstaltung"
 
-#: pretix_passbook/passbook.py:75
+#: pretix_passbook/passbook.py:160
 msgid "Product"
 msgstr "Produkt"
 
-#: pretix_passbook/passbook.py:78
+#: pretix_passbook/passbook.py:163
 msgid "Attendee name"
 msgstr "Name des Teilnehmers"
 
-#: pretix_passbook/passbook.py:80
+#: pretix_passbook/passbook.py:165
 msgid "Ordered by"
 msgstr "Bestellt von"
 
-#: pretix_passbook/passbook.py:81
+#: pretix_passbook/passbook.py:166
 msgid "Organizer"
 msgstr "Veranstalter"
 
-#: pretix_passbook/passbook.py:83
+#: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
 msgstr "Veranstalterkontakt"
 
-#: pretix_passbook/passbook.py:84
+#: pretix_passbook/passbook.py:169
 msgid "Order code"
 msgstr "Bestellnummer"
 
-#: pretix_passbook/passbook.py:86
+#: pretix_passbook/passbook.py:171
 msgid "From"
 msgstr "Von"
 
-#: pretix_passbook/passbook.py:88
+#: pretix_passbook/passbook.py:173
 msgid "To"
 msgstr "Bis"
 
-#: pretix_passbook/passbook.py:93 pretix_passbook/passbook.py:95
+#: pretix_passbook/passbook.py:178 pretix_passbook/passbook.py:180
 msgid "Website"
 msgstr "Website"
 
-#: pretix_passbook/passbook.py:107
+#: pretix_passbook/passbook.py:192
 #, python-brace-format
 msgid "Ticket for {event} ({product})"
 msgstr "Ticket für {event} ({product})"
@@ -181,12 +202,28 @@ msgstr ""
 "Passwort gesichert ist."
 
 #: pretix_passbook/signals.py:57
-msgid "Google Maps API key"
+#, fuzzy
+#| msgid "Google Maps API key"
+msgid "Google Geocoding API key"
 msgstr "Google Maps API key"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
 msgstr "Optional, nur nötig um automatisch Koordinaten vorzuschlagen."
+
+#~ msgid ""
+#~ "Display size is 160 x 50 pixels. We suggest an upload size of 480 x 150 "
+#~ "pixels to support retina displays."
+#~ msgstr ""
+#~ "Anzeigegröße ist 160 x 50 Pixel. Wir empfehlen eine Bildgröße von 480 x "
+#~ "150 Pixeln zur Unterstützung von Retina-Displays."
+
+#~ msgid ""
+#~ "Display size is 180 x 220 pixels. We suggest an upload size of 540 x 660 "
+#~ "pixels to support retina displays."
+#~ msgstr ""
+#~ "Anzeigegröße ist 180 x 220 Pixel. Wir empfehlen eine Bildgröße von 540 x "
+#~ "660 Pixeln zur Unterstützung von Retina-Displays."
 
 #~ msgid "Name"
 #~ msgstr "Name"
