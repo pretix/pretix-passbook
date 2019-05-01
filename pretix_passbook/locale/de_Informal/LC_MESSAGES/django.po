@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-03 12:44+0200\n"
-"PO-Revision-Date: 2019-04-14 06:00+0000\n"
-"Last-Translator: Juliane Wessalowski <juliane.wessalowski@gmail.com>\n"
+"PO-Revision-Date: 2019-05-01 21:00+0000\n"
+"Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: German (informal) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-passbook/de_Informal/>\n"
 "Language: de_Informal\n"
@@ -59,6 +59,11 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"In manchen Fällen ist das automatische Herunterskalieren der Grafiken durch "
+"die Wallet-App nicht zufriedenstellend. Wenn du diese Option wählst, kannst "
+"du selbst herunterskalierte Versionen deiner Dateien hochladen.<br><br>Wenn "
+"du dich dafür entscheidest, lade bitte die Bilder weiter oben für eine "
+"reguläre Bildschirmauflösung, nicht für Retina-Displays hoch."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
@@ -81,7 +86,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr ""
+msgstr "Icon für Retina {}x-Displays"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
@@ -89,17 +94,15 @@ msgstr "Logo"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr ""
+msgstr "Event-Logo für Retina {}x-Displays"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
 msgstr "Hintergrundbild"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
-#, fuzzy
-#| msgid "Pass background image"
 msgid "Pass background image for Retina {}x displays"
-msgstr "Hintergrundbild"
+msgstr "Hintergrundbild für Retina {x}x-Displays"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
