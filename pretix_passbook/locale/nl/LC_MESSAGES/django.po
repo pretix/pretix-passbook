@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-03 12:44+0200\n"
-"PO-Revision-Date: 2018-09-24 20:00+0000\n"
+"PO-Revision-Date: 2019-04-04 04:00+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
-"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
-"plugin-passbook/nl/>\n"
+"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.1.1\n"
+"X-Generator: Weblate 3.5.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -51,7 +51,7 @@ msgstr "Wallet/Passbook"
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
-msgstr ""
+msgstr "Ik wil graag zelf de plaatjes verkleinen"
 
 #: pretix_passbook/passbook.py:34
 msgid ""
@@ -60,6 +60,11 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"In sommige gevallen is de verkleining van plaatjes die de Wallet-app "
+"uitvoert niet optimaal. Door deze optie in te schakelen kunt u "
+"voorverkleinde bestanden met de juiste afmetingen aanleveren.<br><br>Als u "
+"ervoor kiest om dit te doen hoeft u alleen uw afbeeldingen in de normale "
+"weergavegrootte te uploaden, en niet in de hogere retina-resolutie."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
@@ -71,22 +76,18 @@ msgstr "Evenementsicoon"
 #: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
 #: pretix_passbook/passbook.py:127
 msgid "Display size is {} x {} pixels."
-msgstr ""
+msgstr "Weergavegrootte is {} x {} pixels."
 
 #: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
 #: pretix_passbook/passbook.py:109
-#, fuzzy
-#| msgid ""
-#| "Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 "
-#| "pixels to support retina displays."
 msgid "We suggest an upload size of {} x {} pixels to support retina displays."
 msgstr ""
-"De weergavegrootte is 29 x 29 pixels. We raden een uploadgrootte van 87 x 87 "
-"pixels aan om retina-schermen te ondersteunen."
+"We raden een uploadgrootte van {} x {} pixels aan om retina-schermen te "
+"ondersteunen."
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr ""
+msgstr "Evenementsicoon voor Retina {}x-schermen"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
@@ -94,17 +95,15 @@ msgstr "Logo evenement"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr ""
+msgstr "Evenementslogo voor Retina {}x-schermen"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
 msgstr "Achtergrondafbeelding Pass"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
-#, fuzzy
-#| msgid "Pass background image"
 msgid "Pass background image for Retina {}x displays"
-msgstr "Achtergrondafbeelding Pass"
+msgstr "Achtergrondafbeelding Pass voor Retina {}x-schermen"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
@@ -203,10 +202,8 @@ msgstr ""
 "vereist om te gebruiken."
 
 #: pretix_passbook/signals.py:57
-#, fuzzy
-#| msgid "Google Maps API key"
 msgid "Google Geocoding API key"
-msgstr "Google Maps API-sleutel"
+msgstr "Google Geocoding API-sleutel"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
