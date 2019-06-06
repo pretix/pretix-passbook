@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-03 12:44+0200\n"
-"PO-Revision-Date: 2019-05-01 21:00+0000\n"
+"PO-Revision-Date: 2019-06-06 09:38+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: German (informal) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-passbook/de_Informal/>\n"
@@ -102,7 +102,7 @@ msgstr "Hintergrundbild"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
 msgid "Pass background image for Retina {}x displays"
-msgstr "Hintergrundbild für Retina {x}x-Displays"
+msgstr "Hintergrundbild für Retina {}x-Displays"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
