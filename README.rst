@@ -44,8 +44,9 @@ You can generate a key and CSR using::
     openssl genrsa -out pass-pretix.key 2048
     openssl req -new -key pass-pretix.key -out pass-pretix.csr
 
-You can then request a certificate using that CSR in your `Apple developer account`_.
+You can then request a certificate using that CSR in your `Apple developer account`_. You can then convert the downloaded certificate like this::
 
+    openssl x509 -inform der -in pass-pretix.cer -out pass-pretix.pem
 
 License
 -------
