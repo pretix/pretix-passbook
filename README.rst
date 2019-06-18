@@ -36,8 +36,8 @@ Development setup
    the 'plugins' tab in the settings.
 
 
-Generating Passbook keys
-------------------------
+Generating Passbook keys and configuring them in pretix
+-------------------------------------------------------
 
 You can generate a key and CSR using::
 
@@ -47,6 +47,14 @@ You can generate a key and CSR using::
 You can then request a certificate using that CSR in your `Apple developer account`_. You can then convert the downloaded certificate like this::
 
     openssl x509 -inform der -in pass-pretix.cer -out pass-pretix.pem
+    
+After generating the .pem file, upload it to pretix as passbook certificate.
+Make sure you have uploaded the key generated before (pass-pretix.key) and added the passbook CA of apple.
+Next add your Team ID in pretix and the passbook type id. This is your identifier, as example pass.pretix.example.
+If you have configured your private rsa key with a password you can provide it in pretix.
+
+Click on Save.
+Enjoy!
 
 License
 -------
