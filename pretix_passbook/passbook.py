@@ -7,7 +7,7 @@ from django import forms
 from django.contrib.staticfiles import finders
 from django.core.files.storage import default_storage
 from django.template.loader import get_template
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext, ugettext_lazy as _  # NOQA
 from pretix.base.models import OrderPosition
 from pretix.base.ticketoutput import BaseTicketOutput
 from pretix.control.forms import ClearableBasenameFileInput
@@ -178,6 +178,17 @@ class PassbookOutput(BaseTicketOutput):
             }), ugettext('Website'))
         else:
             card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), ugettext('Website'))
+
+        if ev.seating_plan_id is not None:
+            if order_position.seat:
+                if order_position.seat.zone_name:
+                    card.addSecondaryField('zone', order_position.seat.zone_name, ugettext('Zone'))
+                if order_position.seat.row_name:
+                    card.addSecondaryField('row', order_position.seat.row_name, ugettext('Row'))
+                if order_position.seat.seat_number:
+                    card.addSecondaryField('seat', order_position.seat.seat_number, ugettext('Seat'))
+            else:
+                card.addSecondaryField('seat', ugettext('General admission'), ugettext('Seat'))
 
         passfile = Pass(
             card,
