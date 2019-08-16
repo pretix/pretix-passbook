@@ -1,7 +1,5 @@
 import tempfile
 from collections import OrderedDict
-
-from django.utils.formats import date_format
 from typing import Tuple
 
 import pytz
@@ -9,6 +7,7 @@ from django import forms
 from django.contrib.staticfiles import finders
 from django.core.files.storage import default_storage
 from django.template.loader import get_template
+from django.utils.formats import date_format
 from django.utils.translation import ugettext, ugettext_lazy as _  # NOQA
 from pretix.base.models import OrderPosition
 from pretix.base.ticketoutput import BaseTicketOutput
