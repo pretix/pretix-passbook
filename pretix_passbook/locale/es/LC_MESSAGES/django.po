@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-03 12:44+0200\n"
+"POT-Creation-Date: 2019-08-16 15:52+0200\n"
 "PO-Revision-Date: 2018-11-07 21:28+0000\n"
 "Last-Translator: oocf <oswaldocerna@gmail.com>\n"
 "Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/pretix-"
@@ -152,7 +152,23 @@ msgstr "A"
 msgid "Website"
 msgstr "Sitio web"
 
-#: pretix_passbook/passbook.py:192
+#: pretix_passbook/passbook.py:185
+msgid "Zone"
+msgstr ""
+
+#: pretix_passbook/passbook.py:187
+msgid "Row"
+msgstr ""
+
+#: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
+msgid "Seat"
+msgstr ""
+
+#: pretix_passbook/passbook.py:191
+msgid "General admission"
+msgstr ""
+
+#: pretix_passbook/passbook.py:203
 #, python-brace-format
 msgid "Ticket for {event} ({product})"
 msgstr "Ticket para {event} ({product})"
