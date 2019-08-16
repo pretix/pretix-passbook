@@ -157,7 +157,20 @@ class PassbookOutput(BaseTicketOutput):
         ticket = str(order_position.item.name)
         if order_position.variation:
             ticket += ' - ' + str(order_position.variation)
+
         card.addSecondaryField('ticket', ticket, ugettext('Product'))
+        if ev.seating_plan_id is not None:
+            if order_position.seat:
+                card.addAuxiliaryField('seat', str(order_position.seat), ugettext('Seat'))
+            else:
+                card.addAuxiliaryField('seat', ugettext('General admission'), ugettext('Seat'))
+
+        card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz, short=True), ugettext('From'))
+        if order.event.settings.show_date_to:
+            if ev.seating_plan_id:
+                card.addBackField('doorsClose', ev.get_date_to_display(tz, short=True), ugettext('To'))
+            else:
+                card.addAuxiliaryField('doorsClose', ev.get_date_to_display(tz, short=True), ugettext('To'))
 
         if order_position.attendee_name:
             card.addBackField('name', order_position.attendee_name, ugettext('Attendee name'))
@@ -168,27 +181,12 @@ class PassbookOutput(BaseTicketOutput):
             card.addBackField('organizerContact', order.event.settings.contact_mail, ugettext('Organizer contact'))
         card.addBackField('orderCode', order.code, ugettext('Order code'))
 
-        card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz), ugettext('From'))
-        if order.event.settings.show_date_to:
-            card.addAuxiliaryField('doorsClose', ev.get_date_to_display(tz), ugettext('To'))
-
         if order_position.subevent:
             card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index', {
                 'subevent': order_position.subevent.pk
             }), ugettext('Website'))
         else:
             card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), ugettext('Website'))
-
-        if ev.seating_plan_id is not None:
-            if order_position.seat:
-                if order_position.seat.zone_name:
-                    card.addSecondaryField('zone', order_position.seat.zone_name, ugettext('Zone'))
-                if order_position.seat.row_name:
-                    card.addSecondaryField('row', order_position.seat.row_name, ugettext('Row'))
-                if order_position.seat.seat_number:
-                    card.addSecondaryField('seat', order_position.seat.seat_number, ugettext('Seat'))
-            else:
-                card.addSecondaryField('seat', ugettext('General admission'), ugettext('Seat'))
 
         passfile = Pass(
             card,
