@@ -1,5 +1,7 @@
 import tempfile
 from collections import OrderedDict
+
+from django.utils.formats import date_format
 from typing import Tuple
 
 import pytz
@@ -165,8 +167,15 @@ class PassbookOutput(BaseTicketOutput):
             else:
                 card.addAuxiliaryField('seat', ugettext('General admission'), ugettext('Seat'))
 
+        if ev.date_admission:
+            card.addBackField(
+                'doorsAdmission',
+                date_format(ev.date_admission.astimezone(tz), 'SHORT_DATETIME_FORMAT'),
+                ugettext('Admission time')
+            )
+
         card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz, short=True), ugettext('From'))
-        if order.event.settings.show_date_to and order.event.date_to:
+        if order.event.settings.show_date_to and ev.date_to:
             if ev.seating_plan_id:
                 card.addBackField('doorsClose', ev.get_date_to_display(tz, short=True), ugettext('To'))
             else:
