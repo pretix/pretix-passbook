@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2019-04-04 04:00+0000\n"
+"PO-Revision-Date: 2019-08-18 05:00+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
 "Language-Team: Dutch (informal) <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/nl_Informal/>\n"
@@ -155,19 +155,19 @@ msgstr "Website"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr ""
+msgstr "Gebied"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr ""
+msgstr "Rij"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr ""
+msgstr "Stoel"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr ""
+msgstr "Vrije plaatskeuze"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
