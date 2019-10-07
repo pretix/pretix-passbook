@@ -210,6 +210,7 @@ class PassbookOutput(BaseTicketOutput):
 
         passfile.description = ugettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
+        passfile.barcode.altText = order_position.secret[:10].upper()
         passfile.relevantDate = ev.date_from.astimezone(tz).isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
