@@ -195,7 +195,7 @@ class PassbookOutput(BaseTicketOutput):
             }), ugettext('Website'))
         else:
             card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), ugettext('Website'))
-            
+
         card.addBackField('barCodeID', order_position.secret, ugettext('Barcode ID'))
 
         passfile = Pass(
