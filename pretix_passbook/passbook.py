@@ -136,11 +136,13 @@ class PassbookOutput(BaseTicketOutput):
                 ('latitude',
                  forms.FloatField(
                      label=_('Event location (latitude)'),
+                     help_text=_('Will be taken from event settings by default.'),
                      required=False
                  )),
                 ('longitude',
                  forms.FloatField(
                      label=_('Event location (longitude)'),
+                     help_text=_('Will be taken from event settings by default.'),
                      required=False
                  )),
             ]
@@ -213,6 +215,10 @@ class PassbookOutput(BaseTicketOutput):
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
             passfile.locations = Location(self.event.settings.passbook_latitude, self.event.settings.passbook_longitude)
+        elif order_position.subevent and order_position.subevent.geo_lat and order_position.subevent.geo_lon:
+            passfile.locations = Location(order_position.subevent.geo_lat, order_position.subevent.geo_lon)
+        elif self.event.geo_lat and self.event.geo_lon:
+            passfile.locations = Location(self.event.geo_lat, self.event.geo_lon)
 
         icon_file = self.event.settings.get('ticketoutput_passbook_icon')
         if icon_file:
@@ -279,10 +285,3 @@ class PassbookOutput(BaseTicketOutput):
 
         _pass.seek(0)
         return filename, 'application/vnd.apple.pkpass', _pass.read()
-
-    def settings_content_render(self, request) -> str:
-        if self.event.settings.get('passbook_gmaps_api_key') and self.event.location:
-            template = get_template('pretix_passbook/form.html')
-            return template.render({
-                'request': request
-            })
