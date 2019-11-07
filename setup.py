@@ -25,7 +25,7 @@ cmdclass = {
 
 setup(
     name='pretix-passbook',
-    version='1.6.0',
+    version='1.6.1',
     description='Passbook tickets for pretix',
     long_description=long_description,
     url='https://github.com/pretix/pretix-passbook',
