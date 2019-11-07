@@ -8,42 +8,41 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2019-08-18 05:00+0000\n"
-"Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
-"Language-Team: Dutch (informal) <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-passbook/nl_Informal/>\n"
-"Language: nl_Informal\n"
+"PO-Revision-Date: 2019-11-07 09:31+0000\n"
+"Last-Translator: Raphael Michel <michel@rami.io>\n"
+"Language-Team: Russian <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.5.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
-msgstr "Passbook Tickets"
+msgstr "Билеты в Passbook"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr "Voegt passbook-tickets toe aan pretix"
+msgstr "Предоставляет билеты в Passbook для pretix"
 
 #: pretix_passbook/forms.py:20
 msgid ""
 "This does not look like a RSA private key in PEM format (it misses the begin "
 "or end signifiers)"
 msgstr ""
-"Dit lijkt niet op een RSA-privésleutel in PEM-formaat (mist de begin- of "
-"eindmarkeringen)"
+"Это не похоже на закрытый ключ RSA в формате PEM (не хватает начальных и "
+"конечных значений)"
 
 #: pretix_passbook/forms.py:55
 msgid "This does not look like a X509 certificate in either PEM or DER format"
-msgstr "Dit lijkt niet op een X509-certificaat in PEM- of DER-formaat"
+msgstr "Это не похоже на сертификат X509 в формате PEM или DER"
 
 #: pretix_passbook/forms.py:83
 msgid "The file you uploaded could not be converted to PNG format."
-msgstr ""
-"Het bestand dat je hebt geüpload kon niet worden geconverteerd naar het PNG-"
-"formaat."
+msgstr "Не удалось сконвертировать загруженный файл в формат PNG."
 
 #: pretix_passbook/passbook.py:24
 msgid "Wallet/Passbook"
@@ -51,7 +50,7 @@ msgstr "Wallet/Passbook"
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
-msgstr "Ik wil graag zelf de plaatjes verkleinen"
+msgstr "Я бы хотел масштабировать графику самостоятельно"
 
 #: pretix_passbook/passbook.py:34
 msgid ""
@@ -60,15 +59,16 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
-"In sommige gevallen is de verkleining van plaatjes die de Wallet-app "
-"uitvoert niet optimaal. Door deze optie in te schakelen kan je "
-"voorverkleinde bestanden met de juiste afmetingen aanleveren.<br><br>Als je "
-"ervoor kiest om dit te doen hoef je alleen je afbeeldingen in de normale "
-"weergavegrootte te uploaden, en niet in de hogere retina-resolutie."
+"В некоторых случаях уменьшение масштаба графики, выполняемое приложением "
+"Wallet, является неудовлетворительным. Поставив здесь отметку, вы сможете "
+"предоставлять предварительно отмасштабированные файлы с правильными "
+"размерами. <br> <br> Если вы решите это сделать, загружайте свои изображения "
+"только такого размера, который подходит для обычного дисплея, а не "
+"увеличенного размера для сетчаточного дисплея."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
-msgstr "Evenementsicoon"
+msgstr "Иконка мероприятия"
 
 #: pretix_passbook/passbook.py:46 pretix_passbook/passbook.py:54
 #: pretix_passbook/passbook.py:65 pretix_passbook/passbook.py:77
@@ -76,165 +76,152 @@ msgstr "Evenementsicoon"
 #: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
 #: pretix_passbook/passbook.py:127
 msgid "Display size is {} x {} pixels."
-msgstr "Weergavegrootte is {} x {} pixels."
+msgstr "Размер дисплея {} x {} пикселей."
 
 #: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
 #: pretix_passbook/passbook.py:109
 msgid "We suggest an upload size of {} x {} pixels to support retina displays."
 msgstr ""
-"We raden een uploadgrootte van {} x {} pixels aan om retina-schermen te "
-"ondersteunen."
+"Мы предлагаем размер загрузки {} x {} пикселей для поддержки сетчаточных "
+"дисплеев."
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr "Evenementsicoon voor Retina {}x-schermen"
+msgstr "Иконка мероприятия для сетчаточных {}x дисплеев"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
-msgstr "Logo evenement"
+msgstr "Логотип мероприятия"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr "Evenementslogo voor Retina {}x-schermen"
+msgstr "Логотип мероприятия для сетчаточных {}x дисплеев"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
-msgstr "Achtergrondafbeelding Pass"
+msgstr "Передать фоновое изображение"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
 msgid "Pass background image for Retina {}x displays"
-msgstr "Achtergrondafbeelding Pass voor Retina {}x-schermen"
+msgstr "Передать фоновое изображение для сетчаточных {}x дисплеев"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
-msgstr "Evenementslocatie (breedtegraad)"
+msgstr "Место проведения мероприятия (широта)"
 
 #: pretix_passbook/passbook.py:142
 msgid "Event location (longitude)"
-msgstr "Evenementslocatie (lengtegraad)"
+msgstr "Место проведения мероприятия (долгота)"
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
-msgstr "Evenement"
+msgstr "Мероприятие"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr "Product"
+msgstr "Продукт"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
-msgstr "Naam van gast"
+msgstr "Имя посетителя"
 
 #: pretix_passbook/passbook.py:165
 msgid "Ordered by"
-msgstr "Besteld door"
+msgstr "Заказано (кем)"
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
-msgstr "Organisator"
+msgstr "Организатор"
 
 #: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
-msgstr "Contactadres organisator"
+msgstr "Контакт организатора"
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr "Bestelcode"
+msgstr "Код заказа"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
-msgstr "Van"
+msgstr "От/с"
 
 #: pretix_passbook/passbook.py:173
 msgid "To"
-msgstr "Tot"
+msgstr "До/по"
 
 #: pretix_passbook/passbook.py:178 pretix_passbook/passbook.py:180
 msgid "Website"
-msgstr "Website"
+msgstr "Сайт"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr "Gebied"
+msgstr "Зона"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr "Rij"
+msgstr "Ряд"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr "Stoel"
+msgstr "Место"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr "Vrije plaatskeuze"
+msgstr "Свободная рассадка"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
 msgid "Ticket for {event} ({product})"
-msgstr "Ticket voor {event} ({product})"
+msgstr "Билет на {event} ({product})"
 
 #: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
-msgstr "Passbook team-ID"
+msgstr "Командный ID для Passbook"
 
 #: pretix_passbook/signals.py:27
 msgid "Passbook type"
-msgstr "Passbook-type"
+msgstr "Тип Passbook"
 
 #: pretix_passbook/signals.py:31
 msgid "Passbook organizer name"
-msgstr "Passbook organisatornaam"
+msgstr "Имя организатора Passbook"
 
 #: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
-msgstr "Passbook certificaatbestand"
+msgstr "Файл сертификата Passbook"
 
 #: pretix_passbook/signals.py:39
 msgid "Passbook CA Certificate"
-msgstr "Passbook CA-certificaat"
+msgstr "Сертификат ЦС Passbook"
 
 #: pretix_passbook/signals.py:40
 msgid ""
 "You can download the current CA certificate from apple at https://developer."
 "apple.com/certificationauthority/AppleWWDRCA.cer"
 msgstr ""
-"Je kan het huidige CA-certificaat van Apple downloaden via https://developer."
-"apple.com/certificationauthority/AppleWWDRCA.cer"
+"Вы можете скачать текущий сертификат ЦС Apple по адресу "
+"https://developer.apple.com/certificationauthority/AppleWWDRCA.cer."
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"
-msgstr "Passbook-privésleutel"
+msgstr "Секретный ключ Passbook"
 
 #: pretix_passbook/signals.py:51
 msgid "Passbook key password"
-msgstr "Wachtwoord Passbook-privésleutel"
+msgstr "Пароль к ключу Passbook"
 
 #: pretix_passbook/signals.py:54
 msgid ""
 "Optional, only necessary if the key entered above requires a password to use."
 msgstr ""
-"Optioneel, alleen nodig als de hierboven ingevoerde sleutel een wachtwoord "
-"vereist om te gebruiken."
+"Необязательно, необходимо только в случае, если для введённого выше ключа "
+"требуется пароль."
 
 #: pretix_passbook/signals.py:57
 msgid "Google Geocoding API key"
-msgstr "Google Geocoding API-sleutel"
+msgstr "Ключ для Google API геокодирования"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
-msgstr "Optioneel, alleen nodig om automatisch coördinaten te vinden."
-
-#~ msgid ""
-#~ "Display size is 160 x 50 pixels. We suggest an upload size of 480 x 150 "
-#~ "pixels to support retina displays."
-#~ msgstr ""
-#~ "De weergavegrootte is 160 x 50 pixels. We raden een uploadgrootte van 480 "
-#~ "x 150 pixels aan om retina-schermen te ondersteunen."
-
-#~ msgid ""
-#~ "Display size is 180 x 220 pixels. We suggest an upload size of 540 x 660 "
-#~ "pixels to support retina displays."
-#~ msgstr ""
-#~ "De weergavegrootte is 180 x 220 pixels. We raden een uploadgrootte van "
-#~ "540 x 660 pixels aan om retina-schermen te ondersteunen."
+msgstr ""
+"Необязательно, необходимо только для автоматического определения координат."
