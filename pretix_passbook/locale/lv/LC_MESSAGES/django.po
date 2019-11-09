@@ -8,43 +8,49 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-11-09 21:00+0000\n"
+"Last-Translator: Zane Smite <z.smite@riga-jurmala.com>\n"
+"Language-Team: Latvian <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= "
+"19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+"X-Generator: Weblate 3.5.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
-msgstr ""
+msgstr "Passbook Biļetes"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr ""
+msgstr "Nodrošina passbook biļetes pretixam"
 
 #: pretix_passbook/forms.py:20
 msgid ""
 "This does not look like a RSA private key in PEM format (it misses the begin "
 "or end signifiers)"
 msgstr ""
+"Šī neizskatās pēc RSA privātās atslēgas PEM formātā (tai trūkst sākuma vai "
+"beigu indentifikatori)"
 
 #: pretix_passbook/forms.py:55
 msgid "This does not look like a X509 certificate in either PEM or DER format"
-msgstr ""
+msgstr "Šis neizskatās kā X509 sertifikāts ne PEM, ne DER formātā"
 
 #: pretix_passbook/forms.py:83
 msgid "The file you uploaded could not be converted to PNG format."
-msgstr ""
+msgstr "Augšupielādēto failu nebija iespējams konvertēt uz PNG formātu."
 
 #: pretix_passbook/passbook.py:24
 msgid "Wallet/Passbook"
-msgstr ""
+msgstr "Maks/Passbook"
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
-msgstr ""
+msgstr "Es gribētu pielāgot mērogu grafikām pats"
 
 #: pretix_passbook/passbook.py:34
 msgid ""
@@ -53,10 +59,15 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"Dažos gadījumos attēla izmēra automātiskā samazināšana, ko veic Wallet-app "
+"nav derīga. Atķeksējot šo kastīti, jūs varēsiet pats ielādēt pirms tam "
+"izmērā pielāgotus failus pareizajās dimensijās. <br><br> Ja izvēlaties šo "
+"opciju, lūdzu augšupielādējiet tikai parasta displeja izmēra attēlus, "
+"neizmantojiet attēlus, kas palielināti priekš retina displejiem."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
-msgstr ""
+msgstr "Pasākuma ikona"
 
 #: pretix_passbook/passbook.py:46 pretix_passbook/passbook.py:54
 #: pretix_passbook/passbook.py:65 pretix_passbook/passbook.py:77
@@ -64,92 +75,97 @@ msgstr ""
 #: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
 #: pretix_passbook/passbook.py:127
 msgid "Display size is {} x {} pixels."
-msgstr ""
+msgstr "Displeja izmērs ir {} x {} pixeļi."
 
 #: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
 #: pretix_passbook/passbook.py:109
 msgid "We suggest an upload size of {} x {} pixels to support retina displays."
 msgstr ""
+"Mēs iesakām ielādes faila izmēru {} x {} pixeļi, lai atbalstītu attēlu uz "
+"retina displejiem."
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr ""
+msgstr "Pasākuma ikona priekš Retina {}x displejiem"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
-msgstr ""
+msgstr "Pasākuma logo"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr ""
+msgstr "Pasākuma logo priekš Retina {}x displejiem"
 
 #: pretix_passbook/passbook.py:106
+#, fuzzy
 msgid "Pass background image"
-msgstr ""
+msgstr "Fona attēls"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
+#, fuzzy
 msgid "Pass background image for Retina {}x displays"
-msgstr ""
+msgstr "Fona attēls priekš Retina {}x displejiem"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
-msgstr ""
+msgstr "Pasākuma norises vieta (platuma grādi)"
 
 #: pretix_passbook/passbook.py:142
 msgid "Event location (longitude)"
-msgstr ""
+msgstr "Pasākuma norises vieta (garuma grādi)"
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
-msgstr ""
+msgstr "Pasākums"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr ""
+msgstr "Produkts"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
-msgstr ""
+msgstr "Apmeklētāja vārds"
 
 #: pretix_passbook/passbook.py:165
+#, fuzzy
 msgid "Ordered by"
-msgstr ""
+msgstr "Pasūtīts"
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
-msgstr ""
+msgstr "Rīkotājs"
 
 #: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
-msgstr ""
+msgstr "Rīkotāja kontakti"
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr ""
+msgstr "Pirkuma kods"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
-msgstr ""
+msgstr "No"
 
 #: pretix_passbook/passbook.py:173
 msgid "To"
-msgstr ""
+msgstr "Uz"
 
 #: pretix_passbook/passbook.py:178 pretix_passbook/passbook.py:180
 msgid "Website"
-msgstr ""
+msgstr "Mājaslapa"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr ""
+msgstr "Zona"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr ""
+msgstr "Rinda"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr ""
+msgstr "Sēdvieta"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
@@ -158,51 +174,57 @@ msgstr ""
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
 msgid "Ticket for {event} ({product})"
-msgstr ""
+msgstr "Biļete uz {event}{product}"
 
 #: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
-msgstr ""
+msgstr "Passbook komandas ID"
 
 #: pretix_passbook/signals.py:27
 msgid "Passbook type"
-msgstr ""
+msgstr "Passbook veids"
 
 #: pretix_passbook/signals.py:31
 msgid "Passbook organizer name"
-msgstr ""
+msgstr "Passbook rīkotāja vārds"
 
 #: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
-msgstr ""
+msgstr "Passbook sertifikātu fails"
 
 #: pretix_passbook/signals.py:39
 msgid "Passbook CA Certificate"
-msgstr ""
+msgstr "Passbook CA Sertifikāts"
 
 #: pretix_passbook/signals.py:40
 msgid ""
 "You can download the current CA certificate from apple at https://developer."
 "apple.com/certificationauthority/AppleWWDRCA.cer"
 msgstr ""
+"Jūs varat nolādēt pašreizējo CA sertifikātu no apple šeit: "
+"https://developer.apple.com/certificationauthority/AppleWWDRCA.cer"
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"
-msgstr ""
+msgstr "Passbook slepenā atslēga"
 
 #: pretix_passbook/signals.py:51
 msgid "Passbook key password"
-msgstr ""
+msgstr "Passbook atslēgas parole"
 
 #: pretix_passbook/signals.py:54
 msgid ""
 "Optional, only necessary if the key entered above requires a password to use."
 msgstr ""
+"Pēc izvēles, nepieciešams tikai tādā gadījumā, ja atslēgai, kas ievadīta "
+"augstāk, ir nepieciešama parole, lai to lietotu."
 
 #: pretix_passbook/signals.py:57
 msgid "Google Geocoding API key"
-msgstr ""
+msgstr "Google Ģeokodēšanas API atslēga"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
 msgstr ""
+"Pēc izvēles, nepieciešams tikai tādā gadījumā, ja vajadzīgs atrast "
+"koordinātas automātiski."
