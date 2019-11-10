@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2019-11-09 21:00+0000\n"
+"PO-Revision-Date: 2019-11-10 09:45+0000\n"
 "Last-Translator: Zane Smite <z.smite@riga-jurmala.com>\n"
 "Language-Team: Latvian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/lv/>\n"
@@ -141,7 +141,7 @@ msgstr "Rīkotāja kontakti"
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr "Pirkuma kods"
+msgstr "Pasūtījuma numurs"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
