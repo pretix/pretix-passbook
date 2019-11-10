@@ -213,11 +213,12 @@ class PassbookOutput(BaseTicketOutput):
         passfile.relevantDate = ev.date_from.astimezone(tz).isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
-            passfile.locations = Location(self.event.settings.passbook_latitude, self.event.settings.passbook_longitude)
+            passfile.locations = [Location(self.event.settings.passbook_latitude,
+                                           self.event.settings.passbook_longitude)]
         elif order_position.subevent and order_position.subevent.geo_lat and order_position.subevent.geo_lon:
-            passfile.locations = Location(order_position.subevent.geo_lat, order_position.subevent.geo_lon)
+            passfile.locations = [Location(order_position.subevent.geo_lat, order_position.subevent.geo_lon)]
         elif self.event.geo_lat and self.event.geo_lon:
-            passfile.locations = Location(self.event.geo_lat, self.event.geo_lon)
+            passfile.locations = [Location(self.event.geo_lat, self.event.geo_lon)]
 
         icon_file = self.event.settings.get('ticketoutput_passbook_icon')
         if icon_file:
