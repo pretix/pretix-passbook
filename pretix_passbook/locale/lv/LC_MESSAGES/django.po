@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2019-11-10 10:45+0000\n"
+"PO-Revision-Date: 2019-11-13 07:00+0000\n"
 "Last-Translator: Zane Smite <z.smite@riga-jurmala.com>\n"
 "Language-Team: Latvian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/lv/>\n"
@@ -26,7 +26,7 @@ msgstr "Passbook Biļetes"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr "Nodrošina passbook biļetes pretixam"
+msgstr "Nodrošina passbook biļetes pretix"
 
 #: pretix_passbook/forms.py:20
 msgid ""
@@ -97,12 +97,10 @@ msgid "Event logo for Retina {}x displays"
 msgstr "Pasākuma logo priekš Retina {}x displejiem"
 
 #: pretix_passbook/passbook.py:106
-#, fuzzy
 msgid "Pass background image"
 msgstr "Fona attēls"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
-#, fuzzy
 msgid "Pass background image for Retina {}x displays"
 msgstr "Fona attēls priekš Retina {}x displejiem"
 
@@ -127,9 +125,8 @@ msgid "Attendee name"
 msgstr "Apmeklētāja vārds"
 
 #: pretix_passbook/passbook.py:165
-#, fuzzy
 msgid "Ordered by"
-msgstr "Pasūtīts"
+msgstr "Pasūtīja"
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
@@ -169,7 +166,7 @@ msgstr "Sēdvieta"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr ""
+msgstr "Brīvi izvēlētu sēdvietu ieeja"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
@@ -225,5 +222,4 @@ msgstr "Google Ģeokodēšanas API atslēga"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
-msgstr ""
-"Pēc izvēles, nepieciešams tikai tādā gadījumā, ja vajadzīgs atrast "
+msgstr "Pēc izvēles, nepieciešams tikai tādā gadījumā, ja vajadzīgs atrast."
