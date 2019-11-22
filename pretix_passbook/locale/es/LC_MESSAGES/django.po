@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2019-08-27 12:00+0000\n"
-"Last-Translator: oocf <oswaldocerna@gmail.com>\n"
+"PO-Revision-Date: 2019-11-22 10:00+0000\n"
+"Last-Translator: Carolina Fernández <cfermart@gmail.com>\n"
 "Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/es/>\n"
 "Language: es\n"
@@ -49,7 +49,7 @@ msgstr "Billetera/Passbook"
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
-msgstr ""
+msgstr "Prefiero redimensionar los gráficos yo mismo"
 
 #: pretix_passbook/passbook.py:34
 msgid ""
@@ -58,6 +58,11 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"El redimensionado de gráficos hecho por la Wallet-app no siempre es "
+"satisfactorio. Al seleccionar esto, puedes proveer archivos que ya hayan "
+"sido correctamente dimensionados.<br><br>Si eliges eso, por favor sube "
+"únicamente imágenes con dimensiones comunes y no con dimensiones adaptadas a "
+"pantallas Retina."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
@@ -69,22 +74,18 @@ msgstr "Ícono del evento"
 #: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
 #: pretix_passbook/passbook.py:127
 msgid "Display size is {} x {} pixels."
-msgstr ""
+msgstr "Tamaño mostrado de {} x {} píxeles."
 
 #: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
 #: pretix_passbook/passbook.py:109
-#, fuzzy
-#| msgid ""
-#| "Display size is 29 x 29 pixels. We suggest an upload size of 87 x 87 "
-#| "pixels to support retina displays."
 msgid "We suggest an upload size of {} x {} pixels to support retina displays."
 msgstr ""
-"Se mostrará con tamaño de 29 x 29 píxeles. Le sugerimos una imagen de tamaño "
-"87 x 87 para compatibilidad con monitores retina."
+"Se aconseja subir una imagen con dimensiones de {} x {} píxeles para la "
+"compatibilidad con pantallas Retina."
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr ""
+msgstr "Icono de evento para pantallas Retina {}x"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
@@ -92,17 +93,15 @@ msgstr "Logo del evento"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr ""
+msgstr "Logo de evento para pantallas Retina {}x"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
 msgstr "Imagen de fondo"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
-#, fuzzy
-#| msgid "Pass background image"
 msgid "Pass background image for Retina {}x displays"
-msgstr "Imagen de fondo"
+msgstr "Imagen de fondo para pantallas Retina {}x"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
@@ -154,11 +153,11 @@ msgstr "Sitio web"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr ""
+msgstr "Zona"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr ""
+msgstr "Fila"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
@@ -166,7 +165,7 @@ msgstr "Asiento"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr ""
+msgstr "Entrada general"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
@@ -217,10 +216,8 @@ msgstr ""
 "clave."
 
 #: pretix_passbook/signals.py:57
-#, fuzzy
-#| msgid "Google Maps API key"
 msgid "Google Geocoding API key"
-msgstr "Llave para el API de Google Maps"
+msgstr "Clave de la API de Google Geocoding"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
