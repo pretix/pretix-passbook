@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2019-06-06 09:38+0000\n"
+"PO-Revision-Date: 2019-12-06 13:55+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: German (informal) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-passbook/de_Informal/>\n"
@@ -154,19 +154,19 @@ msgstr "Website"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr ""
+msgstr "Bereich"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr ""
+msgstr "Reihe"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr ""
+msgstr "Sitzplatz"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr ""
+msgstr "Freie Platzwahl"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
