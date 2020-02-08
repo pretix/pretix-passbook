@@ -11,6 +11,7 @@ class PassbookApp(AppConfig):
         name = ugettext_lazy('Passbook Tickets')
         author = 'Tobias Kunze, Raphael Michel'
         description = ugettext_lazy('Provides passbook tickets for pretix')
+        category = 'FORMAT'
         visible = True
         version = '1.6.1'
 
