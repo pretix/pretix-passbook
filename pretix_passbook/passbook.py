@@ -7,7 +7,7 @@ from django import forms
 from django.contrib.staticfiles import finders
 from django.core.files.storage import default_storage
 from django.utils.formats import date_format
-from django.utils.translation import ugettext, ugettext_lazy as _  # NOQA
+from django.utils.translation import gettext, gettext_lazy as _  # NOQA
 from pretix.base.models import OrderPosition
 from pretix.base.ticketoutput import BaseTicketOutput
 from pretix.control.forms import ClearableBasenameFileInput
@@ -154,48 +154,48 @@ class PassbookOutput(BaseTicketOutput):
 
         card = EventTicket()
 
-        card.addPrimaryField('eventName', str(ev.name), ugettext('Event'))
+        card.addPrimaryField('eventName', str(ev.name), gettext('Event'))
 
         ticket = str(order_position.item.name)
         if order_position.variation:
             ticket += ' - ' + str(order_position.variation)
 
-        card.addSecondaryField('ticket', ticket, ugettext('Product'))
+        card.addSecondaryField('ticket', ticket, gettext('Product'))
         if ev.seating_plan_id is not None:
             if order_position.seat:
-                card.addAuxiliaryField('seat', str(order_position.seat), ugettext('Seat'))
+                card.addAuxiliaryField('seat', str(order_position.seat), gettext('Seat'))
             else:
-                card.addAuxiliaryField('seat', ugettext('General admission'), ugettext('Seat'))
+                card.addAuxiliaryField('seat', gettext('General admission'), gettext('Seat'))
 
         if ev.date_admission:
             card.addBackField(
                 'doorsAdmission',
                 date_format(ev.date_admission.astimezone(tz), 'SHORT_DATETIME_FORMAT'),
-                ugettext('Admission time')
+                gettext('Admission time')
             )
 
-        card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz, short=True), ugettext('From'))
+        card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz, short=True), gettext('From'))
         if order.event.settings.show_date_to and ev.date_to:
             if ev.seating_plan_id:
-                card.addBackField('doorsClose', ev.get_date_to_display(tz, short=True), ugettext('To'))
+                card.addBackField('doorsClose', ev.get_date_to_display(tz, short=True), gettext('To'))
             else:
-                card.addAuxiliaryField('doorsClose', ev.get_date_to_display(tz, short=True), ugettext('To'))
+                card.addAuxiliaryField('doorsClose', ev.get_date_to_display(tz, short=True), gettext('To'))
 
         if order_position.attendee_name:
-            card.addBackField('name', order_position.attendee_name, ugettext('Attendee name'))
+            card.addBackField('name', order_position.attendee_name, gettext('Attendee name'))
 
-        card.addBackField('email', order.email, ugettext('Ordered by'))
-        card.addBackField('organizer', str(order.event.organizer), ugettext('Organizer'))
+        card.addBackField('email', order.email, gettext('Ordered by'))
+        card.addBackField('organizer', str(order.event.organizer), gettext('Organizer'))
         if order.event.settings.contact_mail:
-            card.addBackField('organizerContact', order.event.settings.contact_mail, ugettext('Organizer contact'))
-        card.addBackField('orderCode', order.code, ugettext('Order code'))
+            card.addBackField('organizerContact', order.event.settings.contact_mail, gettext('Organizer contact'))
+        card.addBackField('orderCode', order.code, gettext('Order code'))
 
         if order_position.subevent:
             card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index', {
                 'subevent': order_position.subevent.pk
-            }), ugettext('Website'))
+            }), gettext('Website'))
         else:
-            card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), ugettext('Website'))
+            card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), gettext('Website'))
 
         passfile = Pass(
             card,
@@ -207,7 +207,7 @@ class PassbookOutput(BaseTicketOutput):
         passfile.serialNumber = '%s-%s-%s-%d' % (order.event.organizer.slug, order.event.slug, order.code,
                                                  order_position.pk)
 
-        passfile.description = ugettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
+        passfile.description = gettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
         passfile.barcode.altText = order_position.secret
         passfile.relevantDate = ev.date_from.astimezone(tz).isoformat()

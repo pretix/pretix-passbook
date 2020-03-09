@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy
+from django.utils.translation import gettext_lazy
 
 
 class PassbookApp(AppConfig):
@@ -8,9 +8,9 @@ class PassbookApp(AppConfig):
     verbose_name = 'Passbook Tickets'
 
     class PretixPluginMeta:
-        name = ugettext_lazy('Passbook Tickets')
+        name = gettext_lazy('Passbook Tickets')
         author = 'Tobias Kunze, Raphael Michel'
-        description = ugettext_lazy('Provides passbook tickets for pretix')
+        description = gettext_lazy('Provides passbook tickets for pretix')
         category = 'FORMAT'
         visible = True
         version = '1.6.2'
