@@ -13,7 +13,7 @@ class PassbookApp(AppConfig):
         description = gettext_lazy('Provides passbook tickets for pretix')
         category = 'FORMAT'
         visible = True
-        version = '1.6.2'
+        version = '1.6.3'
 
     def ready(self):
         from . import signals  # NOQA
