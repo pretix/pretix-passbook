@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-06-12 20:00+0000\n"
+"Last-Translator: Frank <webappconcept@gmail.com>\n"
+"Language-Team: Italian <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -101,11 +104,11 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
-msgstr ""
+msgstr "Evento"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr ""
+msgstr "Prodotto"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
@@ -117,7 +120,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
-msgstr ""
+msgstr "Organizzatore"
 
 #: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
