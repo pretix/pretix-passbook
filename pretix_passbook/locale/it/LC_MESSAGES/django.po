@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2020-06-12 20:00+0000\n"
+"PO-Revision-Date: 2020-06-15 06:00+0000\n"
 "Last-Translator: Frank <webappconcept@gmail.com>\n"
 "Language-Team: Italian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/it/>\n"
@@ -112,7 +112,7 @@ msgstr "Prodotto"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
-msgstr ""
+msgstr "Nome partecipante"
 
 #: pretix_passbook/passbook.py:165
 msgid "Ordered by"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr ""
+msgstr "Codice ordine"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
