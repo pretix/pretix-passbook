@@ -154,6 +154,13 @@ class PassbookOutput(BaseTicketOutput):
 
         card = EventTicket()
 
+        card.addHeaderField(
+            'doorsAdmissionHeader',
+            date_format(ev.date_admission.astimezone(tz),
+                        'SHORT_DATETIME_FORMAT') if ev.date_admission else ev.get_date_from_display(tz, short=True),
+            gettext('Admission time')
+        )
+
         card.addPrimaryField('eventName', str(ev.name), gettext('Event'))
 
         ticket = str(order_position.item.name)
