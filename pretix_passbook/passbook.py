@@ -154,12 +154,13 @@ class PassbookOutput(BaseTicketOutput):
 
         card = EventTicket()
 
-        card.addHeaderField(
-            'doorsAdmissionHeader',
-            date_format(ev.date_admission.astimezone(tz),
-                        'SHORT_DATETIME_FORMAT') if ev.date_admission else ev.get_date_from_display(tz, short=True),
-            gettext('Admission time')
-        )
+        if ev.date_admission:
+            card.addHeaderField(
+                'doorsAdmissionHeader',
+                date_format(ev.date_admission.astimezone(tz),
+                            'SHORT_DATETIME_FORMAT') if ev.date_admission else ev.get_date_from_display(tz, short=True),
+                gettext('Admission time')
+            )
 
         card.addPrimaryField('eventName', str(ev.name), gettext('Event'))
 
@@ -168,11 +169,14 @@ class PassbookOutput(BaseTicketOutput):
             ticket += ' - ' + str(order_position.variation)
 
         card.addSecondaryField('ticket', ticket, gettext('Product'))
+
         if ev.seating_plan_id is not None:
             if order_position.seat:
                 card.addAuxiliaryField('seat', str(order_position.seat), gettext('Seat'))
             else:
                 card.addAuxiliaryField('seat', gettext('General admission'), gettext('Seat'))
+        elif order_position.attendee_name:
+            card.addAuxiliaryField('name', order_position.attendee_name, gettext('Attendee name'))
 
         if ev.date_admission:
             card.addBackField(
