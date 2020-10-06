@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2020-09-19 18:00+0000\n"
+"PO-Revision-Date: 2020-10-07 04:00+0000\n"
 "Last-Translator: Tobias Sundgren <syrgas@gmail.com>\n"
 "Language-Team: Swedish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/sv/>\n"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
-msgstr ""
+msgstr "Evenemang"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
