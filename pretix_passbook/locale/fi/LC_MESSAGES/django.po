@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-10-27 21:00+0000\n"
+"Last-Translator: Jaakko Rinta-Filppula <jaakko@r-f.fi>\n"
+"Language-Team: Finnish <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -125,7 +128,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr ""
+msgstr "Tilauskoodi"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
