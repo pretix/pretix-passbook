@@ -31,6 +31,7 @@ setup(
     url='https://github.com/pretix/pretix-passbook',
     author='Tobias Kunze',
     author_email='rixx@cutebit.de',
+    license='Apache License 2.0',
 
     install_requires=['wallet-py3k', 'googlemaps'],
     packages=find_packages(exclude=['tests', 'tests.*']),
