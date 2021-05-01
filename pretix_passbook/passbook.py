@@ -208,6 +208,8 @@ class PassbookOutput(BaseTicketOutput):
         else:
             card.addBackField('website', build_absolute_uri(order.event, 'presale:event.index'), gettext('Website'))
 
+        card.addBackField('barCodeID', order_position.secret, ugettext('Barcode ID'))
+
         passfile = Pass(
             card,
             passTypeIdentifier=order.event.settings.passbook_pass_type_id,
@@ -220,7 +222,7 @@ class PassbookOutput(BaseTicketOutput):
 
         passfile.description = gettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
-        passfile.barcode.altText = order_position.secret
+        passfile.barcode.altText = order_position.secret[:10].upper()
         passfile.relevantDate = ev.date_from.astimezone(tz).isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
