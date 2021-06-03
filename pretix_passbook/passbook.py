@@ -154,7 +154,7 @@ class PassbookOutput(BaseTicketOutput):
 
         card = EventTicket()
 
-        if ev.date_admission:
+        if order.event.has_subevents or ev.date_admission:
             card.addHeaderField(
                 'doorsAdmissionHeader',
                 date_format(ev.date_admission.astimezone(tz),
