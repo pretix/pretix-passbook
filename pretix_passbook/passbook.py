@@ -154,13 +154,44 @@ class PassbookOutput(BaseTicketOutput):
 
         card = EventTicket()
 
-        if order.event.has_subevents or ev.date_admission:
-            card.addHeaderField(
-                'doorsAdmissionHeader',
-                date_format(ev.date_admission.astimezone(tz),
-                            'SHORT_DATETIME_FORMAT') if ev.date_admission else ev.get_date_from_display(tz, short=True),
-                gettext('Admission time')
-            )
+        # The following lines define the ticket header, i.e. what is visible when the ticket is collapsed
+        # in the stack of tickets. We differentiate these cases:
+        #
+        # 1. If there is no custom logo, we always show
+        #    [ PRETIX LOGO ]  [ EVENT TITLE ]
+        #    to make sure you can tell the ticket apart from other pretix tickets. In an event series
+        #    we'll also add the date to the event title.
+        #
+        #  2. If there is a custom logo and we're in an event series or have a custom admission time, we show
+        #    [ CUSTOM LOGO ]                    [ EVENT ADMISSION ]
+        #    to make sure you can tell the ticket apart from other tickets from the same entity.
+        #
+        #  3. If there is a custom logo and we're not in an event series and do not custom admission time, we show
+        #    [ CUSTOM LOGO ]
+
+        logo_file = self.event.settings.get('ticketoutput_passbook_logo')
+        if logo_file:
+            logo_text = None
+
+            if order.event.has_subevents or ev.date_admission:
+                if ev.date_admission:
+                    card.addHeaderField(
+                        'doorsAdmissionHeader',
+                        date_format(ev.date_admission.astimezone(tz), 'SHORT_DATETIME_FORMAT'),
+                        gettext('Admission time')
+                    )
+                else:
+                    card.addHeaderField(
+                        'doorsAdmissionHeader',
+                        ev.get_date_from_display(tz, short=True),
+                        gettext('Begin')
+                    )
+        else:
+            logo_text = str(ev.name)
+            if order.event.has_subevents:
+                logo_text += f" ({ev.get_date_from_display(tz, short=True)})"
+
+        # Ticket content
 
         card.addPrimaryField('eventName', str(ev.name), gettext('Event'))
 
@@ -237,12 +268,11 @@ class PassbookOutput(BaseTicketOutput):
         else:
             passfile.addFile('icon.png', open(finders.find('pretix_passbook/icon.png'), "rb"))
 
-        logo_file = self.event.settings.get('ticketoutput_passbook_logo')
         if logo_file:
             passfile.addFile('logo.png', default_storage.open(logo_file.name, 'rb'))
         else:
-            passfile.logoText = str(ev.name)
             passfile.addFile('logo.png', open(finders.find('pretix_passbook/logo.png'), "rb"))
+        passfile.logoText = logo_text
 
         bg_file = self.event.settings.get('ticketoutput_passbook_background')
         if bg_file:
