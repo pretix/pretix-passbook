@@ -226,7 +226,8 @@ class PassbookOutput(BaseTicketOutput):
         if order_position.attendee_name:
             card.addBackField('name', order_position.attendee_name, gettext('Attendee name'))
 
-        card.addBackField('email', order.email, gettext('Ordered by'))
+        if order.email:
+            card.addBackField('email', order.email, gettext('Ordered by'))
         card.addBackField('organizer', str(order.event.organizer), gettext('Organizer'))
         if order.event.settings.contact_mail:
             card.addBackField('organizerContact', order.event.settings.contact_mail, gettext('Organizer contact'))
