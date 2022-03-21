@@ -13,6 +13,7 @@ class PassbookApp(AppConfig):
         description = gettext_lazy('Provides passbook tickets for pretix')
         category = 'FORMAT'
         visible = True
+        featured = True
         version = '1.9.1'
 
     def ready(self):
