@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2021-12-06 23:00+0000\n"
-"Last-Translator: Ondřej Sokol <osokol@treesoft.cz>\n"
-"Language-Team: Czech <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-passbook/cs/>\n"
-"Language: cs\n"
+"PO-Revision-Date: 2020-11-06 00:00+0000\n"
+"Last-Translator: Jaakko Rinta-Filppula <jaakko@r-f.fi>\n"
+"Language-Team: Finnish <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook/fi/>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -104,15 +104,15 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
-msgstr "Událost"
+msgstr "Tapahtuma"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr "Produkt"
+msgstr "Tuote"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
-msgstr "Jméno účastníka"
+msgstr "Osallistujan nimi"
 
 #: pretix_passbook/passbook.py:165
 msgid "Ordered by"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
-msgstr ""
+msgstr "Järjestäjä"
 
 #: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr "Kód objednávky"
+msgstr "Tilauskoodi"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
