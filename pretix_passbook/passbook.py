@@ -253,7 +253,12 @@ class PassbookOutput(BaseTicketOutput):
         passfile.description = gettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
         passfile.barcode.altText = order_position.secret
-        passfile.relevantDate = ev.date_from.astimezone(tz).isoformat()
+        date_from_local_time = ev.date_from.astimezone(tz)
+        date_to_local_time = ev.date_to.astimezone(tz) if ev.date_to else None
+        if order.event.settings.show_date_to and date_to_local_time and date_to_local_time.date() != date_from_local_time.date():
+            passfile.exprirationDate = date_to_local_time.isoformat()
+        else:
+            passfile.relevantDate = date_from_local_time.isoformat()
 
         if self.event.settings.passbook_latitude and self.event.settings.passbook_longitude:
             passfile.locations = [Location(self.event.settings.passbook_latitude,
