@@ -14,7 +14,7 @@ class PassbookApp(AppConfig):
         category = 'FORMAT'
         visible = True
         featured = True
-        version = '1.9.1'
+        version = '1.10.0'
 
     def ready(self):
         from . import signals  # NOQA
