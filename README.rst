@@ -41,12 +41,13 @@ Generating Passbook keys and configuring them in pretix
 
 You can generate a key and CSR using::
 
-    openssl genrsa -out pass-pretix.key 2048
-    openssl req -new -key pass-pretix.key -out pass-pretix.csr
+    export CERT_NAME=pass-pretix
+    openssl genrsa -out $CERT_NAME.key 2048
+    openssl req -new -key $CERT_NAME.key -out $CERT_NAME.csr
 
 You can then request a certificate using that CSR in your `Apple developer account`_. You can then convert the downloaded certificate like this::
 
-    openssl x509 -inform der -in pass-pretix.cer -out pass-pretix.pem
+    openssl x509 -inform der -in $CERT_NAME.cer -out $CERT_NAME.pem
     
 After generating the .pem file, upload it to pretix as passbook certificate.
 Make sure you have uploaded the key generated before (pass-pretix.key) and added the passbook CA of apple.
