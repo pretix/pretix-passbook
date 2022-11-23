@@ -194,11 +194,11 @@ msgstr "Certificado CA para Passbook"
 
 #: pretix_passbook/signals.py:40
 msgid ""
-"You can download the current CA certificate from apple at https://developer."
-"apple.com/certificationauthority/AppleWWDRCA.cer"
+"You can download the current CA certificate from apple at https://www."
+"apple.com/certificateauthority/AppleWWDRCAG4.cer"
 msgstr ""
-"Puede descargar el certificado CA actual desde Apple en https://developer."
-"apple.com/certificationauthority/AppleWWDRCA.cer"
+"Puede descargar el certificado CA actual desde Apple en https://www."
+"apple.com/certificateauthority/AppleWWDRCAG4.cer"
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"

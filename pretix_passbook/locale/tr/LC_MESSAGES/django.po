@@ -196,11 +196,11 @@ msgstr "Hesap Cüzdanı CA Sertifikası"
 
 #: pretix_passbook/signals.py:40
 msgid ""
-"You can download the current CA certificate from apple at https://developer."
-"apple.com/certificationauthority/AppleWWDRCA.cer"
+"You can download the current CA certificate from apple at https://www."
+"apple.com/certificateauthority/AppleWWDRCAG4.cer"
 msgstr ""
-"Geçerli CA sertifikasını apple'dan https://developer.apple.com/"
-"certificationauthority/AppleWWDRCA.cer adresinden indirebilirsiniz."
+"Geçerli CA sertifikasını apple'dan https://www.apple.com/"
+"certificateauthority/AppleWWDRCAG4.cer adresinden indirebilirsiniz."
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"

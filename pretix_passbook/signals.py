@@ -38,7 +38,7 @@ def register_global_settings(sender, **kwargs):
         ('passbook_wwdr_certificate_file', CertificateFileField(
             label=_('Passbook CA Certificate'),
             help_text=_('You can download the current CA certificate from apple at '
-                        'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer'),
+                        'https://www.apple.com/certificateauthority/AppleWWDRCAG4.cer'),
             required=False,
         )),
         ('passbook_key', forms.CharField(
