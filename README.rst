@@ -43,6 +43,7 @@ You can generate a key and CSR using::
 
     export CERT_NAME=pass-pretix
     openssl genrsa -out $CERT_NAME.key 2048
+    openssl pkey -in $CERT_NAME.key -traditional > $CERT_NAME.key.pem
     openssl req -new -key $CERT_NAME.key -out $CERT_NAME.csr
 
 You can then request a certificate using that CSR in your `Apple developer account`_. You can then convert the downloaded certificate like this::
