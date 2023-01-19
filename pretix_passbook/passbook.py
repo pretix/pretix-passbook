@@ -137,6 +137,7 @@ class PassbookOutput(BaseTicketOutput):
                     'bg_color',
                     forms.CharField(
                         label=_('Background color'),
+                        help_text=_('If you use a background image, the background color will have no effect.'),
                         validators=[
                             RegexValidator(regex='^#[0-9a-fA-F]{6}$',
                                            message=_('Please enter the hexadecimal code of a color, e.g. #990000.')),
