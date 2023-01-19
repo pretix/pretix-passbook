@@ -6,6 +6,7 @@ import pytz
 from django import forms
 from django.contrib.staticfiles import finders
 from django.core.files.storage import default_storage
+from django.core.validators import RegexValidator
 from django.utils.formats import date_format
 from django.utils.translation import gettext, gettext_lazy as _  # NOQA
 from pretix.base.models import OrderPosition
@@ -132,6 +133,42 @@ class PassbookOutput(BaseTicketOutput):
                      ),
                      required=False,
                  )),
+                (
+                    'bg_color',
+                    forms.CharField(
+                        label=_('Background color'),
+                        validators=[
+                            RegexValidator(regex='^#[0-9a-fA-F]{6}$',
+                                           message=_('Please enter the hexadecimal code of a color, e.g. #990000.')),
+                        ],
+                        required=False,
+                        widget=forms.TextInput(attrs={'class': 'colorpickerfield no-contrast', 'placeholder': '#RRGGBB'})
+                    )
+                ),
+                (
+                    'fg_color',
+                    forms.CharField(
+                        label=_('Text color'),
+                        validators=[
+                            RegexValidator(regex='^#[0-9a-fA-F]{6}$',
+                                           message=_('Please enter the hexadecimal code of a color, e.g. #990000.')),
+                        ],
+                        required=False,
+                        widget=forms.TextInput(attrs={'class': 'colorpickerfield no-contrast', 'placeholder': '#RRGGBB'})
+                    )
+                ),
+                (
+                    'label_color',
+                    forms.CharField(
+                        label=_('Label color'),
+                        validators=[
+                            RegexValidator(regex='^#[0-9a-fA-F]{6}$',
+                                           message=_('Please enter the hexadecimal code of a color, e.g. #990000.')),
+                        ],
+                        required=False,
+                        widget=forms.TextInput(attrs={'class': 'colorpickerfield no-contrast', 'placeholder': '#RRGGBB'})
+                    )
+                ),
                 ('latitude',
                  forms.FloatField(
                      label=_('Event location (latitude)'),
@@ -308,6 +345,10 @@ class PassbookOutput(BaseTicketOutput):
             bg3x_file = self.event.settings.get('ticketoutput_passbook_background3x')
             if bg3x_file:
                 passfile.addFile('background@3x.png', default_storage.open(bg3x_file.name, 'rb'))
+
+        passfile.backgroundColor = self.event.settings.get('ticketoutput_passbook_bg_color')
+        passfile.foregroundColor = self.event.settings.get('ticketoutput_passbook_fg_color')
+        passfile.labelColor = self.event.settings.get('ticketoutput_passbook_label_color')
 
         filename = '{}-{}.pkpass'.format(order.event.slug, order.code)
 
