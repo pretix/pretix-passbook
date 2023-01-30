@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-16 15:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: pretix_passbook/__init__.py:11
+msgid "Passbook Tickets"
+msgstr ""
+
+#: pretix_passbook/__init__.py:13
+msgid "Provides passbook tickets for pretix"
+msgstr ""
+
+#: pretix_passbook/forms.py:20
+msgid ""
+"This does not look like a RSA private key in PEM format (it misses the begin "
+"or end signifiers)"
+msgstr ""
+
+#: pretix_passbook/forms.py:55
+msgid "This does not look like a X509 certificate in either PEM or DER format"
+msgstr ""
+
+#: pretix_passbook/forms.py:83
+msgid "The file you uploaded could not be converted to PNG format."
+msgstr ""
+
+#: pretix_passbook/passbook.py:24
+msgid "Wallet/Passbook"
+msgstr ""
+
+#: pretix_passbook/passbook.py:33
+msgid "I would like to scale the graphics myself"
+msgstr ""
+
+#: pretix_passbook/passbook.py:34
+msgid ""
+"In some instances, the downscaling of graphics done by the Wallet-app is not "
+"satisfactory. By checking this box, you can provide prescaled files in the "
+"correct dimensions.<br><br>If you choose to do so, please only upload your "
+"pictures in the regular display size and not the increased retina size."
+msgstr ""
+
+#: pretix_passbook/passbook.py:44
+msgid "Event icon"
+msgstr ""
+
+#: pretix_passbook/passbook.py:46 pretix_passbook/passbook.py:54
+#: pretix_passbook/passbook.py:65 pretix_passbook/passbook.py:77
+#: pretix_passbook/passbook.py:85 pretix_passbook/passbook.py:96
+#: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
+#: pretix_passbook/passbook.py:127
+msgid "Display size is {} x {} pixels."
+msgstr ""
+
+#: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
+#: pretix_passbook/passbook.py:109
+msgid "We suggest an upload size of {} x {} pixels to support retina displays."
+msgstr ""
+
+#: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
+msgid "Event icon for Retina {}x displays"
+msgstr ""
+
+#: pretix_passbook/passbook.py:75
+msgid "Event logo"
+msgstr ""
+
+#: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
+msgid "Event logo for Retina {}x displays"
+msgstr ""
+
+#: pretix_passbook/passbook.py:106
+msgid "Pass background image"
+msgstr ""
+
+#: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
+msgid "Pass background image for Retina {}x displays"
+msgstr ""
+
+#: pretix_passbook/passbook.py:137
+msgid "Event location (latitude)"
+msgstr ""
+
+#: pretix_passbook/passbook.py:142
+msgid "Event location (longitude)"
+msgstr ""
+
+#: pretix_passbook/passbook.py:155
+msgid "Event"
+msgstr ""
+
+#: pretix_passbook/passbook.py:160
+msgid "Product"
+msgstr ""
+
+#: pretix_passbook/passbook.py:163
+msgid "Attendee name"
+msgstr ""
+
+#: pretix_passbook/passbook.py:165
+msgid "Ordered by"
+msgstr ""
+
+#: pretix_passbook/passbook.py:166
+msgid "Organizer"
+msgstr ""
+
+#: pretix_passbook/passbook.py:168
+msgid "Organizer contact"
+msgstr ""
+
+#: pretix_passbook/passbook.py:169
+msgid "Order code"
+msgstr ""
+
+#: pretix_passbook/passbook.py:171
+msgid "From"
+msgstr ""
+
+#: pretix_passbook/passbook.py:173
+msgid "To"
+msgstr ""
+
+#: pretix_passbook/passbook.py:178 pretix_passbook/passbook.py:180
+msgid "Website"
+msgstr ""
+
+#: pretix_passbook/passbook.py:185
+msgid "Zone"
+msgstr ""
+
+#: pretix_passbook/passbook.py:187
+msgid "Row"
+msgstr ""
+
+#: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
+msgid "Seat"
+msgstr ""
+
+#: pretix_passbook/passbook.py:191
+msgid "General admission"
+msgstr ""
+
+#: pretix_passbook/passbook.py:203
+#, python-brace-format
+msgid "Ticket for {event} ({product})"
+msgstr ""
+
+#: pretix_passbook/signals.py:23
+msgid "Passbook team ID"
+msgstr ""
+
+#: pretix_passbook/signals.py:27
+msgid "Passbook type"
+msgstr ""
+
+#: pretix_passbook/signals.py:31
+msgid "Passbook organizer name"
+msgstr ""
+
+#: pretix_passbook/signals.py:35
+msgid "Passbook certificate file"
+msgstr ""
+
+#: pretix_passbook/signals.py:39
+msgid "Passbook CA Certificate"
+msgstr ""
+
+#: pretix_passbook/signals.py:40
+msgid ""
+"You can download the current CA certificate from apple at https://www."
+"apple.com/certificateauthority/AppleWWDRCAG4.cer"
+msgstr ""
+
+#: pretix_passbook/signals.py:45
+msgid "Passbook secret key"
+msgstr ""
+
+#: pretix_passbook/signals.py:51
+msgid "Passbook key password"
+msgstr ""
+
+#: pretix_passbook/signals.py:54
+msgid ""
+"Optional, only necessary if the key entered above requires a password to use."
+msgstr ""
+
+#: pretix_passbook/signals.py:57
+msgid "Google Geocoding API key"
+msgstr ""
+
+#: pretix_passbook/signals.py:60
+msgid "Optional, only necessary to find coordinates automatically."
+msgstr ""
