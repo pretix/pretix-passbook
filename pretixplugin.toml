@@ -1,0 +1,10 @@
+# This file is used by the pretix team internally to coordinate releases of this plugin
+[plugin]
+package = "pretix-passbook"
+modules = [ "pretix_passbook" ]
+marketplace_name = "passbook"
+pypi = true
+repository_servers = { origin = "github.com", gitlab = "code.rami.io" }
+tag_targets = [ "origin", "gitlab" ]
+branch_targets = [ "origin/master", "gitlab/master", "f:gitlab/pypi" ]
+
