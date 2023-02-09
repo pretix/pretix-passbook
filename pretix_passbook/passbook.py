@@ -254,8 +254,16 @@ class PassbookOutput(BaseTicketOutput):
                 gettext('Admission time')
             )
 
-        card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz, short=True), gettext('From'))
-        if order.event.settings.show_date_to and ev.date_to:
+        if order_position.valid_from:
+            card.addAuxiliaryField('doorsOpen', date_format(order_position.valid_from, 'SHORT_DATETIME_FORMAT'), gettext('From'))
+        else:
+            card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz, short=True), gettext('From'))
+        if order_position.valid_until:
+            if ev.seating_plan_id:
+                card.addBackField('doorsClose', date_format(order_position.valid_until, 'SHORT_DATETIME_FORMAT'), gettext('To'))
+            else:
+                card.addAuxiliaryField('doorsClose', date_format(order_position.valid_until, 'SHORT_DATETIME_FORMAT'), gettext('To'))
+        elif order.event.settings.show_date_to and ev.date_to:
             if ev.seating_plan_id:
                 card.addBackField('doorsClose', ev.get_date_to_display(tz, short=True), gettext('To'))
             else:
@@ -291,9 +299,17 @@ class PassbookOutput(BaseTicketOutput):
         passfile.description = gettext('Ticket for {event} ({product})').format(event=ev.name, product=ticket)
         passfile.barcode = Barcode(message=order_position.secret, format=BarcodeFormat.QR)
         passfile.barcode.altText = order_position.secret
+
         date_from_local_time = ev.date_from.astimezone(tz)
         date_to_local_time = ev.date_to.astimezone(tz) if ev.date_to else None
-        if order.event.settings.show_date_to and date_to_local_time and date_to_local_time.date() != date_from_local_time.date():
+
+        if order_position.valid_until and order_position.valid_from and order_position.valid_from.astimezone(tz).date() != order_position.valid_until.astimezone(tz):
+            passfile.exprirationDate = order_position.valid_until
+        elif order_position.valid_from:
+            passfile.relevantDate = order_position.valid_from
+            if order_position.valid_until:
+                passfile.exprirationDate = order_position.valid_until
+        elif order.event.settings.show_date_to and date_to_local_time and date_to_local_time.date() != date_from_local_time.date():
             passfile.exprirationDate = date_to_local_time.isoformat()
         else:
             passfile.relevantDate = date_from_local_time.isoformat()
