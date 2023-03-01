@@ -308,13 +308,13 @@ class PassbookOutput(BaseTicketOutput):
         date_to_local_time = ev.date_to.astimezone(tz) if ev.date_to else None
 
         if order_position.valid_until and order_position.valid_from and order_position.valid_from.astimezone(tz).date() != order_position.valid_until.astimezone(tz):
-            passfile.exprirationDate = order_position.valid_until
+            passfile.expirationDate = order_position.valid_until
         elif order_position.valid_from:
             passfile.relevantDate = order_position.valid_from
             if order_position.valid_until:
-                passfile.exprirationDate = order_position.valid_until
+                passfile.expirationDate = order_position.valid_until
         elif order.event.settings.show_date_to and date_to_local_time and date_to_local_time.date() != date_from_local_time.date():
-            passfile.exprirationDate = date_to_local_time.isoformat()
+            passfile.expirationDate = date_to_local_time.isoformat()
         else:
             passfile.relevantDate = date_from_local_time.isoformat()
 
