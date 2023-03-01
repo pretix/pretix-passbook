@@ -107,7 +107,10 @@ class PassbookOutput(BaseTicketOutput):
                      label=_('Pass background image'),
                      help_text='%s %s' % (
                          _('Display size is {} x {} pixels.').format(180, 220),
-                         _('We suggest an upload size of {} x {} pixels to support retina displays.').format(540, 660)
+                         _('We suggest an upload size of {} x {} pixels to support retina displays. '
+                           'Please note: iOS Wallet seems to ignore custom text color and uses white text '
+                           'if a background image is used. Please use a dark background '
+                           'image to provide sufficient text contrast.').format(540, 660)
                      ),
                      required=False,
                  )),
@@ -150,6 +153,7 @@ class PassbookOutput(BaseTicketOutput):
                     'fg_color',
                     forms.CharField(
                         label=_('Text color'),
+                        help_text=_('If you use a background image, iOS Wallet ignores the custom text color.'),
                         validators=[
                             RegexValidator(regex='^#[0-9a-fA-F]{6}$',
                                            message=_('Please enter the hexadecimal code of a color, e.g. #990000.')),
