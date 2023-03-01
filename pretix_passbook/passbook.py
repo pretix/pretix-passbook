@@ -15,7 +15,7 @@ from pretix.control.forms import ClearableBasenameFileInput
 from pretix.multidomain.urlreverse import build_absolute_uri
 from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
 
-from .forms import PNGImageField
+from pretix_passbook.forms import PNGImageField
 
 
 class PassbookOutput(BaseTicketOutput):
@@ -308,11 +308,11 @@ class PassbookOutput(BaseTicketOutput):
         date_to_local_time = ev.date_to.astimezone(tz) if ev.date_to else None
 
         if order_position.valid_until and order_position.valid_from and order_position.valid_from.astimezone(tz).date() != order_position.valid_until.astimezone(tz):
-            passfile.expirationDate = order_position.valid_until
+            passfile.expirationDate = order_position.valid_until.astimezone(tz).isoformat()
         elif order_position.valid_from:
-            passfile.relevantDate = order_position.valid_from
+            passfile.relevantDate = order_position.valid_from.astimezone(tz).isoformat()
             if order_position.valid_until:
-                passfile.expirationDate = order_position.valid_until
+                passfile.expirationDate = order_position.valid_until.astimezone(tz).isoformat()
         elif order.event.settings.show_date_to and date_to_local_time and date_to_local_time.date() != date_from_local_time.date():
             passfile.expirationDate = date_to_local_time.isoformat()
         else:
