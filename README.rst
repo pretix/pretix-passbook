@@ -52,7 +52,7 @@ You can then request a certificate using that CSR in your `Apple developer accou
     
 After generating the .pem file, upload it to pretix as passbook certificate.
 Make sure you have uploaded the key generated before (pass-pretix.key) and added the passbook CA of apple.
-Next add your Team ID in pretix and the passbook type id. This is your identifier, as example pass.pretix.example.
+Next add your Team ID in pretix and the passbook type id. The passbook type id is your identifier, as example pass.pretix.example. The Team ID can be found under "Organizational Unit" when opening the passbook certificate, e.g. with Keychain on MacOS.  
 If you have configured your private rsa key with a password you can provide it in pretix.
 
 Click on Save.
