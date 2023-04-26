@@ -259,14 +259,14 @@ class PassbookOutput(BaseTicketOutput):
             )
 
         if order_position.valid_from:
-            card.addAuxiliaryField('doorsOpen', date_format(order_position.valid_from, 'SHORT_DATETIME_FORMAT'), gettext('From'))
+            card.addAuxiliaryField('doorsOpen', date_format(order_position.valid_from.astimezone(tz), 'SHORT_DATETIME_FORMAT'), gettext('From'))
         else:
             card.addAuxiliaryField('doorsOpen', ev.get_date_from_display(tz, short=True), gettext('From'))
         if order_position.valid_until:
             if ev.seating_plan_id:
-                card.addBackField('doorsClose', date_format(order_position.valid_until, 'SHORT_DATETIME_FORMAT'), gettext('To'))
+                card.addBackField('doorsClose', date_format(order_position.valid_until.astimezone(tz), 'SHORT_DATETIME_FORMAT'), gettext('To'))
             else:
-                card.addAuxiliaryField('doorsClose', date_format(order_position.valid_until, 'SHORT_DATETIME_FORMAT'), gettext('To'))
+                card.addAuxiliaryField('doorsClose', date_format(order_position.valid_until.astimezone(tz), 'SHORT_DATETIME_FORMAT'), gettext('To'))
         elif order.event.settings.show_date_to and ev.date_to:
             if ev.seating_plan_id:
                 card.addBackField('doorsClose', ev.get_date_to_display(tz, short=True), gettext('To'))
