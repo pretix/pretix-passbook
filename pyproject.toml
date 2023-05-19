@@ -1,0 +1,45 @@
+[project]
+name = "pretix-passbook"
+dynamic = ["version"]
+description = "Passbook tickets for pretix"
+readme = "README.rst"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = ["pretix"]
+authors = [
+    {name = "pretix team", email = "support@pretix.eu"},
+]
+maintainers = [
+    {name = "pretix team", email = "support@pretix.eu"},
+]
+
+dependencies = [
+    "wallet-py3k",
+    "googlemaps",
+]
+
+[project.entry-points."pretix.plugin"]
+passbook = "pretix_passbook:PretixPluginMeta"
+
+[project.entry-points."distutils.commands"]
+build = "pretix_plugin_build.build:CustomBuild"
+
+[build-system]
+requires = [
+    "setuptools",
+    "pretix-plugin-build",
+    "wallet-py3k",
+]
+
+[project.urls]
+homepage = "https://github.com/pretix/pretix-passbook"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "pretix_passbook.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["pretix*"]
+namespaces = false
