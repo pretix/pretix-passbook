@@ -293,7 +293,7 @@ class PassbookOutput(BaseTicketOutput):
         passfile = Pass(
             card,
             passTypeIdentifier=order.event.settings.passbook_pass_type_id,
-            organizationName=order.event.settings.passbook_organizer_name,
+            organizationName=str(ev.name),
             teamIdentifier=order.event.settings.passbook_team_id,
         )
 
