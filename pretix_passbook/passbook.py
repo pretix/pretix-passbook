@@ -10,6 +10,7 @@ from django.core.validators import RegexValidator
 from django.utils.formats import date_format
 from django.utils.translation import gettext, gettext_lazy as _  # NOQA
 from pretix.base.models import OrderPosition
+from pretix.base.pdf import get_seat
 from pretix.base.ticketoutput import BaseTicketOutput
 from pretix.control.forms import ClearableBasenameFileInput
 from pretix.multidomain.urlreverse import build_absolute_uri
@@ -244,7 +245,8 @@ class PassbookOutput(BaseTicketOutput):
         card.addSecondaryField('ticket', ticket, gettext('Product'))
 
         if ev.seating_plan_id is not None:
-            if order_position.seat:
+            seat = get_seat(order_position)
+            if seat:
                 card.addAuxiliaryField('seat', str(order_position.seat), gettext('Seat'))
             else:
                 card.addAuxiliaryField('seat', gettext('General admission'), gettext('Seat'))
