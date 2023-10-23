@@ -6,14 +6,14 @@ from . import __version__
 
 
 class PassbookApp(AppConfig):
-    name = 'pretix_passbook'
-    verbose_name = 'Passbook Tickets'
+    name = "pretix_passbook"
+    verbose_name = "Passbook Tickets"
 
     class PretixPluginMeta:
-        name = gettext_lazy('Passbook Tickets')
-        author = 'Tobias Kunze, Raphael Michel'
-        description = gettext_lazy('Provides passbook tickets for pretix')
-        category = 'FORMAT'
+        name = gettext_lazy("Passbook Tickets")
+        author = "Tobias Kunze, Raphael Michel"
+        description = gettext_lazy("Provides passbook tickets for pretix")
+        category = "FORMAT"
         visible = True
         featured = True
         version = __version__
@@ -25,8 +25,9 @@ class PassbookApp(AppConfig):
     @cached_property
     def compatibility_errors(self):
         import shutil
+
         errs = []
-        if not shutil.which('openssl'):
+        if not shutil.which("openssl"):
             errs.append("The OpenSSL binary is not installed or not in the PATH.")
         return errs
 
@@ -36,5 +37,7 @@ class PassbookApp(AppConfig):
         try:
             from PIL import Image  # NOQA
         except ImportError:
-            errs.append("Pillow is not installed on this system, which is required for converting and scaling images.")
+            errs.append(
+                "Pillow is not installed on this system, which is required for converting and scaling images."
+            )
         return errs

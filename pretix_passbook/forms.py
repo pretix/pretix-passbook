@@ -14,9 +14,13 @@ def validate_rsa_privkey(value: str):
     value = value.strip()
     if not value:
         return
-    if not value.startswith('-----BEGIN RSA PRIVATE KEY-----') or not value.endswith('-----END RSA PRIVATE KEY-----'):
+    if not value.startswith("-----BEGIN RSA PRIVATE KEY-----") or not value.endswith(
+        "-----END RSA PRIVATE KEY-----"
+    ):
         raise ValidationError(
-            _('This does not look like a RSA private key in PEM format (it misses the begin or end signifiers)'),
+            _(
+                "This does not look like a RSA private key in PEM format (it misses the begin or end signifiers)"
+            ),
         )
 
 
@@ -26,19 +30,22 @@ class CertificateFileField(forms.FileField):
     def clean(self, value, *args, **kwargs):
         value = super().clean(value, *args, **kwargs)
         if isinstance(value, UploadedFile):
-            value.open('rb')
+            value.open("rb")
             value.seek(0)
             content = value.read()
-            if content.startswith(b'-----BEGIN CERTIFICATE-----') and b'-----BEGIN CERTIFICATE-----' in content:
-                return SimpleUploadedFile('cert.pem', content, 'text/plain')
+            if (
+                content.startswith(b"-----BEGIN CERTIFICATE-----")
+                and b"-----BEGIN CERTIFICATE-----" in content
+            ):
+                return SimpleUploadedFile("cert.pem", content, "text/plain")
 
             openssl_cmd = [
-                'openssl',
-                'x509',
-                '-inform',
-                'DER',
-                '-outform',
-                'PEM',
+                "openssl",
+                "x509",
+                "-inform",
+                "DER",
+                "-outform",
+                "PEM",
             ]
             process = subprocess.Popen(
                 openssl_cmd,
@@ -49,12 +56,14 @@ class CertificateFileField(forms.FileField):
             process.stdin.write(content)
             pem, error = process.communicate()
             if process.returncode != 0:
-                logger.info('Trying to convert a DER to PEM failed: {}'.format(error))
+                logger.info("Trying to convert a DER to PEM failed: {}".format(error))
                 raise ValidationError(
-                    _('This does not look like a X509 certificate in either PEM or DER format'),
+                    _(
+                        "This does not look like a X509 certificate in either PEM or DER format"
+                    ),
                 )
 
-            return SimpleUploadedFile('cert.pem', pem, 'text/plain')
+            return SimpleUploadedFile("cert.pem", pem, "text/plain")
         return value
 
 
@@ -69,17 +78,21 @@ class PNGImageField(forms.FileField):
             except ImportError:
                 return value
 
-            value.open('rb')
+            value.open("rb")
             value.seek(0)
             try:
-                with Image.open(value) as im, tempfile.NamedTemporaryFile('rb', suffix='.png') as tmpfile:
+                with Image.open(value) as im, tempfile.NamedTemporaryFile(
+                    "rb", suffix=".png"
+                ) as tmpfile:
                     im.save(tmpfile.name)
                     tmpfile.seek(0)
-                    return SimpleUploadedFile('picture.png', tmpfile.read(), 'image png')
+                    return SimpleUploadedFile(
+                        "picture.png", tmpfile.read(), "image png"
+                    )
             except IOError:
-                logger.exception('Could not convert image to PNG.')
+                logger.exception("Could not convert image to PNG.")
                 raise ValidationError(
-                    _('The file you uploaded could not be converted to PNG format.')
+                    _("The file you uploaded could not be converted to PNG format.")
                 )
 
         return value
