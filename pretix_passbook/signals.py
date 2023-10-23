@@ -27,10 +27,6 @@ def register_global_settings(sender, **kwargs):
             label=_('Passbook type'),
             required=False,
         )),
-        ('passbook_organizer_name', forms.CharField(
-            label=_('Passbook organizer name'),
-            required=False,
-        )),
         ('passbook_certificate_file', CertificateFileField(
             label=_('Passbook certificate file'),
             required=False,
