@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy
+
 from . import __version__
 
 
@@ -37,5 +38,3 @@ class PassbookApp(AppConfig):
         except ImportError:
             errs.append("Pillow is not installed on this system, which is required for converting and scaling images.")
         return errs
-
-

@@ -1,8 +1,8 @@
-import tempfile
-from collections import OrderedDict
 from typing import Tuple
 
 import pytz
+import tempfile
+from collections import OrderedDict
 from django import forms
 from django.contrib.staticfiles import finders
 from django.core.files.storage import default_storage
@@ -309,7 +309,10 @@ class PassbookOutput(BaseTicketOutput):
         date_from_local_time = ev.date_from.astimezone(tz)
         date_to_local_time = ev.date_to.astimezone(tz) if ev.date_to else None
 
-        if order_position.valid_until and order_position.valid_from and order_position.valid_from.astimezone(tz).date() != order_position.valid_until.astimezone(tz):
+        if (
+            order_position.valid_until and order_position.valid_from
+            and order_position.valid_from.astimezone(tz).date() != order_position.valid_until.astimezone(tz)
+        ):
             passfile.expirationDate = order_position.valid_until.astimezone(tz).isoformat()
         elif order_position.valid_from:
             passfile.relevantDate = order_position.valid_from.astimezone(tz).isoformat()

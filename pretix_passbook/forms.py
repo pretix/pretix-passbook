@@ -1,7 +1,6 @@
 import logging
 import subprocess
 import tempfile
-
 from django import forms
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile, UploadedFile
