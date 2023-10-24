@@ -321,7 +321,7 @@ class PassbookOutput(BaseTicketOutput):
             seat = get_seat(order_position)
             if seat:
                 card.addAuxiliaryField(
-                    "seat", str(order_position.seat), gettext("Seat")
+                    "seat", str(seat), gettext("Seat")
                 )
             else:
                 card.addAuxiliaryField(
