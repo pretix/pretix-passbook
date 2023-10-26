@@ -555,9 +555,9 @@ class PassbookOutput(BaseTicketOutput):
         with tempfile.NamedTemporaryFile(
             "w", encoding="utf-8"
         ) as keyfile, tempfile.NamedTemporaryFile(
-            "w", encoding="utf-8"
+            "wb" #, encoding="utf-8"
         ) as certfile, tempfile.NamedTemporaryFile(
-            "w", encoding="utf-8"
+            "wb" #, encoding="utf-8"
         ) as cafile:
             certfile.write(order.event.settings.passbook_certificate_file.read())
             certfile.flush()
