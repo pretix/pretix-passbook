@@ -320,9 +320,7 @@ class PassbookOutput(BaseTicketOutput):
         if ev.seating_plan_id is not None:
             seat = get_seat(order_position)
             if seat:
-                card.addAuxiliaryField(
-                    "seat", str(seat), gettext("Seat")
-                )
+                card.addAuxiliaryField("seat", str(seat), gettext("Seat"))
             else:
                 card.addAuxiliaryField(
                     "seat", gettext("General admission"), gettext("Seat")

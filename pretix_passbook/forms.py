@@ -2,6 +2,7 @@ import logging
 import subprocess
 import tempfile
 from django import forms
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile, UploadedFile
 from django.utils.translation import gettext_lazy as _
@@ -81,9 +82,9 @@ class PNGImageField(forms.FileField):
             value.open("rb")
             value.seek(0)
             try:
-                with Image.open(value) as im, tempfile.NamedTemporaryFile(
-                    "rb", suffix=".png"
-                ) as tmpfile:
+                with Image.open(
+                    value, formats=settings.PILLOW_FORMATS_IMAGE
+                ) as im, tempfile.NamedTemporaryFile("rb", suffix=".png") as tmpfile:
                     im.save(tmpfile.name)
                     tmpfile.seek(0)
                     return SimpleUploadedFile(
