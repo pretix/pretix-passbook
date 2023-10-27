@@ -5,6 +5,7 @@ import tempfile
 from collections import OrderedDict
 from django import forms
 from django.contrib.staticfiles import finders
+from django.core.files import File
 from django.core.files.storage import default_storage
 from django.core.validators import RegexValidator
 from django.utils.formats import date_format
@@ -559,10 +560,10 @@ class PassbookOutput(BaseTicketOutput):
         ) as certfile, tempfile.NamedTemporaryFile(
             "wb" #, encoding="utf-8"
         ) as cafile:
-            certfile.write(order.event.settings.passbook_certificate_file.read())
+            certfile.write(order.event.settings.get("passbook_certificate_file", as_type=File, binary_file=True).read())
             certfile.flush()
 
-            cafile.write(order.event.settings.passbook_wwdr_certificate_file.read())
+            cafile.write(order.event.settings.get("passbook_wwdr_certificate_file", as_type=File, binary_file=True).read())
             cafile.flush()
 
             keyfile.write(order.event.settings.passbook_key)
