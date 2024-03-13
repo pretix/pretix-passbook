@@ -262,7 +262,7 @@ class PassbookOutput(BaseTicketOutput):
             ]
         )
 
-    def generate(self, order_position: OrderPosition) -> Tuple[str, str, str]:
+    def generate_pass(self, order_position: OrderPosition):
         order = order_position.order
         ev = order_position.subevent or order.event
         tz = pytz.timezone(order.event.settings.timezone)
@@ -443,15 +443,11 @@ class PassbookOutput(BaseTicketOutput):
             and order_position.valid_from.astimezone(tz).date()
             != order_position.valid_until.astimezone(tz)
         ):
-            passfile.expirationDate = order_position.valid_until.astimezone(
-                tz
-            ).isoformat()
+            passfile.expirationDate = order_position.valid_until.astimezone(tz).isoformat()
         elif order_position.valid_from:
             passfile.relevantDate = order_position.valid_from.astimezone(tz).isoformat()
             if order_position.valid_until:
-                passfile.expirationDate = order_position.valid_until.astimezone(
-                    tz
-                ).isoformat()
+                passfile.expirationDate = order_position.valid_until.astimezone(tz).isoformat()
         elif (
             order.event.settings.show_date_to
             and date_to_local_time
@@ -550,7 +546,11 @@ class PassbookOutput(BaseTicketOutput):
         passfile.labelColor = self.event.settings.get(
             "ticketoutput_passbook_label_color"
         )
+        return passfile
 
+    def generate(self, order_position: OrderPosition) -> Tuple[str, str, str]:
+        order = order_position.order
+        passfile = self.generate_pass(order_position)
         filename = "{}-{}.pkpass".format(order.event.slug, order.code)
 
         with tempfile.NamedTemporaryFile(
