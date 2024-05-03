@@ -1,7 +1,10 @@
 from collections import OrderedDict
 from django import forms
+from django.core.files import File
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
+
+from pretix.base.settings import settings_hierarkey
 from pretix.base.signals import register_global_settings, register_ticket_outputs
 
 from .forms import CertificateFileField, validate_rsa_privkey
@@ -72,3 +75,16 @@ def register_global_settings(sender, **kwargs):
             ),
         ]
     )
+
+
+settings_hierarkey.add_default('passbook_certificate_file', None, File)
+settings_hierarkey.add_default('passbook_wwdr_certificate_file', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_background', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_background2x', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_background3x', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_icon', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_icon2x', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_icon3x', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_logo', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_logo2x', None, File)
+settings_hierarkey.add_default('ticketoutput_passbook_logo3x', None, File)
