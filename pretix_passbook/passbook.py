@@ -326,7 +326,8 @@ class PassbookOutput(BaseTicketOutput):
                 card.addAuxiliaryField(
                     "seat", gettext("General admission"), gettext("Seat")
                 )
-        elif order_position.attendee_name:
+
+        if order_position.attendee_name:
             card.addAuxiliaryField(
                 "name", order_position.attendee_name, gettext("Attendee name")
             )
