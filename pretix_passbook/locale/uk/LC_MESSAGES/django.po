@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2024-05-03 00:00+0000\n"
+"PO-Revision-Date: 2024-05-07 23:00+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/uk/>\n"
@@ -109,7 +109,7 @@ msgstr "Подія"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr ""
+msgstr "Товар"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
