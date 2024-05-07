@@ -394,6 +394,11 @@ class PassbookOutput(BaseTicketOutput):
                 gettext("Organizer contact"),
             )
         card.addBackField("orderCode", order.code, gettext("Order code"))
+        card.addBackField(
+            "purchaseDate",
+            date_format(order.datetime.astimezone(tz), "SHORT_DATETIME_FORMAT"),
+            gettext("Purchase date"),
+        )
 
         if order_position.subevent:
             card.addBackField(
