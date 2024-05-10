@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2024-05-07 23:00+0000\n"
+"PO-Revision-Date: 2024-05-10 20:00+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/uk/>\n"
@@ -22,33 +22,35 @@ msgstr ""
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
-msgstr ""
+msgstr "Квитки Passbook"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr ""
+msgstr "Додає можливість передачі квитків між passbook та pretix"
 
 #: pretix_passbook/forms.py:20
 msgid ""
 "This does not look like a RSA private key in PEM format (it misses the begin "
 "or end signifiers)"
 msgstr ""
+"Це не виглядає як приватний ключ RSA у форматі PEM (відсутні символи початку "
+"або кінця)"
 
 #: pretix_passbook/forms.py:55
 msgid "This does not look like a X509 certificate in either PEM or DER format"
-msgstr ""
+msgstr "Це не схоже на сертифікат X509 у форматі PEM або DER"
 
 #: pretix_passbook/forms.py:83
 msgid "The file you uploaded could not be converted to PNG format."
-msgstr ""
+msgstr "Завантажений файл не можна перетворити на файл PNG."
 
 #: pretix_passbook/passbook.py:24
 msgid "Wallet/Passbook"
-msgstr ""
+msgstr "Wallet/Passbook"
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
-msgstr ""
+msgstr "Я хочу масштабувати графіку самостійно"
 
 #: pretix_passbook/passbook.py:34
 msgid ""
@@ -57,10 +59,15 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"У деяких випадках зменшення масштабу графіки, виконане програмою Wallet, не "
+"достатньо якісне. Установивши цей прапорець, Ви можете надати попередньо "
+"зроблені файли у правильних розмірах.<br><br>Якщо Ви це обираєте, будь "
+"ласка, завантажуйте зображення лише у звичайному розмірі дисплея, а не у "
+"збільшеному розмірі матриці."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
-msgstr ""
+msgstr "Іконка події"
 
 #: pretix_passbook/passbook.py:46 pretix_passbook/passbook.py:54
 #: pretix_passbook/passbook.py:65 pretix_passbook/passbook.py:77
@@ -68,40 +75,42 @@ msgstr ""
 #: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
 #: pretix_passbook/passbook.py:127
 msgid "Display size is {} x {} pixels."
-msgstr ""
+msgstr "Роздільна здатність екрана становить {} x {} пікселів."
 
 #: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
 #: pretix_passbook/passbook.py:109
 msgid "We suggest an upload size of {} x {} pixels to support retina displays."
 msgstr ""
+"Для підтримки дисплеїв Retina ми радимо завантажувати в розмірі {} x {} "
+"пікселів."
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr ""
+msgstr "Іконка події для дисплеїв Retina {}x"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
-msgstr ""
+msgstr "Логотип події"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr ""
+msgstr "Логотип події для дисплеїв Retina {}x"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
-msgstr ""
+msgstr "Фонове зображення"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
 msgid "Pass background image for Retina {}x displays"
-msgstr ""
+msgstr "Фонове зображення для дисплеїв Retina {}x"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
-msgstr ""
+msgstr "Розташування події (широта)"
 
 #: pretix_passbook/passbook.py:142
 msgid "Event location (longitude)"
-msgstr ""
+msgstr "Розташування події (довгота)"
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
@@ -109,35 +118,35 @@ msgstr "Подія"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr "Товар"
+msgstr "Продукт"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
-msgstr ""
+msgstr "Ім'я учасника"
 
 #: pretix_passbook/passbook.py:165
 msgid "Ordered by"
-msgstr ""
+msgstr "Замовник"
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
-msgstr ""
+msgstr "Організатор"
 
 #: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
-msgstr ""
+msgstr "Контакти організатора"
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr ""
+msgstr "Код замовлення"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
-msgstr ""
+msgstr "Від"
 
 #: pretix_passbook/passbook.py:173
 msgid "To"
-msgstr ""
+msgstr "До"
 
 #: pretix_passbook/passbook.py:178 pretix_passbook/passbook.py:180
 msgid "Website"
