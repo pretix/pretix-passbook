@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2024-05-10 20:00+0000\n"
+"PO-Revision-Date: 2024-05-12 06:00+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/uk/>\n"
@@ -150,72 +150,74 @@ msgstr "До"
 
 #: pretix_passbook/passbook.py:178 pretix_passbook/passbook.py:180
 msgid "Website"
-msgstr ""
+msgstr "Вебсайт"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr ""
+msgstr "Зона"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr ""
+msgstr "Ряд"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr ""
+msgstr "Місце"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr ""
+msgstr "Вільне місце"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
 msgid "Ticket for {event} ({product})"
-msgstr ""
+msgstr "Квиток на {event} {product}"
 
 #: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
-msgstr ""
+msgstr "ID команди у Passbook"
 
 #: pretix_passbook/signals.py:27
 msgid "Passbook type"
-msgstr ""
+msgstr "Тип Passbook"
 
 #: pretix_passbook/signals.py:31
 msgid "Passbook organizer name"
-msgstr ""
+msgstr "Назва організатора у Passbook"
 
 #: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
-msgstr ""
+msgstr "Файл сертифіката Passbook"
 
 #: pretix_passbook/signals.py:39
 msgid "Passbook CA Certificate"
-msgstr ""
+msgstr "CA-Сертифікат Passbook"
 
 #: pretix_passbook/signals.py:40
 msgid ""
 "You can download the current CA certificate from apple at https://www."
 "apple.com/certificateauthority/AppleWWDRCAG4.cer"
 msgstr ""
+"Поточний CA-Сертифікат від Apple можна звантажити з https://www.apple.com/"
+"certificateauthority/AppleWWDRCAG4.cer"
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"
-msgstr ""
+msgstr "Секретний ключ Passbook"
 
 #: pretix_passbook/signals.py:51
 msgid "Passbook key password"
-msgstr ""
+msgstr "Пароль від ключа Passbook"
 
 #: pretix_passbook/signals.py:54
 msgid ""
 "Optional, only necessary if the key entered above requires a password to use."
-msgstr ""
+msgstr "Додатково, лише у випадку, коли доданий ключ вимагає пароль."
 
 #: pretix_passbook/signals.py:57
 msgid "Google Geocoding API key"
-msgstr ""
+msgstr "Ключ API Google Geocoding"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
-msgstr ""
+msgstr "Додатково, лише якщо необхідно автоматично знаходити координати."
