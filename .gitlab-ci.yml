@@ -1,17 +1,16 @@
 pypi:
+    image:
+        name: pretix/ci-image
+    before_script:
+        - cat $PYPIRC > ~/.pypirc
+        - pip install -U pip uv
+        - uv pip install --system -U wheel setuptools twine build pretix-plugin-build check-manifest
     script:
-        - cp /keys/.pypirc ~/.pypirc
-        - virtualenv /tmp/env
-        - source /tmp/env/bin/activate
-        - XDG_CACHE_HOME=/cache pip3 install -U pip wheel setuptools twine build pretix-plugin-build check-manifest
         - python -m build
         - check-manifest .
         - twine check dist/*
         - twine upload dist/*
-    tags:
-        - python3
     only:
-        - release
         - pypi
     artifacts:
         paths:
