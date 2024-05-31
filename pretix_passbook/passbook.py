@@ -448,11 +448,15 @@ class PassbookOutput(BaseTicketOutput):
             and order_position.valid_from.astimezone(tz).date()
             != order_position.valid_until.astimezone(tz)
         ):
-            passfile.expirationDate = order_position.valid_until.astimezone(tz).isoformat()
+            passfile.expirationDate = order_position.valid_until.astimezone(
+                tz
+            ).isoformat()
         elif order_position.valid_from:
             passfile.relevantDate = order_position.valid_from.astimezone(tz).isoformat()
             if order_position.valid_until:
-                passfile.expirationDate = order_position.valid_until.astimezone(tz).isoformat()
+                passfile.expirationDate = order_position.valid_until.astimezone(
+                    tz
+                ).isoformat()
         elif (
             order.event.settings.show_date_to
             and date_to_local_time
@@ -558,17 +562,23 @@ class PassbookOutput(BaseTicketOutput):
         passfile = self.generate_pass(order_position)
         filename = "{}-{}.pkpass".format(order.event.slug, order.code)
 
-        with tempfile.NamedTemporaryFile(
-            "w", encoding="utf-8"
-        ) as keyfile, tempfile.NamedTemporaryFile(
-            "wb" #, encoding="utf-8"
-        ) as certfile, tempfile.NamedTemporaryFile(
-            "wb" #, encoding="utf-8"
-        ) as cafile:
-            certfile.write(order.event.settings.get("passbook_certificate_file", as_type=File, binary_file=True).read())
+        with (
+            tempfile.NamedTemporaryFile("w", encoding="utf-8") as keyfile,
+            tempfile.NamedTemporaryFile("wb") as certfile,  # , encoding="utf-8"
+            tempfile.NamedTemporaryFile("wb") as cafile,  # , encoding="utf-8"
+        ):
+            certfile.write(
+                order.event.settings.get(
+                    "passbook_certificate_file", as_type=File, binary_file=True
+                ).read()
+            )
             certfile.flush()
 
-            cafile.write(order.event.settings.get("passbook_wwdr_certificate_file", as_type=File, binary_file=True).read())
+            cafile.write(
+                order.event.settings.get(
+                    "passbook_wwdr_certificate_file", as_type=File, binary_file=True
+                ).read()
+            )
             cafile.flush()
 
             keyfile.write(order.event.settings.passbook_key)

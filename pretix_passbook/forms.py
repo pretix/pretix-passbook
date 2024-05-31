@@ -82,9 +82,10 @@ class PNGImageField(forms.FileField):
             value.open("rb")
             value.seek(0)
             try:
-                with Image.open(
-                    value, formats=settings.PILLOW_FORMATS_IMAGE
-                ) as im, tempfile.NamedTemporaryFile("rb", suffix=".png") as tmpfile:
+                with (
+                    Image.open(value, formats=settings.PILLOW_FORMATS_IMAGE) as im,
+                    tempfile.NamedTemporaryFile("rb", suffix=".png") as tmpfile,
+                ):
                     im.save(tmpfile.name)
                     tmpfile.seek(0)
                     return SimpleUploadedFile(
