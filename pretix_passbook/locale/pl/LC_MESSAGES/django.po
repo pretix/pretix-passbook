@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2019-09-24 19:00+0000\n"
-"Last-Translator: Serge Bazanski <q3k@hackerspace.pl>\n"
+"PO-Revision-Date: 2024-06-27 19:00+0000\n"
+"Last-Translator: Anarion Dunedain <anarion80@gmail.com>\n"
 "Language-Team: Polish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/pl/>\n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 5.6.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -59,11 +59,11 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
-"W niektórych przypadkach jakość zmniejszenia rozmiaru grafiki dokonane przez "
+"W niektórych przypadkach jakość zmniejszenia rozmiaru grafiki dokonana przez "
 "aplikację Wallet jest niesatysfakcjonująca. Zaznaczając to pole możesz sam(a)"
-" dostarczyć  pre-skalowane (zmniejszone) pliki we właściwych "
+" dostarczyć pre-skalowane (zmniejszone) pliki we właściwych "
 "rozmiarach.<br><br>Jeśli ta opcja zostanie wybrana, wyślij tylko pliki w "
-"standardowej roździelczości, nie w roździelczości retina."
+"standardowej rozdzielczości, nie w rozdzielczości retina."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
@@ -121,7 +121,7 @@ msgstr "Produkt"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
-msgstr "Imię uczestnika"
+msgstr "Imię i nazwisko uczestnika"
 
 #: pretix_passbook/passbook.py:165
 msgid "Ordered by"
