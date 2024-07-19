@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2024-06-24 23:00+0000\n"
+"PO-Revision-Date: 2024-07-19 11:00+0000\n"
 "Last-Translator: Reece Needham <nouveaureece@protonmail.com>\n"
 "Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -137,7 +137,7 @@ msgstr "Contacto del organizador"
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr "Código de la orden"
+msgstr "Código del pedido"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
