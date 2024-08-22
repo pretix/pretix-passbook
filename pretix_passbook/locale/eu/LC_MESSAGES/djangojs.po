@@ -8,24 +8,28 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-08-22 19:00+0000\n"
+"Last-Translator: Albizuri <oier@puntu.eus>\n"
+"Language-Team: Basque <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook-js/eu/>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.7\n"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:4
 msgid "Loading suggested geolocations…"
-msgstr ""
+msgstr "Iradokitako geolokalizazioak kargatzen …"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:13
 msgid ""
 "Click on one of the following suggestions to fill in the coordinates "
 "automatically:"
 msgstr ""
+"Egin klik iradokizun hauetako batean koordenatuak automatikoki betetzeko:"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:35
 msgid "Error while loading suggested geolocations."
-msgstr ""
+msgstr "Errorea iradokitako geolokalizazioak kargatzean."
