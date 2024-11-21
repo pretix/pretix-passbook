@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2024-11-16 08:00+0000\n"
+"PO-Revision-Date: 2024-11-21 23:00+0000\n"
 "Last-Translator: CVZ-es <damien.bremont@casadevelazquez.org>\n"
 "Language-Team: French <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/fr/>\n"
@@ -91,7 +91,7 @@ msgstr "Icône de l'événement pour affichage Retina {}x"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
-msgstr "Logo de l’événement"
+msgstr "Logo de l'événement"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
