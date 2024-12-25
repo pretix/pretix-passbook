@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2024-12-25 12:08+0000\n"
+"PO-Revision-Date: 2024-12-25 21:00+0000\n"
 "Last-Translator: Hijiri <7m4gmh@gmail.com>\n"
 "Language-Team: Japanese <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/ja/>\n"
@@ -57,10 +57,15 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"インスタンスによっては、ウォレットアプリで縮小される画像は、十分満足なもので"
+"はありません。このチェックボックスの選択で、あらかじめ正しい縮尺に変更したフ"
+"ァイルを提供することができます。<br><br>これを選択する場合、アップロードする"
+"画像は一般的なディスプレイサイズの画像を使用し、Retina用のサイズに拡大したも"
+"のは使用しないでください。"
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
-msgstr ""
+msgstr "イベント・アイコン"
 
 #: pretix_passbook/passbook.py:46 pretix_passbook/passbook.py:54
 #: pretix_passbook/passbook.py:65 pretix_passbook/passbook.py:77
@@ -68,48 +73,49 @@ msgstr ""
 #: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
 #: pretix_passbook/passbook.py:127
 msgid "Display size is {} x {} pixels."
-msgstr ""
+msgstr "表示サイズは、 {} x {} ピクセルです。"
 
 #: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
 #: pretix_passbook/passbook.py:109
 msgid "We suggest an upload size of {} x {} pixels to support retina displays."
-msgstr ""
+msgstr "Retinaディスプレイに対応するためには、アップロードするファイルのサイズを {} "
+"x {} ピクセルにすることをお勧めします。"
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr ""
+msgstr "Retina {}x ディスプレイ用のイベント・アイコン"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
-msgstr ""
+msgstr "イベント・ロゴ"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr ""
+msgstr "Retina {}x ディスプレイ用のイベント・ロゴ"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
-msgstr ""
+msgstr "パスの背景画像"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
 msgid "Pass background image for Retina {}x displays"
-msgstr ""
+msgstr "Retina {}x ディスプレイ用のパスの背景画像"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
-msgstr ""
+msgstr "イベントの場所（緯度）"
 
 #: pretix_passbook/passbook.py:142
 msgid "Event location (longitude)"
-msgstr ""
+msgstr "イベントの場所（経度）"
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
-msgstr ""
+msgstr "イベント"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr ""
+msgstr "商品"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
@@ -153,60 +159,62 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr ""
+msgstr "座席"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr ""
+msgstr "一般入場"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
 msgid "Ticket for {event} ({product})"
-msgstr ""
+msgstr "{event}の ({product})のためのチケット"
 
 #: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
-msgstr ""
+msgstr "パスブック・チームID"
 
 #: pretix_passbook/signals.py:27
 msgid "Passbook type"
-msgstr ""
+msgstr "パスブックの種類"
 
 #: pretix_passbook/signals.py:31
 msgid "Passbook organizer name"
-msgstr ""
+msgstr "パスブック主催者名"
 
 #: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
-msgstr ""
+msgstr "パスブック認証ファイル"
 
 #: pretix_passbook/signals.py:39
 msgid "Passbook CA Certificate"
-msgstr ""
+msgstr "パスブックCA証明書"
 
 #: pretix_passbook/signals.py:40
 msgid ""
 "You can download the current CA certificate from apple at https://www."
 "apple.com/certificateauthority/AppleWWDRCAG4.cer"
 msgstr ""
+"Appleの現在のCA証明書は、こちらからダウンロードできます https://"
+"www.apple.com/certificateauthority/AppleWWDRCAG4.cer"
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"
-msgstr ""
+msgstr "パスブックの秘密鍵"
 
 #: pretix_passbook/signals.py:51
 msgid "Passbook key password"
-msgstr ""
+msgstr "パスブック・キーのパスワード"
 
 #: pretix_passbook/signals.py:54
 msgid ""
 "Optional, only necessary if the key entered above requires a password to use."
-msgstr ""
+msgstr "オプションで、上で入力したキーがパスワードを要求した場合にのみ必要。"
 
 #: pretix_passbook/signals.py:57
 msgid "Google Geocoding API key"
-msgstr ""
+msgstr "Google Geocoding API キー"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
-msgstr ""
+msgstr "オプションで、コーディネートを自動で見つける場合のみ。"
