@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-12-27 18:00+0000\n"
+"Last-Translator: Hijiri Umemoto <hijiri@umemoto.org>\n"
+"Language-Team: Japanese <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook-js/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:4
 msgid "Loading suggested geolocations…"
-msgstr ""
+msgstr "提案するジオロケーションをロード中…"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:13
 msgid ""
 "Click on one of the following suggestions to fill in the coordinates "
 "automatically:"
-msgstr ""
+msgstr "次の提案のいずれかをクリックすると、座標が自動的に入力されます:"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:35
 msgid "Error while loading suggested geolocations."
-msgstr ""
+msgstr "提案されたジオロケーションの読み込み中にエラーが発生しました。"
