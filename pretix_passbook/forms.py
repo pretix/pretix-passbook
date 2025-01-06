@@ -1,4 +1,5 @@
 import logging
+import re
 import subprocess
 import tempfile
 import re
@@ -16,7 +17,7 @@ def validate_rsa_privkey(value: str):
     value = value.strip()
     if not value:
         return
-    if not match(r"^-----BEGIN( (RSA |ENCRYPTED )?PRIVATE KEY-----).*-----END\1$",value,re.DOTALL):
+    if not re.match(r"^-----BEGIN( (RSA |ENCRYPTED )?PRIVATE KEY-----).*-----END\1$", value, re.DOTALL):
         raise ValidationError(
             _(
                 "This does not look like an RSA private key in PEM format (it misses the correct begin or end signifiers)"
