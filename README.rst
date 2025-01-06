@@ -57,7 +57,7 @@ Obtaining *Pass Type ID certificates* and configuring them in pretix
     - Add the Pass Type ID  
       (The Pass Type ID is your identifier, for example ``pass.pretix.example``)
     - Upload the *Pass Type ID certificate* (``pass-pretix.pem``)
-    - Add the right *Apple Intermediate Certificate* for your certificate 
+    - Add the right *Apple Intermediate Certificate* for your certificate to *Passbook CA of Apple*  
       (You can download the current certificate from Apple at https://www.apple.com/certificateauthority/AppleWWDRCAG4.cer)
     - Paste the *RSA private key* (``pass-pretix.key``) into the secret key field
     - If you have configured your *RSA private key* with a password, it is necessary to provide it in pretix
@@ -77,3 +77,4 @@ Released under the terms of the Apache License 2.0
 .. _pretix: https://github.com/pretix/pretix
 .. _Code of Conduct: https://docs.pretix.eu/en/latest/development/contribution/codeofconduct.html
 .. _pretix development setup: https://docs.pretix.eu/en/latest/development/setup.html
+
