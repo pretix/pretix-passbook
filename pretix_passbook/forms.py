@@ -2,7 +2,6 @@ import logging
 import re
 import subprocess
 import tempfile
-import re
 from django import forms
 from django.conf import settings
 from django.core.exceptions import ValidationError

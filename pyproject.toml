@@ -1,7 +1,7 @@
 [project]
 name = "pretix-passbook"
 dynamic = ["version"]
-description = "Passbook tickets for pretix"
+description = "Apple Wallet tickets for pretix"
 readme = "README.rst"
 requires-python = ">=3.9"
 license = {file = "LICENSE"}
