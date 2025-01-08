@@ -77,4 +77,3 @@ Released under the terms of the Apache License 2.0
 .. _pretix: https://github.com/pretix/pretix
 .. _Code of Conduct: https://docs.pretix.eu/en/latest/development/contribution/codeofconduct.html
 .. _pretix development setup: https://docs.pretix.eu/en/latest/development/setup.html
-
