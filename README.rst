@@ -37,7 +37,7 @@ Development setup
 
 
 Obtaining *Pass Type ID certificates* and configuring them in pretix
-------------------------------------------------------------------
+--------------------------------------------------------------------
 
 1. To obtain a *Pass Type ID certificate* you need to generate an *RSA private key* and a certificate signing request (CSR) using::
 
