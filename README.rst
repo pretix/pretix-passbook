@@ -36,16 +36,16 @@ Development setup
    the 'plugins' tab in the settings.
 
 
-Obtaining Pass Type ID certificates and configuring them in pretix
+Obtaining *Pass Type ID certificates* and configuring them in pretix
 ------------------------------------------------------------------
 
-1. To obtain a *Pass Type ID certificate* you need to generate an RSA private key and a certificate signing request (CSR) using::
+1. To obtain a *Pass Type ID certificate* you need to generate an *RSA private key* and a certificate signing request (CSR) using::
 
     export CERT_NAME=pass-pretix
     openssl genpkey -out $CERT_NAME.key -algorithm RSA -pkeyopt rsa_keygen_bits:2048
     openssl req -new -key $CERT_NAME.key -out $CERT_NAME.csr
 
-2. Request a *Pass Type ID certificate* using this CSR in your `Apple developer account`_ and download the certificate (as pass-pretix.cer)
+2. Request a *Pass Type ID certificate* using the CSR (``pass-pretix.csr``) in your `Apple developer account`_ and download the certificate (as ``pass-pretix.cer``)
 
 3. Convert the downloaded certificate to PEM format::
 
@@ -53,14 +53,14 @@ Obtaining Pass Type ID certificates and configuring them in pretix
     
 4. Setup your *Pass Type ID certificate* in pretix within global settings
     - Add your Team ID  
-      (The Team ID can be found under "Organizational Unit" when opening the passbook certificate, e.g. with Keychain on MacOS or you can find it in your `Apple developer account`_)
+      (The Team ID can be found under "Organizational Unit" when opening the certificate, e.g. with Keychain on MacOS or you can find it in your `Apple developer account`_)
     - Add the Pass Type ID  
-      (The Pass Type ID is your identifier, for example pass.pretix.example)
-    - Upload the *Pass Type ID certificate* (pass-pretix.pem)
+      (The Pass Type ID is your identifier, for example ``pass.pretix.example``)
+    - Upload the *Pass Type ID certificate* (``pass-pretix.pem``)
     - Add the right *Apple Intermediate Certificate* for your certificate to *Passbook CA of Apple*  
       (You can download the current certificate from Apple at https://www.apple.com/certificateauthority/AppleWWDRCAG4.cer)
-    - Paste the *RSA private key* (pass-pretix.key) into the secret key field
-    - If you have configured your RSA private key with a password, it is necessary to provide it in pretix
+    - Paste the *RSA private key* (``pass-pretix.key``) into the secret key field
+    - If you have configured your *RSA private key* with a password, it is necessary to provide it in pretix
     - Click on `Save`
 
 Enjoy!
