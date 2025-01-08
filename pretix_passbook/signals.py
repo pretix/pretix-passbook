@@ -23,30 +23,38 @@ def register_global_settings(sender, **kwargs):
             (
                 "passbook_team_id",
                 forms.CharField(
-                    label=_("Passbook team ID"),
+                    label=_("Passbook: Team ID"),
+                    help_text=_(
+                        "The Team ID can be found under 'Organizational Unit' when "
+                        "opening the certificate, e.g. with Keychain on MacOS or you "
+                        "can find it in your Apple developer account"
+                    ),
                     required=False,
                 ),
             ),
             (
                 "passbook_pass_type_id",
                 forms.CharField(
-                    label=_("Passbook type"),
+                    label=_("Passbook: Pass Type ID"),
+                    help_text=_(
+                        "The Pass Type ID is your identifier, for example pass.pretix.example"
+                    ),
                     required=False,
                 ),
             ),
             (
                 "passbook_certificate_file",
                 CertificateFileField(
-                    label=_("Passbook certificate file"),
+                    label=_("Passbook: Pass Type ID Certificate"),
                     required=False,
                 ),
             ),
             (
                 "passbook_wwdr_certificate_file",
                 CertificateFileField(
-                    label=_("Passbook CA Certificate"),
+                    label=_("Passbook: Apple Intermediate Certificate"),
                     help_text=_(
-                        "You can download the current CA certificate from apple at "
+                        "You can download the current certificate from Apple at "
                         "https://www.apple.com/certificateauthority/AppleWWDRCAG4.cer"
                     ),
                     required=False,
@@ -55,7 +63,7 @@ def register_global_settings(sender, **kwargs):
             (
                 "passbook_key",
                 forms.CharField(
-                    label=_("Passbook secret key"),
+                    label=_("Passbook: RSA private key"),
                     required=False,
                     widget=forms.Textarea,
                     validators=[validate_rsa_privkey],
@@ -64,11 +72,11 @@ def register_global_settings(sender, **kwargs):
             (
                 "passbook_key_password",
                 forms.CharField(
-                    label=_("Passbook key password"),
+                    label=_("Passbook: RSA private key password"),
                     widget=forms.PasswordInput(render_value=True),
                     required=False,
                     help_text=_(
-                        "Optional, only necessary if the key entered above requires a password to use."
+                        "Optional, only necessary if the RSA private key entered above requires a password."
                     ),
                 ),
             ),
