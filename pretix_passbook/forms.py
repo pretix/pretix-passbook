@@ -1,4 +1,5 @@
 import logging
+import re
 import subprocess
 import tempfile
 from django import forms
@@ -15,12 +16,10 @@ def validate_rsa_privkey(value: str):
     value = value.strip()
     if not value:
         return
-    if not value.startswith("-----BEGIN RSA PRIVATE KEY-----") or not value.endswith(
-        "-----END RSA PRIVATE KEY-----"
-    ):
+    if not re.match(r"^-----BEGIN( (RSA |ENCRYPTED )?PRIVATE KEY-----).*-----END\1$", value, re.DOTALL):
         raise ValidationError(
             _(
-                "This does not look like a RSA private key in PEM format (it misses the begin or end signifiers)"
+                "This does not look like an RSA private key in PEM format (it misses the correct begin or end signifiers)"
             ),
         )
 
