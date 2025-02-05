@@ -448,13 +448,15 @@ class PassbookOutput(BaseTicketOutput):
             and order_position.valid_from.astimezone(tz).date()
             != order_position.valid_until.astimezone(tz)
         ):
-            passfile.expirationDate = order_position.valid_until.astimezone(
+            # note: exprirationDate is a typo in the underlying wallet-library
+            passfile.exprirationDate = order_position.valid_until.astimezone(
                 tz
             ).isoformat()
         elif order_position.valid_from:
             passfile.relevantDate = order_position.valid_from.astimezone(tz).isoformat()
             if order_position.valid_until:
-                passfile.expirationDate = order_position.valid_until.astimezone(
+                # note: exprirationDate is a typo in the underlying wallet-library
+                passfile.exprirationDate = order_position.valid_until.astimezone(
                     tz
                 ).isoformat()
         elif (
@@ -462,7 +464,8 @@ class PassbookOutput(BaseTicketOutput):
             and date_to_local_time
             and date_to_local_time.date() != date_from_local_time.date()
         ):
-            passfile.expirationDate = date_to_local_time.isoformat()
+            # note: exprirationDate is a typo in the underlying wallet-library
+            passfile.exprirationDate = date_to_local_time.isoformat()
         else:
             passfile.relevantDate = date_from_local_time.isoformat()
 
