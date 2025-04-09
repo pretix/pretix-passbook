@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-04-09 14:00+0000\n"
+"Last-Translator: 조정화 <junghwa.jo@om.org>\n"
+"Language-Team: Korean <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook-js/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:4
 msgid "Loading suggested geolocations…"
-msgstr ""
+msgstr "추천 지리적 위치 로드 중…"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:13
 msgid ""
 "Click on one of the following suggestions to fill in the coordinates "
 "automatically:"
-msgstr ""
+msgstr "다음 제안 중 하나를 클릭하여 좌표를 자동으로 입력합니다:"
 
 #: pretix_passbook/static/pretix_passbook/geosuggest.js:35
 msgid "Error while loading suggested geolocations."
-msgstr ""
+msgstr "로드 중 오류가 발생했습니다."
