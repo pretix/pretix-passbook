@@ -7,7 +7,7 @@ pretix-passbook
 .. image:: https://travis-ci.org/pretix/pretix-passbook.svg?branch=master
    :target: https://travis-ci.org/pretix/pretix-passbook
 
-This is a plugin for `pretix`_. It allows to provide tickets in the passbook format supported by Apple Wallet and a
+This is a plugin for `pretix`_. It allows to provide tickets in the pkpass format supported by Apple Wallet and a
 number of Android apps.
 
 Contributing
@@ -36,26 +36,33 @@ Development setup
    the 'plugins' tab in the settings.
 
 
-Generating Passbook keys and configuring them in pretix
--------------------------------------------------------
+Obtaining *Pass Type ID certificates* and configuring them in pretix
+--------------------------------------------------------------------
 
-You can generate a key and CSR using::
+1. To obtain a *Pass Type ID certificate* you need to generate an *RSA private key* and a certificate signing request (CSR) using::
 
     export CERT_NAME=pass-pretix
-    openssl genrsa -out $CERT_NAME.key 2048
-    openssl pkey -in $CERT_NAME.key -traditional > $CERT_NAME.key.pem
+    openssl genpkey -out $CERT_NAME.key -algorithm RSA -pkeyopt rsa_keygen_bits:2048
     openssl req -new -key $CERT_NAME.key -out $CERT_NAME.csr
 
-You can then request a certificate using that CSR in your `Apple developer account`_. You can then convert the downloaded certificate like this::
+2. Request a *Pass Type ID certificate* using the CSR (``pass-pretix.csr``) in your `Apple developer account`_ and download the certificate (as ``pass-pretix.cer``)
+
+3. Convert the downloaded certificate to PEM format::
 
     openssl x509 -inform der -in $CERT_NAME.cer -out $CERT_NAME.pem
     
-After generating the .pem file, upload it to pretix as passbook certificate.
-Make sure you have uploaded the key generated before (pass-pretix.key) and added the passbook CA of apple.
-Next add your Team ID in pretix and the passbook type id. The passbook type id is your identifier, as example pass.pretix.example. The Team ID can be found under "Organizational Unit" when opening the passbook certificate, e.g. with Keychain on MacOS.  
-If you have configured your private rsa key with a password you can provide it in pretix.
+4. Setup your *Pass Type ID certificate* in pretix within global settings
+    - Add your Team ID  
+      (The Team ID can be found under "Organizational Unit" when opening the certificate, e.g. with Keychain on MacOS or you can find it in your `Apple developer account`_)
+    - Add the Pass Type ID  
+      (The Pass Type ID is your identifier, for example ``pass.pretix.example``)
+    - Upload the *Pass Type ID certificate* (``pass-pretix.pem``)
+    - Add the right *Apple Intermediate Certificate* for your certificate 
+      (You can download the current certificate from Apple at https://www.apple.com/certificateauthority/AppleWWDRCAG4.cer)
+    - Paste the *RSA private key* (``pass-pretix.key``) into the secret key field
+    - If you have configured your *RSA private key* with a password, it is necessary to provide it in pretix
+    - Click on `Save`
 
-Click on Save.
 Enjoy!
 
 License
