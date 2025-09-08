@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2023-03-19 20:00+0000\n"
-"Last-Translator: Michael <michael.happl@gmx.at>\n"
+"PO-Revision-Date: 2025-09-08 14:00+0000\n"
+"Last-Translator: Alois Pospíšil <alois.pospisil@gmail.com>\n"
 "Language-Team: Czech <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/cs/>\n"
 "Language: cs\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.13\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
-msgstr ""
+msgstr "Elektronické vstupenky"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr ""
+msgstr "Poskytuje elektronické vstupenky pro pretix"
 
 #: pretix_passbook/forms.py:20
 msgid ""
@@ -35,7 +35,7 @@ msgstr ""
 
 #: pretix_passbook/forms.py:55
 msgid "This does not look like a X509 certificate in either PEM or DER format"
-msgstr ""
+msgstr "Toto nevypadá jako certifikát X509 ve formátu PEM ani DER"
 
 #: pretix_passbook/forms.py:83
 msgid "The file you uploaded could not be converted to PNG format."
@@ -56,10 +56,15 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"V některých případech není zmenšení grafiky provedené aplikací Wallet "
+"uspokojivé. Zaškrtnutím tohoto políčka můžete poskytnout předem škálované "
+"soubory ve správných rozměrech.<br><br>Pokud se tak rozhodnete, nahrávejte "
+"prosím své obrázky pouze v běžné velikosti zobrazení, nikoli ve zvětšené "
+"velikosti retina."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
-msgstr ""
+msgstr "Ikona události"
 
 #: pretix_passbook/passbook.py:46 pretix_passbook/passbook.py:54
 #: pretix_passbook/passbook.py:65 pretix_passbook/passbook.py:77
@@ -67,7 +72,7 @@ msgstr ""
 #: pretix_passbook/passbook.py:108 pretix_passbook/passbook.py:116
 #: pretix_passbook/passbook.py:127
 msgid "Display size is {} x {} pixels."
-msgstr ""
+msgstr "Velikost zobrazení je {} x {} pixelů."
 
 #: pretix_passbook/passbook.py:47 pretix_passbook/passbook.py:78
 #: pretix_passbook/passbook.py:109
@@ -76,7 +81,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:53 pretix_passbook/passbook.py:64
 msgid "Event icon for Retina {}x displays"
-msgstr ""
+msgstr "Ikona události pro displeje Retina 1×"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
@@ -88,7 +93,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
-msgstr ""
+msgstr "Obrázek pozadí passu"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
 msgid "Pass background image for Retina {}x displays"
@@ -144,15 +149,15 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr ""
+msgstr "Zóna"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr ""
+msgstr "Řada"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr "Sedadlo"
+msgstr "Místo"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
