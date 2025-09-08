@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2025-09-08 14:00+0000\n"
+"PO-Revision-Date: 2025-09-08 18:57+0000\n"
 "Last-Translator: Alois Pospíšil <alois.pospisil@gmail.com>\n"
 "Language-Team: Czech <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/cs/>\n"
@@ -161,24 +161,24 @@ msgstr "Místo"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr ""
+msgstr "včetně všech daní"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
 msgid "Ticket for {event} ({product})"
-msgstr ""
+msgstr "Vstupenka pro {event} {{product}}"
 
 #: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
-msgstr ""
+msgstr "ID týmu Passbook"
 
 #: pretix_passbook/signals.py:27
 msgid "Passbook type"
-msgstr ""
+msgstr "Typ passu"
 
 #: pretix_passbook/signals.py:31
 msgid "Passbook organizer name"
-msgstr ""
+msgstr "Veletrhy"
 
 #: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
@@ -200,12 +200,13 @@ msgstr ""
 
 #: pretix_passbook/signals.py:51
 msgid "Passbook key password"
-msgstr ""
+msgstr "Heslo klíče passbooku"
 
 #: pretix_passbook/signals.py:54
 msgid ""
 "Optional, only necessary if the key entered above requires a password to use."
 msgstr ""
+"Volitelné, nutné pouze v případě, že zadaný klíč vyžaduje pro použití heslo."
 
 #: pretix_passbook/signals.py:57
 msgid "Google Geocoding API key"
