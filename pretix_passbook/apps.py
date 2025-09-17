@@ -7,12 +7,12 @@ from . import __version__
 
 class PassbookApp(AppConfig):
     name = "pretix_passbook"
-    verbose_name = "Passbook Tickets"
+    verbose_name = "Apple Wallet Tickets"
 
     class PretixPluginMeta:
         name = gettext_lazy("Passbook Tickets")
         author = "Tobias Kunze, Raphael Michel"
-        description = gettext_lazy("Provides passbook tickets for pretix")
+        description = gettext_lazy("Provides Apple Wallet tickets for pretix")
         category = "FORMAT"
         visible = True
         featured = True
