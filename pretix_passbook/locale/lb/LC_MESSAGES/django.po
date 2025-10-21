@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-10-21 22:00+0000\n"
+"Last-Translator: Sven Muhlen <sven.muhlen@bnl.etat.lu>\n"
+"Language-Team: Luxembourgish <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-passbook/lb/>\n"
 "Language: lb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -102,15 +104,15 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:155
 msgid "Event"
-msgstr ""
+msgstr "Evenement"
 
 #: pretix_passbook/passbook.py:160
 msgid "Product"
-msgstr ""
+msgstr "Produit"
 
 #: pretix_passbook/passbook.py:163
 msgid "Attendee name"
-msgstr ""
+msgstr "Numm vum Participant"
 
 #: pretix_passbook/passbook.py:165
 msgid "Ordered by"
@@ -118,7 +120,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
-msgstr ""
+msgstr "Organisateur"
 
 #: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
@@ -126,7 +128,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
-msgstr ""
+msgstr "Nummer vun der Bestellung"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
@@ -150,7 +152,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
-msgstr ""
+msgstr "Sëtz"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
