@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2025-08-23 21:00+0000\n"
-"Last-Translator: \"Luca Sorace \\\"Stranck\\\"\" <strdjn@gmail.com>\n"
+"PO-Revision-Date: 2025-10-25 20:00+0000\n"
+"Last-Translator: Samuele Morandi <samuele.morandi29@gmail.com>\n"
 "Language-Team: Italian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/it/>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
-msgstr ""
+msgstr "Vorrei scalare la grafica da solo"
 
 #: pretix_passbook/passbook.py:34
 msgid ""
@@ -93,7 +93,7 @@ msgstr "Logo dell'evento per gli schermi Retina {}x"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
-msgstr ""
+msgstr "Immagine di sfondo"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
 msgid "Pass background image for Retina {}x displays"
