@@ -338,46 +338,62 @@ class PassbookOutput(BaseTicketOutput):
                 gettext("Admission time"),
             )
 
-        if order_position.valid_from:
+        program_times = order_position.item.program_times.all()
+        if program_times:
+            min_start = min(pt.start for pt in program_times)
+            max_end = max(pt.end for pt in program_times)
             card.addAuxiliaryField(
-                "doorsOpen",
-                date_format(
-                    order_position.valid_from.astimezone(tz), "SHORT_DATETIME_FORMAT"
-                ),
-                gettext("From"),
+                "doorsOpen", date_format(min_start.astimezone(tz), "SHORT_DATETIME_FORMAT"), gettext("From")
             )
+            if ev.seating_plan_id:
+                card.addBackField(
+                    "doorsClose", date_format(max_end.astimezone(tz), "SHORT_DATETIME_FORMAT"), gettext("To")
+                )
+            else:
+                card.addAuxiliaryField(
+                    "doorsClose", date_format(max_end.astimezone(tz), "SHORT_DATETIME_FORMAT"), gettext("To")
+                )
         else:
-            card.addAuxiliaryField(
-                "doorsOpen", ev.get_date_from_display(tz, short=True), gettext("From")
-            )
-        if order_position.valid_until:
-            if ev.seating_plan_id:
-                card.addBackField(
-                    "doorsClose",
+            if order_position.valid_from:
+                card.addAuxiliaryField(
+                    "doorsOpen",
                     date_format(
-                        order_position.valid_until.astimezone(tz),
-                        "SHORT_DATETIME_FORMAT",
+                        order_position.valid_from.astimezone(tz), "SHORT_DATETIME_FORMAT"
                     ),
-                    gettext("To"),
+                    gettext("From"),
                 )
             else:
                 card.addAuxiliaryField(
-                    "doorsClose",
-                    date_format(
-                        order_position.valid_until.astimezone(tz),
-                        "SHORT_DATETIME_FORMAT",
-                    ),
-                    gettext("To"),
+                    "doorsOpen", ev.get_date_from_display(tz, short=True), gettext("From")
                 )
-        elif order.event.settings.show_date_to and ev.date_to:
-            if ev.seating_plan_id:
-                card.addBackField(
-                    "doorsClose", ev.get_date_to_display(tz, short=True), gettext("To")
-                )
-            else:
-                card.addAuxiliaryField(
-                    "doorsClose", ev.get_date_to_display(tz, short=True), gettext("To")
-                )
+            if order_position.valid_until:
+                if ev.seating_plan_id:
+                    card.addBackField(
+                        "doorsClose",
+                        date_format(
+                            order_position.valid_until.astimezone(tz),
+                            "SHORT_DATETIME_FORMAT",
+                        ),
+                        gettext("To"),
+                    )
+                else:
+                    card.addAuxiliaryField(
+                        "doorsClose",
+                        date_format(
+                            order_position.valid_until.astimezone(tz),
+                            "SHORT_DATETIME_FORMAT",
+                        ),
+                        gettext("To"),
+                    )
+            elif order.event.settings.show_date_to and ev.date_to:
+                if ev.seating_plan_id:
+                    card.addBackField(
+                        "doorsClose", ev.get_date_to_display(tz, short=True), gettext("To")
+                    )
+                else:
+                    card.addAuxiliaryField(
+                        "doorsClose", ev.get_date_to_display(tz, short=True), gettext("To")
+                    )
 
         if order_position.attendee_name:
             card.addBackField(
