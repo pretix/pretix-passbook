@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2025-11-11 05:00+0000\n"
+"PO-Revision-Date: 2025-11-11 22:00+0000\n"
 "Last-Translator: Marcos Xavier Gil Júnior <marcosxaviergiljr@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-passbook/pt_BR/>\n"
@@ -25,7 +25,7 @@ msgstr "Ingressos Passbook"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr ""
+msgstr "Fornece ingressos passbook para pretix"
 
 #: pretix_passbook/forms.py:20
 msgid ""
