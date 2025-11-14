@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2025-10-25 20:00+0000\n"
-"Last-Translator: Samuele Morandi <samuele.morandi29@gmail.com>\n"
+"PO-Revision-Date: 2025-11-14 13:01+0000\n"
+"Last-Translator: Sanny <s.logiudice@comune.venariareale.to.it>\n"
 "Language-Team: Italian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/it/>\n"
 "Language: it\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
-msgstr ""
+msgstr "Portafoglio Digitale dei Biglietti"
 
 #: pretix_passbook/__init__.py:13
 msgid "Provides passbook tickets for pretix"
-msgstr ""
+msgstr "Fornire un portafoglio digitale dei biglietti pretix"
 
 #: pretix_passbook/forms.py:20
 msgid ""
@@ -46,11 +46,11 @@ msgstr "Non è stato possibile convertire il file che hai caricato in PNG."
 
 #: pretix_passbook/passbook.py:24
 msgid "Wallet/Passbook"
-msgstr ""
+msgstr "Portafoglio Digitale"
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
-msgstr "Vorrei scalare la grafica da solo"
+msgstr "Vorrei modificare la dimensione delle immagini da solo"
 
 #: pretix_passbook/passbook.py:34
 msgid ""
@@ -59,6 +59,10 @@ msgid ""
 "correct dimensions.<br><br>If you choose to do so, please only upload your "
 "pictures in the regular display size and not the increased retina size."
 msgstr ""
+"A volte, la riduzione delle immagini fatta dalla Wallet-app non è "
+"soddisfacente. Selezionando questo box, puoi fornire un file già delle "
+"dimensioni corrette.<br><br>Se lo fai, per cortesia carica immagini che non "
+"abbiano una risoluzione troppo elevata (troppa densità di pixel)."
 
 #: pretix_passbook/passbook.py:44
 msgid "Event icon"
@@ -97,7 +101,7 @@ msgstr "Immagine di sfondo"
 
 #: pretix_passbook/passbook.py:115 pretix_passbook/passbook.py:126
 msgid "Pass background image for Retina {}x displays"
-msgstr ""
+msgstr "Inserisci l'immagine di sfondo per {}x display Retina"
 
 #: pretix_passbook/passbook.py:137
 msgid "Event location (latitude)"
@@ -149,11 +153,11 @@ msgstr "Sito web"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
-msgstr ""
+msgstr "Settore"
 
 #: pretix_passbook/passbook.py:187
 msgid "Row"
-msgstr "Riga"
+msgstr "Fila"
 
 #: pretix_passbook/passbook.py:189 pretix_passbook/passbook.py:191
 msgid "Seat"
@@ -170,39 +174,39 @@ msgstr "Biglietto per {event} ({product})"
 
 #: pretix_passbook/signals.py:23
 msgid "Passbook team ID"
-msgstr ""
+msgstr "Team ID del Portafoglio Digitale"
 
 #: pretix_passbook/signals.py:27
 msgid "Passbook type"
-msgstr ""
+msgstr "Tipo di Portafoglio Digitale"
 
 #: pretix_passbook/signals.py:31
 msgid "Passbook organizer name"
-msgstr ""
+msgstr "Nome dell'organizzazione del Portafoglio Digitale"
 
 #: pretix_passbook/signals.py:35
 msgid "Passbook certificate file"
-msgstr ""
+msgstr "file del certificato del Portafoglio digitale"
 
 #: pretix_passbook/signals.py:39
 msgid "Passbook CA Certificate"
-msgstr ""
+msgstr "Certificato CA del Portafoglio Digitale"
 
 #: pretix_passbook/signals.py:40
 msgid ""
 "You can download the current CA certificate from apple at https://www."
 "apple.com/certificateauthority/AppleWWDRCAG4.cer"
 msgstr ""
-"Puoi scaricare il certificato CA di Apple da https://www.apple.com/"
-"certificateauthority/AppleWWDRCAG4.cer"
+"Puoi scaricare il certificato CA aggiornato di Apple da https://"
+"www.apple.com/certificateauthority/AppleWWDRCAG4.cer"
 
 #: pretix_passbook/signals.py:45
 msgid "Passbook secret key"
-msgstr ""
+msgstr "chiave segreta del Portafoglio Digitale"
 
 #: pretix_passbook/signals.py:51
 msgid "Passbook key password"
-msgstr ""
+msgstr "Password del Portafoglio Digitale"
 
 #: pretix_passbook/signals.py:54
 msgid ""
