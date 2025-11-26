@@ -17,7 +17,7 @@ class PassbookApp(AppConfig):
         visible = True
         featured = True
         version = __version__
-        compatibility = "pretix>=4.17.0"
+        compatibility = "pretix>=2025.10.0.dev0"
 
     def ready(self):
         from . import signals  # NOQA
