@@ -434,12 +434,12 @@ class PassbookOutput(BaseTicketOutput):
             )
 
         try:
-            backfieldprop = order_position.item.meta_values.get(property__name="pretix_passbook_backfield")
+            backfieldprop = order_position.item.meta_data.get("pretix_passbook_backfield")
 
-            if backfieldprop.value:
+            if backfieldprop:
                 card.addBackField(
                     "metabackfield",
-                    backfieldprop.value,
+                    backfieldprop,
                     gettext("Additional information")
                 )
         except ItemMetaValue.DoesNotExist:
