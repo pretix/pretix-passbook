@@ -10,7 +10,7 @@ from django.core.files.storage import default_storage
 from django.core.validators import RegexValidator
 from django.utils.formats import date_format
 from django.utils.translation import gettext, gettext_lazy as _  # NOQA
-from pretix.base.models import OrderPosition
+from pretix.base.models import OrderPosition, ItemMetaValue
 from pretix.base.pdf import get_seat
 from pretix.base.ticketoutput import BaseTicketOutput
 from pretix.control.forms import ClearableBasenameFileInput
@@ -432,6 +432,18 @@ class PassbookOutput(BaseTicketOutput):
                 build_absolute_uri(order.event, "presale:event.index"),
                 gettext("Website"),
             )
+
+        try:
+            backfieldprop = order_position.item.meta_data.get("pretix_passbook_backfield")
+
+            if backfieldprop:
+                card.addBackField(
+                    "metabackfield",
+                    backfieldprop,
+                    gettext("Additional information")
+                )
+        except ItemMetaValue.DoesNotExist:
+            pass
 
         passfile = Pass(
             card,
