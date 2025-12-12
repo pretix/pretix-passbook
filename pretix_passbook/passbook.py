@@ -576,6 +576,15 @@ class PassbookOutput(BaseTicketOutput):
                 passfile.addFile(
                     "background@3x.png", default_storage.open(bg3x_file.name, "rb")
                 )
+        try:
+            thumnailprop = order_position.item.meta_data.get("pretix_passbook_thumbnail")
+
+            if thumnailprop:
+                passfile.addFile(
+                    "thumbnail.png", default_storage.open(thumnailprop, "rb")
+                )
+        except ItemMetaValue.DoesNotExist:
+            pass
 
         passfile.backgroundColor = self.event.settings.get(
             "ticketoutput_passbook_bg_color"
