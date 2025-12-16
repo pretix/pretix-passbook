@@ -579,7 +579,7 @@ class PassbookOutput(BaseTicketOutput):
         try:
             thumnailprop = order_position.item.meta_data.get("pretix_passbook_thumbnail")
 
-            if thumnailprop:
+            if thumnailprop and thumnailprop.startswith('pub/'):
                 passfile.addFile(
                     "thumbnail.png", default_storage.open(thumnailprop, "rb")
                 )
