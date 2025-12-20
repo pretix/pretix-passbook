@@ -632,3 +632,50 @@ class PassbookOutput(BaseTicketOutput):
 
         _pass.seek(0)
         return filename, "application/vnd.apple.pkpass", _pass.read()
+
+
+def pass_create_without_signature(self, zip_file=None):
+    from io import BytesIO
+    pass_json = self._createPassJson()
+    manifest = self._createManifest(pass_json)
+    if not zip_file:
+        zip_file = BytesIO()
+    pass_create_zip_without_signature(self, pass_json, manifest, zip_file=zip_file)
+    return zip_file
+
+
+def pass_create_zip_without_signature(self, pass_json, manifest, zip_file=None):
+    import zipfile
+    zf = zipfile.ZipFile(zip_file or 'pass.pkpass', 'w')
+    zf.writestr('manifest.json', manifest)
+    zf.writestr('pass.json', pass_json)
+    for filename, filedata in self._files.items():
+        zf.writestr(filename, filedata)
+    zf.close()
+
+
+class UnsignedPassbookOutput(PassbookOutput):
+    identifier = "unsigned_passbook"
+    verbose_name = "Unsigned Passbook Tickets"
+    download_button_icon = "fa-unlock"
+    download_button_text = _("Wallet/Passbook (unsigned)")
+    multi_download_enabled = False
+
+    @property
+    def settings_form_fields(self) -> dict:
+        return OrderedDict(
+            list(super().settings_form_fields.items())[0:1]
+        )
+
+    def generate(self, order_position: OrderPosition) -> Tuple[str, str, str]:
+        order = order_position.order
+        passfile = self.generate_pass(order_position)
+        filename = "{}-{}.pkpass".format(order.event.slug, order.code)
+
+        _pass = pass_create_without_signature(
+            passfile
+        )
+
+        _pass.seek(0)
+        return filename, "application/vnd.apple.pkpass", _pass.read()
+
