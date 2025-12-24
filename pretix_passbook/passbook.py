@@ -1,3 +1,4 @@
+import re
 from typing import Tuple
 
 import pytz
@@ -579,7 +580,7 @@ class PassbookOutput(BaseTicketOutput):
         try:
             thumnailprop = order_position.item.meta_data.get("pretix_passbook_thumbnail")
 
-            if thumnailprop:
+            if thumnailprop and re.match(r"(\d+/)?pub/", thumnailprop):
                 passfile.addFile(
                     "thumbnail.png", default_storage.open(thumnailprop, "rb")
                 )
