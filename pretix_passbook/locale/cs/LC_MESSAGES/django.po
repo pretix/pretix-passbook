@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2025-09-09 12:18+0200\n"
-"Last-Translator: Alois Pospíšil <alois.pospisil@gmail.com>\n"
+"PO-Revision-Date: 2026-01-09 01:28+0000\n"
+"Last-Translator: Jiří Pastrňák <jiri@pastrnak.email>\n"
 "Language-Team: Czech <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-passbook/cs/>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: pretix_passbook/passbook.py:24
 msgid "Wallet/Passbook"
-msgstr ""
+msgstr "Peněženka/Wallet/Passbook"
 
 #: pretix_passbook/passbook.py:33
 msgid "I would like to scale the graphics myself"
@@ -85,11 +85,11 @@ msgstr "Ikona události pro displeje Retina 1×"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
-msgstr ""
+msgstr "Logo akce"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
-msgstr ""
+msgstr "Logo akce pro Retina {}x obrazovky"
 
 #: pretix_passbook/passbook.py:106
 msgid "Pass background image"
@@ -121,15 +121,15 @@ msgstr "Jméno účastníka"
 
 #: pretix_passbook/passbook.py:165
 msgid "Ordered by"
-msgstr ""
+msgstr "Objednal"
 
 #: pretix_passbook/passbook.py:166
 msgid "Organizer"
-msgstr ""
+msgstr "Pořadatel"
 
 #: pretix_passbook/passbook.py:168
 msgid "Organizer contact"
-msgstr ""
+msgstr "Kontakt na pořadatele"
 
 #: pretix_passbook/passbook.py:169
 msgid "Order code"
@@ -137,15 +137,15 @@ msgstr "Kód objednávky"
 
 #: pretix_passbook/passbook.py:171
 msgid "From"
-msgstr ""
+msgstr "Začátek"
 
 #: pretix_passbook/passbook.py:173
 msgid "To"
-msgstr ""
+msgstr "Konec"
 
 #: pretix_passbook/passbook.py:178 pretix_passbook/passbook.py:180
 msgid "Website"
-msgstr ""
+msgstr "Web"
 
 #: pretix_passbook/passbook.py:185
 msgid "Zone"
