@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2026-01-09 01:28+0000\n"
+"PO-Revision-Date: 2026-01-11 10:28+0000\n"
 "Last-Translator: Jiří Pastrňák <jiri@pastrnak.email>\n"
 "Language-Team: Czech <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-passbook/cs/>\n"
@@ -161,7 +161,7 @@ msgstr "Místo"
 
 #: pretix_passbook/passbook.py:191
 msgid "General admission"
-msgstr "včetně všech daní"
+msgstr "Základní vstupné"
 
 #: pretix_passbook/passbook.py:203
 #, python-brace-format
