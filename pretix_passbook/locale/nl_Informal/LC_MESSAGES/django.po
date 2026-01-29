@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2026-01-28 21:28+0000\n"
+"PO-Revision-Date: 2026-01-29 22:28+0000\n"
 "Last-Translator: Ruud Hendrickx <ruud@leckxicon.eu>\n"
 "Language-Team: Dutch (informal) <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-passbook/nl_Informal/>\n"
@@ -91,7 +91,7 @@ msgstr "Evenementpictogram voor Retina {}x-schermen"
 
 #: pretix_passbook/passbook.py:75
 msgid "Event logo"
-msgstr "Logo evenement"
+msgstr "Logo van het evenement"
 
 #: pretix_passbook/passbook.py:84 pretix_passbook/passbook.py:95
 msgid "Event logo for Retina {}x displays"
