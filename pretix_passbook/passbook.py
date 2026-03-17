@@ -1,7 +1,6 @@
 import re
 from typing import Tuple
 
-import pytz
 import tempfile
 from collections import OrderedDict
 from django import forms
@@ -266,7 +265,7 @@ class PassbookOutput(BaseTicketOutput):
     def generate_pass(self, order_position: OrderPosition):
         order = order_position.order
         ev = order_position.subevent or order.event
-        tz = pytz.timezone(order.event.settings.timezone)
+        tz = order.event.timezone
 
         card = EventTicket()
 
