@@ -16,6 +16,13 @@ def register_ticket_output(sender, **kwargs):
     return PassbookOutput
 
 
+@receiver(register_ticket_outputs, dispatch_uid="output_passbook_unsigned")
+def register_ticket_output2(sender, **kwargs):
+    from .passbook import UnsignedPassbookOutput
+
+    return UnsignedPassbookOutput
+
+
 @receiver(register_global_settings, dispatch_uid="passbook_settings")
 def register_global_settings(sender, **kwargs):
     return OrderedDict(
