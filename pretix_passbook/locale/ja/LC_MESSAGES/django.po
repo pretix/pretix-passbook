@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-16 15:52+0200\n"
-"PO-Revision-Date: 2026-02-23 14:34+0000\n"
+"PO-Revision-Date: 2026-08-26 00:48+0000\n"
 "Last-Translator: Hijiri Umemoto <hijiri@umemoto.org>\n"
 "Language-Team: Japanese <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-passbook/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.16\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: pretix_passbook/__init__.py:11
 msgid "Passbook Tickets"
@@ -217,4 +217,4 @@ msgstr "Google Geocoding API キー"
 
 #: pretix_passbook/signals.py:60
 msgid "Optional, only necessary to find coordinates automatically."
-msgstr "オプションで、コーディネートを自動で見つける場合のみ。"
+msgstr "オプションで、座標を自動で見つける場合のみ。"
