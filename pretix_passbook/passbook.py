@@ -1,6 +1,6 @@
-import re
 from typing import Tuple
 
+import re
 import tempfile
 from collections import OrderedDict
 from django import forms
@@ -10,12 +10,12 @@ from django.core.files.storage import default_storage
 from django.core.validators import RegexValidator
 from django.utils.formats import date_format
 from django.utils.translation import gettext, gettext_lazy as _  # NOQA
-from pretix.base.models import OrderPosition, ItemMetaValue
+from pretix.base.models import ItemMetaValue, OrderPosition
 from pretix.base.pdf import get_seat
 from pretix.base.ticketoutput import BaseTicketOutput
 from pretix.control.forms import ClearableBasenameFileInput
 from pretix.multidomain.urlreverse import build_absolute_uri
-from wallet.models import Barcode, BarcodeFormat, EventTicket, Location, Pass
+from wallet.models import Barcode, BarcodeFormat, DateField, EventTicket, Location, Pass
 
 from pretix_passbook.forms import PNGImageField
 
@@ -290,18 +290,20 @@ class PassbookOutput(BaseTicketOutput):
 
             if order.event.has_subevents or ev.date_admission:
                 if ev.date_admission:
-                    card.addHeaderField(
-                        "doorsAdmissionHeader",
-                        date_format(
-                            ev.date_admission.astimezone(tz), "SHORT_DATETIME_FORMAT"
-                        ),
-                        gettext("Admission time"),
+                    card.headerFields.append(
+                        DateField(
+                            "doorsAdmissionHeader",
+                            ev.date_admission.astimezone(tz).isoformat(),
+                            gettext("Admission time")
+                        )
                     )
                 else:
-                    card.addHeaderField(
-                        "doorsAdmissionHeader",
-                        ev.get_date_from_display(tz, short=True),
-                        gettext("Begin"),
+                    card.headerFields.append(
+                        DateField(
+                            "doorsAdmissionHeader",
+                            ev.date_from.astimezone(tz).isoformat(),
+                            gettext("Begin")
+                        )
                     )
         else:
             logo_text = str(ev.name)
